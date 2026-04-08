@@ -19,6 +19,7 @@ public class ModItemGroups {
                     .entries((displayContext, entries) -> {
                         entries.add(ModItems.PURE_IRON_INGOT);
                         entries.add(ModBlocks.PURE_IRON_BLOCK.getLeft());
+                        entries.add(ModBlocks.STAGE_BLOCK.getLeft());
 
                     })
                     .build()

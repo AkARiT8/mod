@@ -1,5 +1,6 @@
 package dev.hellmod.client;
 
+import dev.hellmod.datagen.DatagenAdvancementProvider;
 import dev.hellmod.datagen.DatagenLootTableProvider;
 import dev.hellmod.datagen.DatagenModelProvider;
 import dev.hellmod.datagen.DatagenRecipeProvider;
@@ -15,6 +16,7 @@ public class HellModDataGenerator implements DataGeneratorEntrypoint {
 		pack.addProvider(DatagenModelProvider::new);
 		pack.addProvider(DatagenLootTableProvider::new);
 		pack.addProvider(DatagenRecipeProvider::new);
+		pack.addProvider(DatagenAdvancementProvider::new);
 
 	}
 }
