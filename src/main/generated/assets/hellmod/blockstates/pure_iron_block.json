@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "hellmod:block/pure_iron_block"
+    }
+  }
+}

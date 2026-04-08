@@ -1,0 +1,10 @@
+[
+  {
+    "item": "minecraft:diamond_sword",
+    "advancement": "minecraft:story/enter_the_nether"
+  },
+  {
+    "item": "minecraft:netherite_sword",
+    "advancement": "minecraft:story/enter_the_nether"
+  }
+]
