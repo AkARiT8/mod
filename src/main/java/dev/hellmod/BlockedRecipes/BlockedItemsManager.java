@@ -1,18 +1,14 @@
 package dev.hellmod.BlockedRecipes;
 
-import net.minecraft.advancement.Advancement;
 import net.minecraft.advancement.AdvancementEntry;
-import net.minecraft.advancement.AdvancementProgress;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.util.Identifier;
 
-
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Predicate;
 
 public class BlockedItemsManager {
 

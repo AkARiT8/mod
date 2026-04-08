@@ -1,7 +1,6 @@
 package dev.hellmod.datagen;
 
 import dev.hellmod.blocks.ModBlocks;
-import dev.hellmod.items.ModItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootTableProvider;
 import net.minecraft.registry.RegistryWrapper;
