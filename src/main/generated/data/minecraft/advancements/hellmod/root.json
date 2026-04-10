@@ -1,0 +1,30 @@
+{
+  "criteria": {
+    "got_pure_iron_ingot": {
+      "conditions": {
+        "items": [
+          {
+            "items": "hellmod:pure_iron_ingot"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "background": "minecraft:/assets/hellmod/textures/item/pure_iron_ingot.png",
+    "description": "yet starting",
+    "frame": "challenge",
+    "icon": {
+      "count": 1,
+      "id": "hellmod:pure_iron_ingot"
+    },
+    "title": "Stage 0"
+  },
+  "requirements": [
+    [
+      "got_pure_iron_ingot"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

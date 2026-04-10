@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "hellmod:block/stageblock/stage_block_side",
+    "east": "hellmod:block/stageblock/stage_block_side",
+    "north": "hellmod:block/stageblock/stage_block_front",
+    "particle": "hellmod:block/stageblock/stage_block_top",
+    "south": "hellmod:block/stageblock/stage_block_side",
+    "up": "hellmod:block/stageblock/stage_block_top",
+    "west": "hellmod:block/stageblock/stage_block_side"
+  }
+}
