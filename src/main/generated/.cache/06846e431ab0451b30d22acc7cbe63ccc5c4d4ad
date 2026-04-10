@@ -1,8 +1,8 @@
-// 1.20.6	2026-04-09T01:47:49.3031635	HellMod/Model Definitions
-b2f2d921e0fe517a9aa6e140d7eb9112493a5670 assets\hellmod\models\item\pure_iron_ingot.json
+// 1.20.6	2026-04-09T15:26:01.0316858	HellMod/Model Definitions
 efa98b7eaf4d6afa7c74041d4323a7af85f0c368 assets\hellmod\blockstates\stage_block.json
-d3c95290a75f2f5b2b0c7280e8c79e18474acb1d assets\hellmod\models\item\stage_block.json
+b2f2d921e0fe517a9aa6e140d7eb9112493a5670 assets\hellmod\models\item\pure_iron_ingot.json
 9ccd02a06e7e3c2c861d34af84d0c1b8558a5ff4 assets\hellmod\models\item\pure_iron_block.json
 5208d13b3daf718d1f7522a9afe89f3fd30ad1ca assets\hellmod\models\block\pure_iron_block.json
+0b4f08d4da253b8e837347c6df0a27cc1b9c19f5 assets\hellmod\models\item\stage_block.json
 0538f61a78743a151fdc14579eab155d8a1a3d28 assets\hellmod\blockstates\pure_iron_block.json
 9428f44b808ec51c190758e68c9b82aeed6e540e assets\hellmod\models\stage_block.json

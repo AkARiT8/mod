@@ -1,10 +1,13 @@
 package dev.hellmod.blocks;
 
 import dev.hellmod.blocks.custom.StageBlock;
+import dev.hellmod.blocks.entity.StageBlockEntity;
+import net.fabricmc.fabric.api.object.builder.v1.block.entity.FabricBlockEntityTypeBuilder;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import dev.hellmod.HellMod;
 import net.minecraft.block.Blocks;
+import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.registry.Registries;
@@ -16,7 +19,6 @@ public class ModBlocks {
 
     public static final Pair<Block, Item> PURE_IRON_BLOCK = registerBlock("pure_iron_block", new Block(AbstractBlock.Settings.copy(Blocks.IRON_BLOCK)));
     public static final Pair<Block, Item> STAGE_BLOCK = registerBlock("stage_block", new StageBlock(AbstractBlock.Settings.copy(Blocks.BEDROCK)));
-
 
     private static Pair<Block, Item> registerBlock(String name, Block block){
         return new Pair<>(

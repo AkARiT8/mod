@@ -5,6 +5,8 @@ import dev.hellmod.BlockedRecipes.BlockedItemsManager;
 import dev.hellmod.blocks.ModBlocks;
 import dev.hellmod.items.ModItemGroups;
 import dev.hellmod.items.ModItems;
+import dev.hellmod.registry.ModBlockEntities;
+import dev.hellmod.registry.ModScreenHandlers;
 import net.fabricmc.api.ModInitializer;
 
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents;
@@ -41,6 +43,9 @@ public class HellMod implements ModInitializer {
 		ModItems.registerItems();
 		ModItemGroups.registerItemsGroups();
 		ModBlocks.registerBlocks();
+		ModBlockEntities.register();
+
+		ModScreenHandlers.register();
 
 		BlockedItemsLoader.load(manager);
 

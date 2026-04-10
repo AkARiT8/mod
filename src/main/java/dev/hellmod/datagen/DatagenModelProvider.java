@@ -8,6 +8,8 @@ import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
 import net.minecraft.data.client.*;
 import net.minecraft.util.Identifier;
 
+import java.util.Optional;
+
 public class DatagenModelProvider extends FabricModelProvider {
 
     public DatagenModelProvider(FabricDataOutput output) {
@@ -38,11 +40,13 @@ public class DatagenModelProvider extends FabricModelProvider {
         blockStateModelGenerator.blockStateCollector.accept(
                 BlockStateModelGenerator.createSingletonBlockState(ModBlocks.STAGE_BLOCK.getLeft(), modelId)
         );
+        blockStateModelGenerator.registerParentedItemModel(ModBlocks.STAGE_BLOCK.getLeft(), modelId);
+
     }
 
     @Override
     public void generateItemModels(ItemModelGenerator itemModelGenerator) {
         itemModelGenerator.register(ModItems.PURE_IRON_INGOT, Models.GENERATED);
-        itemModelGenerator.register(ModBlocks.STAGE_BLOCK.getRight(), Models.GENERATED);
+
     }
 }
