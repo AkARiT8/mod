@@ -1,8 +1,10 @@
 package dev.hellmod.blocks.entity;
 
 import dev.hellmod.blocks.custom.StageData;
+import dev.hellmod.items.ModItems;
 import dev.hellmod.registry.ModBlockEntities;
 import dev.hellmod.screen.StageScreenHandler;
+import dev.hellmod.stage.recipe.StageRecipeManager;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -14,6 +16,8 @@ import net.minecraft.screen.ArrayPropertyDelegate;
 import net.minecraft.screen.NamedScreenHandlerFactory;
 import net.minecraft.screen.PropertyDelegate;
 import net.minecraft.screen.ScreenHandler;
+import net.minecraft.sound.SoundCategory;
+import net.minecraft.sound.SoundEvents;
 import net.minecraft.text.Text;
 import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.util.math.BlockPos;
@@ -64,11 +68,22 @@ public class StageBlockEntity extends BlockEntity implements NamedScreenHandlerF
     }
 
     public boolean canAdd() {
+        if (world == null || world.isClient) return false;
 
-        return items.get(0).isOf(Items.DIAMOND)
-                && items.get(1).isOf(Items.EMERALD)
-                && items.get(2).isOf(Items.COAL);
+        int stage = StageData.get((ServerWorld) world).getStage();
 
+        var recipe = StageRecipeManager.get(stage);
+        if (recipe == null) return false;
+
+        var inputs = recipe.getInputs();
+
+        for (int i = 0; i < inputs.size(); i++) {
+            if (!items.get(i).isOf(inputs.get(i))) {
+                return false;
+            }
+        }
+
+        return true;
     }
 
     public void addResources() {
@@ -104,6 +119,21 @@ public class StageBlockEntity extends BlockEntity implements NamedScreenHandlerF
         if (world instanceof ServerWorld serverWorld) {
             StageData data = StageData.get(serverWorld);
             data.setStage(data.getStage() + 1);
+            if (data.getStage() == 1) {
+                items.set(3, new ItemStack(ModItems.SPEED_TOTEM_OF_UNDYING));
+                markDirty();
+            }
+            world.playSound(
+                    null,
+                    pos,
+                    SoundEvents.ENTITY_WITHER_SPAWN,
+                    SoundCategory.BLOCKS,
+                    1.0f,
+                    1.0f
+            );
+
+            serverWorld.setTimeOfDay(14000);
+
         }
     }
     public PropertyDelegate getPropertyDelegate() {

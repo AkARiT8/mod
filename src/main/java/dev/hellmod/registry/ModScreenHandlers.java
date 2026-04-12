@@ -17,6 +17,5 @@ public class ModScreenHandlers {
             );
 
     public static void register() {
-        System.out.println("Registrando ScreenHandlers de HellMod");
     }
 }

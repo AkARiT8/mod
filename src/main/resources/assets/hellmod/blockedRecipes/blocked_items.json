@@ -1,10 +1,66 @@
 [
   {
-    "item": "minecraft:diamond_sword",
-    "advancement": "minecraft:story/enter_the_nether"
+    "item": "hellmod:pure_iron_ingot",
+    "stage": 1
   },
   {
-    "item": "minecraft:netherite_sword",
-    "advancement": "minecraft:story/enter_the_nether"
+    "item": "hellmod:pure_iron_block",
+    "stage": 1
+  },
+  {
+    "item": "hellmod:pure_gold_ingot",
+    "stage": 1
+  },
+  {
+    "item": "hellmod:pure_gold_block",
+    "stage": 1
+  },
+  {
+    "item": "hellmod:pure_diamond",
+    "stage": 1
+  },
+  {
+    "item": "hellmod:pure_diamond_block",
+    "stage": 1
+  },
+  {
+    "item": "hellmod:pure_emerald",
+    "stage": 1
+  },
+  {
+  "item": "hellmod:pure_emerald_block",
+  "stage": 1
+  },
+  {
+    "item": "hellmod:pure_netherite_ingot",
+    "stage": 1
+  },
+  {
+    "item": "hellmod:pure_netherite_block",
+    "stage": 1
+  },
+  {
+    "item": "hellmod:enchanted_golden_carrot",
+    "stage": 1
+  },
+  {
+    "item": "hellmod:speed_totem_of_undying",
+    "stage": 1
+  },
+  {
+    "item": "hellmod:basic_hardcore_heart",
+    "stage": 1
+  },
+  {
+    "item": "hellmod:overworld_essence",
+    "stage": 1
+  },
+  {
+    "item": "hellmod:blaze_main_rod",
+    "stage": 2
+  },
+  {
+    "item": "hellmod:magma_cube_core",
+    "stage": 2
   }
 ]

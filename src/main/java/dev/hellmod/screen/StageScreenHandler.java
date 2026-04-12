@@ -1,21 +1,23 @@
 package dev.hellmod.screen;
 
-import dev.hellmod.blocks.custom.StageData;
 import dev.hellmod.blocks.entity.StageBlockEntity;
 import dev.hellmod.custom.OutputSlot;
 import dev.hellmod.registry.ModScreenHandlers;
+import dev.hellmod.stage.recipe.StageRecipeManager;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.Inventory;
 import net.minecraft.inventory.SimpleInventory;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.screen.ArrayPropertyDelegate;
 import net.minecraft.screen.PropertyDelegate;
 import net.minecraft.screen.ScreenHandler;
 import net.minecraft.screen.slot.Slot;
-import net.minecraft.server.world.ServerWorld;
 import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
+
+import java.util.List;
 
 public class StageScreenHandler extends ScreenHandler {
 
@@ -162,5 +164,12 @@ public class StageScreenHandler extends ScreenHandler {
                 }
             }
         }
+    }
+    public List<Item> getRequiredItems() {
+        int stage = this.getStage();
+
+        var recipe = StageRecipeManager.get(stage);
+
+        return recipe != null ? recipe.getInputs() : List.of();
     }
 }

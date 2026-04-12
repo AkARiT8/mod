@@ -1,8 +1,8 @@
 package dev.hellmod.client.screen;
 
 import com.mojang.blaze3d.systems.RenderSystem;
-import dev.hellmod.items.ModItems;
 import dev.hellmod.screen.StageScreenHandler;
+import dev.hellmod.stage.recipe.StageRecipeManager;
 import net.minecraft.client.gui.DrawContext;
 import net.minecraft.client.gui.screen.ingame.HandledScreen;
 import net.minecraft.client.gui.widget.ButtonWidget;
@@ -12,6 +12,8 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
+
+import java.util.List;
 
 
 public class StageScreen extends HandledScreen<StageScreenHandler> {
@@ -58,14 +60,16 @@ public class StageScreen extends HandledScreen<StageScreenHandler> {
         int titleX = centerX - textRenderer.getWidth(title) / 2;
         context.drawText(textRenderer, title, titleX - 1, 15, 0xFFFFFF, false);
 
-        if (!handler.getSlot(0).hasStack()) {
-            drawGhostItem(context, Items.DIAMOND,  88, 11);
-        }
-        if (!handler.getSlot(1).hasStack()) {
-            drawGhostItem(context, Items.EMERALD,  88, 32);
-        }
-        if (!handler.getSlot(2).hasStack()) {
-            drawGhostItem(context, Items.COAL,  88, 53);
+        var items = handler.getRequiredItems();
+
+        for (int i = 0; i < items.size(); i++) {
+            if (!handler.getSlot(i).hasStack()) {
+
+                int[] xs = {88, 88, 88};
+                int[] ys = {11, 32, 53};
+
+                drawGhostItem(context, items.get(i), xs[i], ys[i]);
+            }
         }
 
         String stageText = String.valueOf(stage);
@@ -113,7 +117,6 @@ public class StageScreen extends HandledScreen<StageScreenHandler> {
         context.drawItem(new ItemStack(item), 0, 0);
 
         context.getMatrices().pop();
-
-
     }
+
 }

@@ -2,8 +2,8 @@ package dev.hellmod.BlockedRecipes;
 
 public class BlockedItemData {
     private String item;
-    private String advancement;
+    private int stage;
 
     public String getItem() { return item; }
-    public String getAdvancement() { return advancement; }
+    public int getStage() { return stage; }
 }

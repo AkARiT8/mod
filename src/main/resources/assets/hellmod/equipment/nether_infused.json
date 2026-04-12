@@ -1,0 +1,14 @@
+{
+  "layers": {
+    "humanoid": [
+      {
+        "texture": "hellmod:textures/models/armor/nether_infused_layer_1.png"
+      }
+    ],
+    "humanoid_leggings": [
+      {
+        "texture": "hellmod:textures/models/armor/nether_infused_layer_2.png"
+      }
+    ]
+  }
+}

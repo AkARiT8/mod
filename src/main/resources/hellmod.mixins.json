@@ -1,14 +1,22 @@
 {
-	"required": true,
-	"package": "dev.hellmod.mixin",
-	"compatibilityLevel": "JAVA_21",
-	"mixins": [
-		"CraftingResultSlotMixin"
-	],
-	"injectors": {
-		"defaultRequire": 1
-	},
-	"overwrites": {
-		"requireAnnotations": true
+  "required": true,
+  "package": "dev.hellmod.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "BlazeMixin",
+    "FireballAccessor",
+    "CraftingResultSlotMixin",
+    "FireballFlagAccessor",
+    "FireballMixin",
+    "GhastMixin",
+    "LivinEntityMixin",
+    "NetherPortalBlockMixin",
+    "SmallFireballMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "overwrites": {
+    "requireAnnotations": true
 	}
 }

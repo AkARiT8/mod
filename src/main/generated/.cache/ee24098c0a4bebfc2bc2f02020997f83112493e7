@@ -1,2 +1,6 @@
-// 1.20.6	2026-04-09T15:26:01.0326858	HellMod/Block Loot Tables
+// 1.20.6	2026-04-13T01:11:24.7398776	HellMod/Block Loot Tables
+a2806b9700f6201dab2e7e1fceb1d2e039be161a data\hellmod\loot_tables\blocks\pure_gold_block.json
+158b0c2b60cf8294f335ed5de786eaf6b9e8468c data\hellmod\loot_tables\blocks\pure_netherite_block.json
 47d08ac88de59c03eb084b709db77df979c3967d data\hellmod\loot_tables\blocks\pure_iron_block.json
+89a7805e7fd3c7eaf1226ead3c63d742eb0a9c7f data\hellmod\loot_tables\blocks\pure_diamond_block.json
+513926e1c701f04c79f1e96750fbd8a9532a4076 data\hellmod\loot_tables\blocks\pure_emerald_block.json

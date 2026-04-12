@@ -20,18 +20,14 @@ public class BlockedItemsLoader {
             List<BlockedItemData> list = new Gson().fromJson(reader, listType);
 
             for (BlockedItemData data : list) {
+
                 Identifier itemId = new Identifier(data.getItem());
                 Item item = Registries.ITEM.get(itemId);
 
                 if (item != null) {
-                    Identifier advId = new Identifier(data.getAdvancement());
-                    manager.addBlocked(item, advId);
-                    System.out.println("[BlockedItemsLoader] Item bloqueado cargado: " + data.getItem());
-                } else {
-                    System.out.println("[BlockedItemsLoader] Item no encontrado: " + data.getItem());
+                    manager.addBlocked(item, data.getStage());
                 }
             }
-
         } catch (Exception e) {
             System.err.println("[BlockedItemsLoader] Error cargando JSON:" + e);
         }

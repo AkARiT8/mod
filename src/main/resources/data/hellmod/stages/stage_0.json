@@ -1,0 +1,15 @@
+{
+  "inputs": [
+    {
+      "item": "minecraft:diamond"
+    },
+    {
+      "item": "minecraft:gold_block"
+    },
+    {
+      "item": "minecraft:iron_block"
+    }
+  ],
+  "difmod": {},
+  "disable_nether": true
+}
