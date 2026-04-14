@@ -20,5 +20,6 @@ public class DatagenLootTableProvider extends FabricBlockLootTableProvider {
         addDrop(ModBlocks.PURE_DIAMOND_BLOCK.getLeft(), drops(ModBlocks.PURE_DIAMOND_BLOCK.getRight()));
         addDrop(ModBlocks.PURE_EMERALD_BLOCK.getLeft(), drops(ModBlocks.PURE_EMERALD_BLOCK.getRight()));
         addDrop(ModBlocks.PURE_NETHERITE_BLOCK.getLeft(), drops(ModBlocks.PURE_NETHERITE_BLOCK.getRight()));
+        addDrop(ModBlocks.EMPOWERED_COAL_BLOCK.getLeft(), drops(ModBlocks.EMPOWERED_COAL_BLOCK.getRight()));
     }
 }

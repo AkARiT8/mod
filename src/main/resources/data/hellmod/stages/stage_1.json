@@ -223,27 +223,13 @@
       ],
       "health": {
         "max": 45
-      },
-      "loot": {
-        "extra_drops": [{
-          "item": "hellmod:blaze_main_rod",
-          "chance": 0.1,
-          "count": 1
-        }]
       }
     },
     "magma_cube": {
       "effects" :  [
         {"id": "minecraft:jump_boost", "amplifier": 10 },
         {"id": "minecraft:strength", "amplifier": 1 }
-      ],
-      "loot": {
-        "extra_drops": [{
-          "item": "hellmod:magma_cube_core",
-          "chance": 0.03,
-          "count": 1
-        }]
-      }
+      ]
     },
     "slime": {
       "effects" :  [

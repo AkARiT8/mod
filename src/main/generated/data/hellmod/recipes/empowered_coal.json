@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "hellmod:empowered_coal_block"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "id": "hellmod:empowered_coal"
+  }
+}

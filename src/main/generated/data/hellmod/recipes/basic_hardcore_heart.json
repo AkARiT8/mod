@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "I": {
+      "item": "minecraft:redstone_block"
+    },
+    "L": {
+      "item": "minecraft:golden_carrot"
+    },
+    "O": {
+      "item": "minecraft:glistering_melon_slice"
+    },
+    "P": {
+      "item": "minecraft:enchanted_golden_apple"
+    }
+  },
+  "pattern": [
+    "III",
+    "OPO",
+    "LIL"
+  ],
+  "result": {
+    "count": 1,
+    "id": "hellmod:basic_hardcore_heart"
+  }
+}

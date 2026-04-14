@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "I": {
+      "item": "hellmod:pure_gold_ingot"
+    },
+    "K": {
+      "item": "hellmod:pure_iron_ingot"
+    },
+    "L": {
+      "item": "hellmod:empowered_coal"
+    },
+    "O": {
+      "item": "hellmod:nether_infused_ingot"
+    },
+    "P": {
+      "item": "minecraft:netherite_upgrade_smithing_template"
+    }
+  },
+  "pattern": [
+    "OLI",
+    "KPK",
+    "ILO"
+  ],
+  "result": {
+    "count": 1,
+    "id": "hellmod:nether_infused_template"
+  }
+}

@@ -28,9 +28,5 @@ public class BlazeModifier implements EntityModifier {
             accessor.hellmod$setBlazeShots(count);
         }
 
-        System.out.println("BLAZE MODIFIER → damage: "
-                + accessor.hellmod$getBlazeDamage()
-                + " shots: "
-                + accessor.hellmod$getBlazeShots());
     }
 }

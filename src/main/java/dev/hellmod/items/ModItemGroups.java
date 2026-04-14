@@ -35,10 +35,23 @@ public class ModItemGroups {
                         entries.add(ModItems.BLAZE_MAIN_ROD);
                         entries.add(ModItems.MAGMA_CUBE_CORE);
                         entries.add(ModItems.NETHER_INFUSED_INGOT);
-                       entries.add(ModItems.NETHER_INFUSED_HELMET);
+                        entries.add(ModItems.NETHER_INFUSED_HELMET);
                         entries.add(ModItems.NETHER_INFUSED_CHESTPLATE);
                         entries.add(ModItems.NETHER_INFUSED_LEGGINGS);
                         entries.add(ModItems.NETHER_INFUSED_BOOTS);
+                        entries.add(ModItems.NETHER_INFUSED_SWORD);
+                        entries.add(ModItems.NETHER_INFUSED_HOE);
+                        entries.add(ModItems.NETHER_INFUSED_SHOVEL);
+                        entries.add(ModItems.NETHER_INFUSED_PICKAXE);
+                        entries.add(ModItems.NETHER_INFUSED_AXE);
+                        entries.add(ModItems.NETHER_INFUSED_TEMPLATE);
+                        entries.add(ModItems.GOLDEN_APPLE_RUNE);
+                        entries.add(ModItems.UNCOMMON_HARDCORE_HEART);
+                        entries.add(ModItems.BARRIER_TOTEM_OF_UNDYING);
+                        entries.add(ModItems.NETHER_ESSENCE);
+                        entries.add(ModItems.GHAST_APPENDIX);
+                        entries.add(ModItems.EMPOWERED_COAL);
+                        entries.add(ModBlocks.EMPOWERED_COAL_BLOCK.getLeft());
 
                     })
                     .build()

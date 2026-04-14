@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "I": {
+      "item": "minecraft:emerald"
+    },
+    "O": {
+      "item": "minecraft:emerald_block"
+    }
+  },
+  "pattern": [
+    "III",
+    "IOI",
+    "III"
+  ],
+  "result": {
+    "count": 1,
+    "id": "hellmod:pure_emerald"
+  }
+}

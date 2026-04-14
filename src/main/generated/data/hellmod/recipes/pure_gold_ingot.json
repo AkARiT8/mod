@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "hellmod:pure_gold_block"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "id": "hellmod:pure_gold_ingot"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_basic_hardcore_heart": {
+      "conditions": {
+        "items": [
+          {
+            "items": "hellmod:basic_hardcore_heart"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "hellmod:uncommon_hardcore_heart"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_basic_hardcore_heart"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "hellmod:uncommon_hardcore_heart"
+    ]
+  }
+}

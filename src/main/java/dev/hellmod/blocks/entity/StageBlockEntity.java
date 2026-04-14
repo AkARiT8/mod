@@ -4,18 +4,23 @@ import dev.hellmod.blocks.custom.StageData;
 import dev.hellmod.items.ModItems;
 import dev.hellmod.registry.ModBlockEntities;
 import dev.hellmod.screen.StageScreenHandler;
+import dev.hellmod.stage.modifier.StageModifierApplier;
+import dev.hellmod.stage.modifier.StageModifierManager;
 import dev.hellmod.stage.recipe.StageRecipeManager;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.BlockEntity;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.Inventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
+import net.minecraft.registry.Registries;
 import net.minecraft.screen.ArrayPropertyDelegate;
 import net.minecraft.screen.NamedScreenHandlerFactory;
 import net.minecraft.screen.PropertyDelegate;
 import net.minecraft.screen.ScreenHandler;
+import net.minecraft.server.MinecraftServer;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.text.Text;
@@ -117,12 +122,17 @@ public class StageBlockEntity extends BlockEntity implements NamedScreenHandlerF
 
     public void advanceStage() {
         if (world instanceof ServerWorld serverWorld) {
+
             StageData data = StageData.get(serverWorld);
-            data.setStage(data.getStage() + 1);
-            if (data.getStage() == 1) {
+            int newStage = data.getStage() + 1;
+
+            StageSync.syncStageToAllDimensions(serverWorld, newStage);
+
+            if (newStage == 1) {
                 items.set(3, new ItemStack(ModItems.SPEED_TOTEM_OF_UNDYING));
                 markDirty();
             }
+
             world.playSound(
                     null,
                     pos,
@@ -133,7 +143,6 @@ public class StageBlockEntity extends BlockEntity implements NamedScreenHandlerF
             );
 
             serverWorld.setTimeOfDay(14000);
-
         }
     }
     public PropertyDelegate getPropertyDelegate() {
@@ -189,5 +198,23 @@ public class StageBlockEntity extends BlockEntity implements NamedScreenHandlerF
     @Override
     public boolean canPlayerUse(PlayerEntity player) {
         return true;
+    }
+
+    public class StageSync {
+
+        public static void syncStageToAllDimensions(ServerWorld sourceWorld, int stage) {
+
+            var server = sourceWorld.getServer();
+
+            for (ServerWorld world : server.getWorlds()) {
+
+                StageData data = StageData.get(world);
+
+                data.setStage(stage);
+                data.setStageStepTo0();
+
+                System.out.println("Sync stage " + stage + " a " + world.getRegistryKey().getValue());
+            }
+        }
     }
 }

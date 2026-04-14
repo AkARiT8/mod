@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "I": {
+      "item": "minecraft:diamond"
+    },
+    "O": {
+      "item": "minecraft:diamond_block"
+    }
+  },
+  "pattern": [
+    "III",
+    "IOI",
+    "III"
+  ],
+  "result": {
+    "count": 1,
+    "id": "hellmod:pure_diamond"
+  }
+}

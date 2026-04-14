@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "I": {
+      "item": "minecraft:enchanted_golden_apple"
+    },
+    "K": {
+      "item": "hellmod:nether_infused_ingot"
+    },
+    "O": {
+      "item": "hellmod:nether_essence"
+    },
+    "P": {
+      "item": "hellmod:basic_hardcore_heart"
+    }
+  },
+  "pattern": [
+    "IKI",
+    "OPO",
+    "IKI"
+  ],
+  "result": {
+    "count": 1,
+    "id": "hellmod:uncommon_hardcore_heart"
+  }
+}

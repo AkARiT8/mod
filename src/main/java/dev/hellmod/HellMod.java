@@ -6,6 +6,7 @@ import dev.hellmod.blocks.ModBlocks;
 import dev.hellmod.blocks.custom.StageData;
 import dev.hellmod.command.HeartCommand;
 import dev.hellmod.command.StageCommand;
+import dev.hellmod.custom.TotemManager;
 import dev.hellmod.items.ModItemGroups;
 import dev.hellmod.items.ModItems;
 import dev.hellmod.items.ModArmorMaterials;
@@ -20,6 +21,7 @@ import dev.hellmod.stage.modifier.StageModifierManager;
 import dev.hellmod.stage.modifier.impl.*;
 import dev.hellmod.stage.recipe.StageRecipeReloadListener;
 import dev.hellmod.util.ModItemEffect;
+import dev.hellmod.util.VariantHolder;
 import net.fabricmc.api.ModInitializer;
 
 import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
@@ -36,6 +38,7 @@ import net.fabricmc.fabric.api.resource.SimpleSynchronousResourceReloadListener;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
+import net.minecraft.entity.mob.CreeperEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.particle.ParticleTypes;
@@ -76,12 +79,16 @@ public class HellMod implements ModInitializer {
 
 		ModArmorMaterials.registerArmorMaterials();
 
+
+
 		System.out.println("ARMOR MATERIALS: " + net.minecraft.registry.Registries.ARMOR_MATERIAL.getIds());
 
 		ModItems.registerItems();
 		ModItemGroups.registerItemsGroups();
 		ModBlocks.registerBlocks();
 		ModBlockEntities.register();
+
+		manager.resetBlockedItems();;
 
 		ModScreenHandlers.register();
 
@@ -116,11 +123,71 @@ public class HellMod implements ModInitializer {
 
 			var entityData = difmod.getAsJsonObject(type);
 
-			entity.getServer().execute(() -> {
-				if (!entity.isRemoved()) {
-					StageModifierApplier.apply(living, entityData);
+			if (entityData.has("variants") && entity instanceof CreeperEntity creeper) {
+
+				VariantHolder holder = (VariantHolder) creeper;
+
+				var variants = entityData.getAsJsonArray("variants");
+
+				System.out.println("variante:" + variants);
+
+				if (holder.hellmod$getVariant() == null || holder.hellmod$getVariant().isEmpty()) {
+
+					int totalWeight = 0;
+					for (var v : variants) {
+						totalWeight += v.getAsJsonObject().get("weight").getAsInt();
+					}
+
+					int roll = serverWorld.getRandom().nextInt(totalWeight);
+
+					int current = 0;
+
+					for (var v : variants) {
+						var obj = v.getAsJsonObject();
+						current += obj.get("weight").getAsInt();
+
+						if (roll < current) {
+							entityData = obj;
+
+							String tag = obj.get("tag").getAsString();
+							holder.hellmod$setVariant(tag);
+
+							if (obj.has("fuse_time")) {
+								int fuse = obj.get("fuse_time").getAsInt();
+								holder.hellmod$setFuseTime(fuse);
+
+								System.out.println("SET FUSE FROM JSON: " + fuse);
+							}
+
+							System.out.println("SET VARIANT: " + tag);
+							break;
+						}
+					}
+
+				} else {
+					String currentVariant = holder.hellmod$getVariant();
+
+					for (var v : variants) {
+						var obj = v.getAsJsonObject();
+
+						if (obj.get("tag").getAsString().equals(currentVariant)) {
+							entityData = obj;
+
+
+							break;
+						}
+					}
 				}
-			});
+			}
+
+			var finalData = entityData;
+
+			var server = entity.getServer();
+			if (server == null) return;
+
+			if (!entity.isRemoved()) {
+				StageModifierApplier.apply(living, entityData);
+			}
 		});
 
 
@@ -172,17 +239,15 @@ public class HellMod implements ModInitializer {
 
 			if (!(entity instanceof PlayerEntity player)) return true;
 
-			ItemStack main = player.getMainHandStack();
 			ItemStack off = player.getOffHandStack();
-
-
-			if (isSpeedTotem(off)) {
-				useTotem(player, off);
+			if (TotemManager.isTotem(off)) {
+				TotemManager.useTotem(player, off);
 				return false;
 			}
 
-			if (isSpeedTotem(main)) {
-				useTotem(player, main);
+			ItemStack main = player.getMainHandStack();
+			if (TotemManager.isTotem(main)) {
+				TotemManager.useTotem(player, main);
 				return false;
 			}
 
@@ -200,47 +265,32 @@ public class HellMod implements ModInitializer {
 			}
 		});
 
+		ServerTickEvents.END_SERVER_TICK.register(server -> {
 
+			for (ServerPlayerEntity player : server.getPlayerManager().getPlayerList()) {
+
+				ItemStack main = player.getMainHandStack();
+				ItemStack off = player.getOffHandStack();
+
+				boolean hasTotem =
+						main.isOf(ModItems.BARRIER_TOTEM_OF_UNDYING) ||
+								off.isOf(ModItems.BARRIER_TOTEM_OF_UNDYING);
+
+				if (!hasTotem) continue;
+
+				if (player.age % 300 == 0) {
+
+					player.addStatusEffect(new StatusEffectInstance(
+							StatusEffects.ABSORPTION,
+							200,
+							0
+					));
+				}
+			}
+		});
 
 		ServerLifecycleEvents.SERVER_STARTING.register(server -> SERVER  = server);
 		ServerLifecycleEvents.SERVER_STOPPING.register(server -> SERVER  = null);
 
-	}
-	private static void useTotem(PlayerEntity player, ItemStack stack) {
-		stack.decrement(1);
-
-		player.setHealth(1.0F);
-
-		player.clearStatusEffects();
-
-		player.addStatusEffect(new StatusEffectInstance(StatusEffects.REGENERATION, 900, 1));
-		player.addStatusEffect(new StatusEffectInstance(StatusEffects.ABSORPTION, 100, 1));
-		player.addStatusEffect(new StatusEffectInstance(StatusEffects.FIRE_RESISTANCE, 800, 0));
-
-		player.getWorld().playSound(
-				null,
-				player.getBlockPos(),
-				SoundEvents.ITEM_TOTEM_USE,
-				SoundCategory.PLAYERS,
-				1.0F,
-				1.0F
-		);
-		if (player.getWorld() instanceof ServerWorld serverWorld) {
-			serverWorld.spawnParticles(
-					ParticleTypes.TOTEM_OF_UNDYING,
-					player.getX(),
-					player.getY() + 1,
-					player.getZ(),
-					30,
-					0.5,
-					1.0,
-					0.5,
-					0.1
-			);
-		}
-
-		if (player instanceof ServerPlayerEntity serverPlayer) {
-			ServerPlayNetworking.send(serverPlayer, new ShowTotemPayload());
-		}
 	}
 }

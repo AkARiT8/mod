@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "I": {
+      "item": "minecraft:gold_ingot"
+    },
+    "O": {
+      "item": "hellmod:pure_gold_ingot"
+    },
+    "P": {
+      "item": "minecraft:golden_carrot"
+    }
+  },
+  "pattern": [
+    "IOI",
+    "IPI",
+    "IOI"
+  ],
+  "result": {
+    "count": 1,
+    "id": "hellmod:enchanted_golden_carrot"
+  }
+}

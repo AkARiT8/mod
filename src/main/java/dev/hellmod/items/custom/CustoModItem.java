@@ -22,7 +22,7 @@ public class CustoModItem extends Item {
 
         String baseKey = "tooltip.hellmod." + key;
 
-        for (int i = 1; i <= 5; i++) {
+        for (int i = 1; i <= 10; i++) {
 
             String lineKey = baseKey + ".line" + i;
 
@@ -34,6 +34,7 @@ public class CustoModItem extends Item {
 
                 if (i == 2) color = Formatting.GREEN;
                 if (i == 3) color = Formatting.BLUE;
+                if (i == 7) color = Formatting.YELLOW;
 
                 tooltip.add(text.formatted(color));
             }

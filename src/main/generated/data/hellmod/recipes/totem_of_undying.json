@@ -1,0 +1,33 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "I": {
+      "item": "minecraft:gold_block"
+    },
+    "K": {
+      "item": "hellmod:pure_iron_ingot"
+    },
+    "L": {
+      "item": "minecraft:blaze_powder"
+    },
+    "M": {
+      "item": "hellmod:basic_hardcore_heart"
+    },
+    "O": {
+      "item": "hellmod:pure_gold_ingot"
+    },
+    "P": {
+      "item": "hellmod:pure_emerald"
+    }
+  },
+  "pattern": [
+    "IOI",
+    "PMP",
+    "LKL"
+  ],
+  "result": {
+    "count": 1,
+    "id": "minecraft:totem_of_undying"
+  }
+}

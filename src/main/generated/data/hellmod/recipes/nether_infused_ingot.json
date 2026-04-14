@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "I": {
+      "item": "hellmod:nether_essence"
+    },
+    "K": {
+      "item": "hellmod:blaze_main_rod"
+    },
+    "L": {
+      "item": "hellmod:empowered_coal"
+    },
+    "O": {
+      "item": "hellmod:magma_cube_core"
+    },
+    "P": {
+      "item": "minecraft:netherite_ingot"
+    }
+  },
+  "pattern": [
+    "OIO",
+    "IPI",
+    "KLK"
+  ],
+  "result": {
+    "count": 1,
+    "id": "hellmod:nether_infused_ingot"
+  }
+}

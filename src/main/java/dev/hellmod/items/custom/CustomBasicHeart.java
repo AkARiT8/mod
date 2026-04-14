@@ -7,14 +7,13 @@ import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
-import net.minecraft.nbt.NbtCompound;
 import net.minecraft.world.World;
 
-public class CustomHeart extends CustoModItem {
+public class CustomBasicHeart extends CustoModItem {
 
     private static final int MAX_EXTRA_HEARTS = 4;
 
-    public CustomHeart(Settings settings) {
+    public CustomBasicHeart(Settings settings) {
         super(settings);
     }
 

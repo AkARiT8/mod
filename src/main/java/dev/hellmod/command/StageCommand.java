@@ -23,9 +23,13 @@ public class StageCommand {
 
                                             int value = IntegerArgumentType.getInteger(ctx, "value");
 
-                                            ServerWorld world = ctx.getSource().getWorld();
-                                            StageData.get(world).setStage(value);
-                                            StageData.get(world).setStageStepTo0();
+                                            var server = ctx.getSource().getServer();
+
+                                            for (ServerWorld world : server.getWorlds()) {
+                                                StageData data = StageData.get(world);
+                                                data.setStage(value);
+                                                data.setStageStepTo0();
+                                            }
 
                                             ctx.getSource().sendFeedback(
                                                     () -> Text.literal("Stage cambiado a: " + value),

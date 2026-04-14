@@ -3,6 +3,7 @@ package dev.hellmod.stage.modifier;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerEntityEvents;
+import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.registry.Registries;
@@ -26,8 +27,12 @@ public class LootDropHandler {
     public static void onDeath(LivingEntity entity, ServerWorld world) {
 
         JsonArray drops = LootMemory.get(entity);
-
         if (drops == null) return;
+
+        int lootingLevel = 0;
+        if (entity.getAttacker() instanceof LivingEntity attacker) {
+            lootingLevel = EnchantmentHelper.getLooting(attacker);
+        }
 
         for (var element : drops) {
 
@@ -36,7 +41,17 @@ public class LootDropHandler {
             Identifier id = new Identifier(obj.get("item").getAsString());
             float chance = obj.get("chance").getAsFloat();
 
-            if (world.random.nextFloat() <= chance) {
+            float finalChance = chance;
+            int extraCount = 0;
+
+            if (chance >= 0.3f) {
+                extraCount = world.random.nextInt(lootingLevel + 1);
+            } else {
+                float bonus = 0.1f * lootingLevel;
+                finalChance = Math.min(chance + bonus, 1.0f);
+            }
+
+            if (world.random.nextFloat() <= finalChance) {
 
                 int count = 1;
 
@@ -47,6 +62,7 @@ public class LootDropHandler {
                         count = obj.get("count").getAsInt();
 
                     } else {
+
                         JsonObject countObj = obj.getAsJsonObject("count");
 
                         int min = countObj.get("min").getAsInt();
@@ -55,6 +71,8 @@ public class LootDropHandler {
                         count = min + world.random.nextInt(max - min + 1);
                     }
                 }
+
+                count += extraCount;
 
                 ItemStack stack = new ItemStack(
                         Registries.ITEM.get(id),

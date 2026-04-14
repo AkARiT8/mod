@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "I": {
+      "item": "minecraft:golden_apple"
+    },
+    "K": {
+      "item": "minecraft:enchanted_golden_apple"
+    },
+    "O": {
+      "item": "hellmod:pure_gold_ingot"
+    },
+    "P": {
+      "item": "minecraft:totem_of_undying"
+    }
+  },
+  "pattern": [
+    "OKO",
+    "IPI",
+    "IOI"
+  ],
+  "result": {
+    "count": 1,
+    "id": "hellmod:barrier_totem_of_undying"
+  }
+}

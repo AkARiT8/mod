@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "hellmod:nether_infused_helmet",
+    "hellmod:nether_infused_chestplate",
+    "hellmod:nether_infused_leggings",
+    "hellmod:nether_infused_boots"
+  ]
+}

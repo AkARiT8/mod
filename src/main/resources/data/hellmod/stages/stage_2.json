@@ -1,0 +1,462 @@
+{
+  "inputs": [
+    {
+      "item": "hellmod:nether_infused_ingot"
+    },
+    {
+      "item": "hellmod:ghast_appendix"
+    },
+    {
+      "item": "hellmod:nether_essence"
+    }
+  ],
+  "difmod": {
+    "zombie": {
+      "equipment": {
+        "mainhand":{
+          "item": "hellmod:nether_infused_axe",
+          "enchantments": [
+            {"id": "minecraft:sharpness", "level": 8}
+          ]
+        },
+        "head": {
+          "item": "minecraft:netherite_helmet",
+          "enchantments": [
+            {"id": "minecraft:protection", "level": 5}
+          ]
+        },
+        "chest": {
+          "item": "minecraft:diamond_chestplate",
+          "enchantments": [
+            {"id": "minecraft:protection", "level": 2}
+          ]
+        }
+      },
+      "effects" :  [
+        {"id": "minecraft:strength", "amplifier": 2 },
+        {"id": "minecraft:speed", "amplifier": 2 }
+      ],
+      "loot": {
+        "extra_drops": [{
+          "item": "minecraft:iron_ingot",
+          "chance": 0.75,
+          "count": {
+            "min": 1,
+            "max": 3
+          }
+        }]
+      },
+      "health": {
+        "max": 35
+      }
+    },
+    "husk": {
+      "equipment": {
+        "mainhand":{
+          "item": "hellmod:nether_infused_axe",
+          "enchantments": [
+            {"id": "minecraft:sharpness", "level": 8}
+          ]
+        },
+        "head": {
+          "item": "minecraft:netherite_helmet",
+          "enchantments": [
+            {"id": "minecraft:protection", "level": 5}
+          ]
+        },
+        "chest": {
+          "item": "minecraft:diamond_chestplate",
+          "enchantments": [
+            {"id": "minecraft:protection", "level": 2}
+          ]
+        }
+      },
+      "effects" :  [
+        {"id": "minecraft:strength", "amplifier": 1 },
+        {"id": "minecraft:speed", "amplifier": 1 }
+      ],
+      "loot": {
+        "extra_drops": [{
+          "item": "minecraft:iron_ingot",
+          "chance": 0.75,
+          "count": {
+            "min": 1,
+            "max": 3
+          }
+        }]
+      },
+      "health": {
+        "max": 35
+      }
+    },
+    "creeper": {
+      "variants": [
+        {
+          "weight": 70,
+          "tag": "normal",
+          "charged": true,
+          "fuse_time": 30,
+          "explosion_power": 8,
+          "effects": [
+            { "id": "minecraft:speed", "amplifier": 2 },
+            { "id": "minecraft:fire_resistance", "amplifier": 0 },
+            { "id": "minecraft:invisibility", "amplifier": 0 }
+          ]
+        },
+        {
+          "weight": 30,
+          "tag": "debuff",
+          "charged": false,
+          "fuse_time": 5,
+          "explosion_power": 3,
+          "effects": [
+            { "id": "minecraft:speed", "amplifier": 10 }
+          ]
+        }
+      ]
+    },
+    "spider": {
+      "effects": [
+        { "id": "minecraft:speed", "amplifier": 3 },
+        { "id": "minecraft:strength", "amplifier": 3 },
+        { "id": "minecraft:regeneration", "amplifier": 2 },
+        { "id": "minecraft:resistance", "amplifier": 2 }
+      ]
+    },
+    "cave_spider": {
+      "effects": [
+        { "id": "minecraft:speed", "amplifier": 3 },
+        { "id": "minecraft:strength", "amplifier": 3 },
+        { "id": "minecraft:regeneration", "amplifier": 2 },
+        { "id": "minecraft:resistance", "amplifier": 2 }
+      ]
+    },
+    "skeleton":{
+      "equipment":{
+        "mainhand":{
+          "item": "minecraft:bow",
+          "enchantments": [
+            {"id": "minecraft:power", "level": 25 }
+          ]
+        },
+        "head": {
+          "item": "minecraft:chainmail_helmet",
+          "enchantments": [
+            {"id":  "minecraft:protection", "level": 4}
+          ]
+        },
+        "chest": {
+          "item": "minecraft:chainmail_chestplate",
+          "enchantments": [
+            {"id":  "minecraft:protection", "level": 4}
+          ]
+        },
+        "legs": {
+          "item": "minecraft:chainmail_leggings",
+          "enchantments": [
+            {"id":  "minecraft:protection", "level": 4}
+          ]
+        },
+        "feet": {
+          "item": "minecraft:chainmail_boots",
+          "enchantments": [
+            {"id":  "minecraft:protection", "level": 4}
+          ]
+        }
+      },
+      "loot": {
+        "extra_drops": [{
+          "item": "minecraft:iron_ingot",
+          "chance": 0.66,
+          "count": {
+            "min": 1,
+            "max": 2
+          }
+        }]
+      }
+    },
+    "stray":{
+      "equipment":{
+        "mainhand":{
+          "item": "minecraft:bow",
+          "enchantments": [
+            {"id": "minecraft:power", "level": 25 }
+          ]
+        },
+        "head": {
+          "item": "minecraft:chainmail_helmet",
+          "enchantments": [
+            {"id":  "minecraft:protection", "level": 4}
+          ]
+        },
+        "chest": {
+          "item": "minecraft:chainmail_chestplate",
+          "enchantments": [
+            {"id":  "minecraft:protection", "level": 4}
+          ]
+        },
+        "legs": {
+          "item": "minecraft:chainmail_leggings",
+          "enchantments": [
+            {"id":  "minecraft:protection", "level": 4}
+          ]
+        },
+        "feet": {
+          "item": "minecraft:chainmail_boots",
+          "enchantments": [
+            {"id":  "minecraft:protection", "level": 4}
+          ]
+        }
+      },
+      "loot": {
+        "extra_drops": [{
+          "item": "minecraft:iron_ingot",
+          "chance": 0.66,
+          "count": {
+            "min": 1,
+            "max": 2
+          }
+        }]
+      }
+    },
+    "enderman": {
+      "effects" :  [
+        {"id": "minecraft:strength", "amplifier": 3 },
+        {"id": "minecraft:speed", "amplifier": 2 },
+        {"id": "minecraft:resistance", "amplifier": 2 }
+      ],
+      "loot": {
+        "extra_drops": [
+          {
+            "item": "minecraft:diamond",
+            "chance": 0.3,
+            "count": 1
+          }
+        ]
+      }
+    },
+    "wither_skeleton": {
+      "equipment": {
+        "mainhand": {
+          "item": "minecraft:netherite_sword",
+          "enchantments": [
+            {"id":  "minecraft:sharpness", "level": 20}
+          ]
+        }
+      },
+      "effects" :  [
+        {"id": "minecraft:strength", "amplifier": 0 },
+        {"id": "minecraft:speed", "amplifier": 2 }
+      ],
+      "loot": {
+        "extra_drops": [{
+          "item": "minecraft:coal",
+          "chance": 1,
+          "count": {
+            "min": 2,
+            "max": 5
+          }
+        }]
+      }
+    },
+    "hoglin":{
+      "effects" :  [
+        {"id": "minecraft:resistance", "amplifier": 2 },
+        {"id": "minecraft:speed", "amplifier": 3 },
+        {"id": "minecraft:strength", "amplifier": 3 }
+      ]
+    },
+    "piglin": {
+      "equipment": {
+        "head": {
+          "item": "minecraft:golden_helmet",
+          "enchantments": [
+            {"id":  "minecraft:protection", "level": 6}
+          ]
+        },
+        "chest": {
+          "item": "minecraft:golden_chestplate",
+          "enchantments": [
+            {"id":  "minecraft:protection", "level": 6}
+          ]
+        },
+        "legs": {
+          "item": "minecraft:golden_leggings",
+          "enchantments": [
+            {"id":  "minecraft:protection", "level": 6}
+          ]
+        },
+        "feet": {
+          "item": "minecraft:golden_boots",
+          "enchantments": [
+            {"id":  "minecraft:protection", "level": 6}
+          ]
+        }
+      },
+      "loot":{
+        "extra_drops": [{
+          "item": "minecraft:gold_ingot",
+          "chance": 0.75,
+          "count": {
+            "min": 1,
+            "max": 3
+          }
+        }]
+      }
+    },
+    "ghast": {
+      "fireball": {
+        "fireball_power": 7
+      },
+      "loot":{
+        "extra_drops": [{
+          "item": "hellmod:pure_gold_ingot",
+          "chance": 0.4,
+          "count": 1
+        },
+          {
+            "item": "hellmod:ghast_appendix",
+            "chance": 0.2,
+            "count": 1
+          }
+        ]
+      },
+      "health": {
+        "max": 50
+      }
+    },
+    "blaze": {
+      "blaze_fireball": {
+        "damage": 2,
+        "count": 10
+      },
+      "effects": [
+        {"id": "minecraft:resistance", "amplifier": 2 },
+        {"id": "minecraft:regeneration", "amplifier": 2 },
+        {"id": "minecraft:strength", "amplifier": 4 }
+      ],
+      "health": {
+        "max": 55
+      },
+      "loot": {
+        "extra_drops": [{
+          "item": "hellmod:blaze_main_rod",
+          "chance": 0.15,
+          "count": 1
+        }]
+      }
+    },
+    "magma_cube": {
+      "effects" :  [
+        {"id": "minecraft:jump_boost", "amplifier": 10 },
+        {"id": "minecraft:strength", "amplifier": 3 },
+        {"id": "minecraft:resistance", "amplifier": 1 }
+      ],
+      "loot": {
+        "extra_drops": [{
+          "item": "hellmod:magma_cube_core",
+          "chance": 0.05,
+          "count": 1
+        }]
+      }
+    },
+    "slime": {
+      "effects" :  [
+        {"id": "minecraft:jump_boost", "amplifier": 10 },
+        {"id": "minecraft:strength", "amplifier": 1 },
+        {"id": "minecraft:resistance", "amplifier": 1 }
+      ]
+    },
+    "vindicator": {
+      "equipment": {
+        "mainhand":{
+          "item": "hellmod:nether_infused_axe",
+          "enchantments": [
+            {"id": "minecraft:sharpness", "level": 15}
+          ]
+        }
+      },
+      "effects" :  [
+        {"id": "minecraft:strength", "amplifier": 2 },
+        {"id": "minecraft:speed", "amplifier": 2 }
+      ]
+    },
+    "pillager": {
+      "equipment": {
+        "mainhand":{
+          "item": "hellmod:crossbow",
+          "enchantments": [
+            {"id": "minecraft:quick_charge", "level": 5},
+            {"id": "minecraft:multishot", "level": 5}
+          ]
+        },
+        "head": {
+          "item": "minecraft:chainmail_helmet",
+          "enchantments": [
+            {"id":  "minecraft:protection", "level": 6}
+          ]
+        },
+        "chest": {
+          "item": "minecraft:chainmail_chestplate",
+          "enchantments": [
+            {"id":  "minecraft:protection", "level": 6}
+          ]
+        },
+        "legs": {
+          "item": "minecraft:chainmail_leggings",
+          "enchantments": [
+            {"id":  "minecraft:protection", "level": 6}
+          ]
+        },
+        "feet": {
+          "item": "minecraft:chainmail_boots",
+          "enchantments": [
+            {"id":  "minecraft:protection", "level": 6}
+          ]
+        }
+      }
+    },
+    "piglin_brute": {
+      "equipment": {
+        "mainhand":{
+          "item": "hellmod:nether_infused_axe",
+          "enchantments": [
+            {"id": "minecraft:sharpness", "level": 20}
+          ]
+        },
+        "head": {
+          "item": "minecraft:netherite_helmet",
+          "enchantments": [
+            {"id":  "minecraft:protection", "level": 8}
+          ]
+        },
+        "chest": {
+          "item": "hellmod:nether_infused_chestplate",
+          "enchantments": [
+            {"id":  "minecraft:protection", "level": 8}
+          ]
+        },
+        "feet": {
+          "item": "minecraft:netherite_boots",
+          "enchantments": [
+            {"id":  "minecraft:protection", "level": 6}
+          ]
+        }
+      },
+      "effects" :  [
+        {"id": "minecraft:resistance", "amplifier": 1 },
+        {"id": "minecraft:speed", "amplifier": 1 },
+        {"id": "minecraft:strength", "amplifier": 2 }
+      ],
+      "loot": {
+        "extra_drops": [{
+          "item": "minecraft:netherite_scrap",
+          "chance": 1,
+          "count": 1
+        }]
+      }
+    }
+  },
+  "disable_nether": false
+}
+

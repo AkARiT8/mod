@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "hellmod:nether_infused_ingot"
+  },
+  "base": {
+    "item": "minecraft:netherite_helmet"
+  },
+  "result": {
+    "count": 1,
+    "id": "hellmod:nether_infused_helmet"
+  },
+  "template": {
+    "item": "hellmod:nether_infused_template"
+  }
+}

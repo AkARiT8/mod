@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "I": {
+      "item": "minecraft:magma_cream"
+    },
+    "O": {
+      "item": "minecraft:blaze_rod"
+    },
+    "P": {
+      "item": "minecraft:ghast_tear"
+    }
+  },
+  "pattern": [
+    "IOP",
+    "IOP",
+    "IOP"
+  ],
+  "result": {
+    "count": 1,
+    "id": "hellmod:nether_essence"
+  }
+}

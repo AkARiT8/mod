@@ -38,6 +38,7 @@ public class DatagenModLanguageProvider extends FabricLanguageProvider {
         builder.add("tooltip.hellmod.speed_totem_of_undying.line2", "+20% speed");
         builder.add(ModItems.BASIC_HARDCORE_HEART, "Basic Hardcore Heart");
         builder.add("tooltip.hellmod.basic_hardcore_heart.line1", "Stage 1");
+        builder.add("tooltip.hellmod.basic_hardcore_heart.line7", "Up to 14 Max HP");
         builder.add(ModItems.OVERWORLD_ESSENCE, "Overworld Essence");
         builder.add("tooltip.hellmod.overworld_essence.line1", "Stage 1");
         builder.add(ModItems.BLAZE_MAIN_ROD, "Blaze Main Rod");
@@ -46,6 +47,19 @@ public class DatagenModLanguageProvider extends FabricLanguageProvider {
         builder.add(ModItems.MAGMA_CUBE_CORE, "Magma Cube Core");
         builder.add("tooltip.hellmod.magma_cube_core.line1", "Stage 2");
         builder.add("tooltip.hellmod.magma_cube_core.line3", "Rare");
+        builder.add(ModItems.BARRIER_TOTEM_OF_UNDYING, "Barrier Totem of Undying");
+        builder.add("tooltip.hellmod.barrier_totem_of_undying.line1", "Stage 2");
+        builder.add("tooltip.hellmod.barrier_totem_of_undying.line3", "Rare");
+        builder.add("tooltip.hellmod.barrier_totem_of_undying.line7", "Periodicaly Absortion");
+        builder.add(ModItems.NETHER_ESSENCE, "Nether Essence");
+        builder.add("tooltip.hellmod.nether_essence.line1", "Stage 2");
+        builder.add("tooltip.hellmod.nether_essence.line3", "Rare");
+        builder.add(ModItems.GHAST_APPENDIX, "Ghast Appendix");
+        builder.add("tooltip.hellmod.ghast_appendix.line1", "Stage 2");
+        builder.add("tooltip.hellmod.ghast_appendix.line3", "Rare");
+        builder.add(ModItems.EMPOWERED_COAL, "Empowered Coal");
+        builder.add("tooltip.hellmod.empowered_coal.line1", "Stage 2");
+        builder.add("tooltip.hellmod.empowered_coal.line3", "Rare");
 
         //NETHER INFUSED
         builder.add(ModItems.NETHER_INFUSED_INGOT, "Nether Infused Ingot");
@@ -55,7 +69,7 @@ public class DatagenModLanguageProvider extends FabricLanguageProvider {
         builder.add("tooltip.hellmod.nether_infused_helmet.line1", "Stage 2");
         builder.add("tooltip.hellmod.nether_infused_helmet.line3", "Rare");
         builder.add(ModItems.NETHER_INFUSED_CHESTPLATE, "Nether Infused Chestplate");
-        builder.add("tooltip.hellmod.nether_infused_chestplate.line1", "Stage 2");
+        builder.add("tooltip.hellmod.nether_infused_chestplate.line10", "Stage 2");
         builder.add("tooltip.hellmod.nether_infused_chestplate.line3", "Rare");
         builder.add(ModItems.NETHER_INFUSED_LEGGINGS, "Nether Infused Leggings");
         builder.add("tooltip.hellmod.nether_infused_leggings.line1", "Stage 2");
@@ -64,24 +78,33 @@ public class DatagenModLanguageProvider extends FabricLanguageProvider {
         builder.add("tooltip.hellmod.nether_infused_boots.line1", "Stage 2");
         builder.add("tooltip.hellmod.nether_infused_boots.line3", "Rare");
 
-//        builder.add(ModItems.NETHER_INFUSED_SWORD, "Nether Infused Sword");
-//        builder.add("tooltip.hellmod.nether_infused_sword.line1", "Stage 2");
-//        builder.add("tooltip.hellmod.nether_infused_sword.line3", "Rare");
-//        builder.add(ModItems.NETHER_INFUSED_PICKAXE, "Nether Infused Pickaxe");
-//        builder.add("tooltip.hellmod.nether_infused_pickaxe.line1", "Stage 2");
-//        builder.add("tooltip.hellmod.nether_infused_pickaxe.line3", "Rare");
-//        builder.add(ModItems.NETHER_INFUSED_AXE, "Nether Infused Axe");
-//        builder.add("tooltip.hellmod.nether_infused_axe.line1", "Stage 2");
-//        builder.add("tooltip.hellmod.nether_infused_axe.line3", "Rare");
-//        builder.add(ModItems.NETHER_INFUSED_HOE, "Nether Infused Hoe");
-//        builder.add("tooltip.hellmod.nether_infused_hoe.line1", "Stage 2");
-//        builder.add("tooltip.hellmod.nether_infused_hoe.line3", "Rare");
-//        builder.add(ModItems.NETHER_INFUSED_SHOVEL, "Nether Infused Shovel");
-//        builder.add("tooltip.hellmod.nether_infused_shovel.line1", "Stage 2");
-//        builder.add("tooltip.hellmod.nether_infused_shovel.line3", "Rare");
-//        builder.add(ModItems.NETHER_INFUSED_TEMPLATE, "Nether Infused Template");
-//        builder.add("tooltip.hellmod.nether_infused_template.line1", "Stage 2");
-//        builder.add("tooltip.hellmod.nether_infused_template.line3", "Rare");
+        builder.add(ModItems.NETHER_INFUSED_SWORD, "Nether Infused Sword");
+        builder.add("tooltip.hellmod.nether_infused_sword.line1", "Stage 2");
+        builder.add("tooltip.hellmod.nether_infused_sword.line3", "Rare");
+        builder.add(ModItems.NETHER_INFUSED_PICKAXE, "Nether Infused Pickaxe");
+        builder.add("tooltip.hellmod.nether_infused_pickaxe.line1", "Stage 2");
+        builder.add("tooltip.hellmod.nether_infused_pickaxe.line3", "Rare");
+        builder.add(ModItems.NETHER_INFUSED_AXE, "Nether Infused Axe");
+        builder.add("tooltip.hellmod.nether_infused_axe.line1", "Stage 2");
+        builder.add("tooltip.hellmod.nether_infused_axe.line3", "Rare");
+        builder.add(ModItems.NETHER_INFUSED_HOE, "Nether Infused Hoe");
+        builder.add("tooltip.hellmod.nether_infused_hoe.line1", "Stage 2");
+        builder.add("tooltip.hellmod.nether_infused_hoe.line3", "Rare");
+        builder.add(ModItems.NETHER_INFUSED_SHOVEL, "Nether Infused Shovel");
+        builder.add("tooltip.hellmod.nether_infused_shovel.line1", "Stage 2");
+        builder.add("tooltip.hellmod.nether_infused_shovel.line3", "Rare");
+        builder.add(ModItems.NETHER_INFUSED_TEMPLATE, "Nether Infused Template");
+        builder.add("tooltip.hellmod.nether_infused_template.line1", "Stage 2");
+        builder.add("tooltip.hellmod.nether_infused_template.line3", "Rare");
+
+        builder.add(ModItems.GOLDEN_APPLE_RUNE, "Golden Apple Rune");
+        builder.add("tooltip.hellmod.golden_apple_rune.line1", "Stage 2");
+        builder.add("tooltip.hellmod.golden_apple_rune.line3", "Rare");
+
+        builder.add(ModItems.UNCOMMON_HARDCORE_HEART, "Uncommon Hardcore Heart");
+        builder.add("tooltip.hellmod.uncommon_hardcore_heart.line1", "Stage 2");
+        builder.add("tooltip.hellmod.uncommon_hardcore_heart.line3", "Rare");
+        builder.add("tooltip.hellmod.uncommon_hardcore_heart.line7", "Up to 16 Max HP");
 
         //Blocks
         builder.add(ModBlocks.PURE_IRON_BLOCK.getLeft(), "Block of Pure Iron");
@@ -96,6 +119,10 @@ public class DatagenModLanguageProvider extends FabricLanguageProvider {
         builder.add("tooltip.hellmod.pure_netherite_block.line1", "Stage 1");
         builder.add(ModBlocks.STAGE_BLOCK.getLeft(), "Stage Block");
         builder.add("tooltip.hellmod.stage_block.line1", "Stage 0");
+
+        builder.add(ModBlocks.EMPOWERED_COAL_BLOCK.getLeft(), "Empowered Coal Block");
+        builder.add("tooltip.hellmod.empowered_coal_block.line1", "Stage 2");
+        builder.add("tooltip.hellmod.empowered_coal_block.line3", "Rare");
 
         //gm1Tab
         builder.add("itemGroup.hellmod.hell_group", "Hell items");

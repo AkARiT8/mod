@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "I": {
+      "item": "minecraft:diamond"
+    },
+    "O": {
+      "item": "minecraft:gold_block"
+    },
+    "P": {
+      "item": "minecraft:golden_apple"
+    }
+  },
+  "pattern": [
+    "III",
+    "OPO",
+    "III"
+  ],
+  "result": {
+    "count": 1,
+    "id": "minecraft:enchanted_golden_apple"
+  }
+}

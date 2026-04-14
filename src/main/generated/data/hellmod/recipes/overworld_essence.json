@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "I": {
+      "item": "minecraft:bone"
+    },
+    "O": {
+      "item": "minecraft:gunpowder"
+    },
+    "P": {
+      "item": "minecraft:rotten_flesh"
+    }
+  },
+  "pattern": [
+    "IOP",
+    "IOP",
+    "IOP"
+  ],
+  "result": {
+    "count": 1,
+    "id": "hellmod:overworld_essence"
+  }
+}

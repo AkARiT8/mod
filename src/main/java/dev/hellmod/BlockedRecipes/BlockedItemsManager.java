@@ -37,6 +37,6 @@ public class BlockedItemsManager {
     }
     public void resetBlockedItems() {
         blockedItems.clear();
-        BlockedItemsLoader.load(this); // recarga el JSON
+        BlockedItemsLoader.load(this);
     }
 }

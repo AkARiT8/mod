@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "I": {
+      "item": "hellmod:pure_iron_ingot"
+    },
+    "L": {
+      "item": "minecraft:totem_of_undying"
+    },
+    "O": {
+      "item": "minecraft:diamond"
+    },
+    "P": {
+      "item": "minecraft:sugar"
+    }
+  },
+  "pattern": [
+    "IOI",
+    "PLP",
+    "IOI"
+  ],
+  "result": {
+    "count": 1,
+    "id": "hellmod:speed_totem_of_undying"
+  }
+}

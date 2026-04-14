@@ -26,6 +26,7 @@ public class DatagenModelProvider extends FabricModelProvider {
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.PURE_DIAMOND_BLOCK.getLeft());
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.PURE_EMERALD_BLOCK.getLeft());
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.PURE_NETHERITE_BLOCK.getLeft());
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.EMPOWERED_COAL_BLOCK.getLeft());
 
         TextureMap textureMap = new TextureMap()
                 .put(TextureKey.UP, new Identifier(HellMod.MODID, "block/stageblock/stage_block_top"))
@@ -64,10 +65,25 @@ public class DatagenModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.MAGMA_CUBE_CORE,Models.GENERATED);
 
         itemModelGenerator.register(ModItems.NETHER_INFUSED_INGOT, Models.GENERATED);
+        itemModelGenerator.register(ModItems.NETHER_INFUSED_TEMPLATE, Models.GENERATED);
+
         itemModelGenerator.registerArmor((ArmorItem) ModItems.NETHER_INFUSED_HELMET);
         itemModelGenerator.registerArmor((ArmorItem) ModItems.NETHER_INFUSED_CHESTPLATE);
         itemModelGenerator.registerArmor((ArmorItem) ModItems.NETHER_INFUSED_LEGGINGS);
         itemModelGenerator.registerArmor((ArmorItem) ModItems.NETHER_INFUSED_BOOTS);
+
+        itemModelGenerator.register(ModItems.NETHER_INFUSED_SWORD, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.NETHER_INFUSED_PICKAXE, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.NETHER_INFUSED_AXE, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.NETHER_INFUSED_SHOVEL, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.NETHER_INFUSED_HOE, Models.HANDHELD);
+
+        itemModelGenerator.register(ModItems.GOLDEN_APPLE_RUNE,Models.GENERATED);
+        itemModelGenerator.register(ModItems.BARRIER_TOTEM_OF_UNDYING,Models.GENERATED);
+        itemModelGenerator.register(ModItems.UNCOMMON_HARDCORE_HEART,Models.GENERATED);
+        itemModelGenerator.register(ModItems.GHAST_APPENDIX,Models.GENERATED);
+        itemModelGenerator.register(ModItems.NETHER_ESSENCE,Models.GENERATED);
+        itemModelGenerator.register(ModItems.EMPOWERED_COAL,Models.GENERATED);
 
 
     }

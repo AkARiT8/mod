@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "I": {
+      "item": "hellmod:nether_essence"
+    },
+    "K": {
+      "item": "minecraft:enchanted_golden_apple"
+    },
+    "O": {
+      "item": "minecraft:golden_apple"
+    },
+    "P": {
+      "item": "minecraft:netherite_ingot"
+    }
+  },
+  "pattern": [
+    "IKI",
+    "OPO",
+    "IKI"
+  ],
+  "result": {
+    "count": 1,
+    "id": "hellmod:golden_apple_rune"
+  }
+}

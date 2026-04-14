@@ -20,6 +20,7 @@ public class ModBlocks {
     public static final Pair<Block, Item> PURE_EMERALD_BLOCK = registerBlock("pure_emerald_block", new Block(AbstractBlock.Settings.copy(Blocks.EMERALD_BLOCK).requiresTool()));
     public static final Pair<Block, Item> PURE_NETHERITE_BLOCK = registerBlock("pure_netherite_block", new Block(AbstractBlock.Settings.copy(Blocks.NETHERITE_BLOCK).requiresTool()));
     public static final Pair<Block, Item> STAGE_BLOCK = registerBlock("stage_block", new StageBlock(AbstractBlock.Settings.copy(Blocks.BEDROCK)));
+    public static final Pair<Block, Item> EMPOWERED_COAL_BLOCK = registerBlock("empowered_coal_block", new Block(AbstractBlock.Settings.copy(Blocks.COAL_BLOCK).requiresTool()));
 
     private static Pair<Block, Item> registerBlock(String name, Block block){
         return new Pair<>(

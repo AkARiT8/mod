@@ -31,7 +31,6 @@ public class ModArmorMaterials {
                             SoundEvents.ITEM_ARMOR_EQUIP_NETHERITE,
                             () -> Ingredient.ofItems(ModItems.NETHER_INFUSED_INGOT),
 
-                            // ✅ FIX REAL
                             List.of(
                                     new ArmorMaterial.Layer(
                                             new Identifier(HellMod.MODID, "nether_infused"),
@@ -40,8 +39,8 @@ public class ModArmorMaterials {
                                     )
                             ),
 
-                            3f,
-                            0.1f
+                            4f,
+                            0.2f
                     )
             );
 
