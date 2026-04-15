@@ -27,6 +27,7 @@ public class BlockedItemsManager {
     public boolean isBlocked(ItemStack stack, PlayerEntity player) {
 
         Integer requiredStage = blockedItems.get(stack.getItem());
+
         if (requiredStage == null) return false;
 
         if (!(player.getWorld() instanceof ServerWorld world)) return false;

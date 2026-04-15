@@ -75,13 +75,7 @@ public class HellMod implements ModInitializer {
 	@Override
 	public void onInitialize() {
 
-
-
 		ModArmorMaterials.registerArmorMaterials();
-
-
-
-		System.out.println("ARMOR MATERIALS: " + net.minecraft.registry.Registries.ARMOR_MATERIAL.getIds());
 
 		ModItems.registerItems();
 		ModItemGroups.registerItemsGroups();
@@ -129,8 +123,6 @@ public class HellMod implements ModInitializer {
 
 				var variants = entityData.getAsJsonArray("variants");
 
-				System.out.println("variante:" + variants);
-
 				if (holder.hellmod$getVariant() == null || holder.hellmod$getVariant().isEmpty()) {
 
 					int totalWeight = 0;
@@ -156,10 +148,8 @@ public class HellMod implements ModInitializer {
 								int fuse = obj.get("fuse_time").getAsInt();
 								holder.hellmod$setFuseTime(fuse);
 
-								System.out.println("SET FUSE FROM JSON: " + fuse);
 							}
 
-							System.out.println("SET VARIANT: " + tag);
 							break;
 						}
 					}
@@ -256,11 +246,37 @@ public class HellMod implements ModInitializer {
 
 		ServerTickEvents.END_SERVER_TICK.register(server -> {
 
-			if (StageEffects.skyTimer > 0) {
-				StageEffects.skyTimer--;
+			for (ServerWorld world : server.getWorlds()) {
 
-				for (ServerWorld world : server.getWorlds()) {
-					world.setTimeOfDay(world.getTimeOfDay() + 200);
+				int stage = StageData.get(world).getStage();
+				if (stage < 2) continue;
+
+				for (var entity : world.iterateEntities()) {
+
+					if (!(entity instanceof net.minecraft.entity.mob.MobEntity mob)) continue;
+
+					if (!(mob instanceof net.minecraft.entity.mob.HostileEntity)) continue;
+
+					var attr = mob.getAttributeInstance(
+							net.minecraft.entity.attribute.EntityAttributes.GENERIC_FOLLOW_RANGE
+					);
+
+					if (attr == null) continue;
+
+					double range = attr.getValue();
+
+					for (var player : world.getPlayers()) {
+
+						double distance = mob.squaredDistanceTo(player);
+
+						if (distance <= range * range) {
+
+							if (mob.getTarget() == null) {
+								mob.setTarget(player);
+
+							}
+						}
+					}
 				}
 			}
 		});

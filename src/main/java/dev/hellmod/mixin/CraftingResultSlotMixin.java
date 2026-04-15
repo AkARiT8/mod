@@ -10,27 +10,31 @@ import net.minecraft.util.Formatting;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(Slot.class)
 public abstract class CraftingResultSlotMixin {
 
     @Inject(method = "canTakeItems", at = @At("HEAD"), cancellable = true)
-    private void blockOnlyCraftingResult(PlayerEntity player, CallbackInfoReturnable<Boolean> cir) {
-
-        if (!((Object)this instanceof CraftingResultSlot)) return;
+    private void blockCraft(PlayerEntity player, CallbackInfoReturnable<Boolean> cir) {
 
         Slot slot = (Slot)(Object)this;
+
+        if (!(slot instanceof CraftingResultSlot)) return;
+
         ItemStack stack = slot.getStack();
 
         if (stack.isEmpty()) return;
 
         if (HellMod.manager.isBlocked(stack, player)) {
-            cir.setReturnValue(false);
+
             player.sendMessage(
                     Text.literal("Recipe Locked").formatted(Formatting.RED),
                     true
             );
+
+            cir.setReturnValue(false);
         }
     }
 }

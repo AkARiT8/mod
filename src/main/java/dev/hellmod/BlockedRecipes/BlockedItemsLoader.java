@@ -28,6 +28,7 @@ public class BlockedItemsLoader {
                     manager.addBlocked(item, data.getStage());
                 }
             }
+
         } catch (Exception e) {
             System.err.println("[BlockedItemsLoader] Error cargando JSON:" + e);
         }

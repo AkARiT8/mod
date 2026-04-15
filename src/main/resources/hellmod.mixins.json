@@ -3,6 +3,8 @@
   "package": "dev.hellmod.mixin",
   "compatibilityLevel": "JAVA_21",
   "mixins": [
+    "AnvilCostMixin",
+    "AnvilScreenHandlerAccessor",
     "BlazeMixin",
     "CraftingResultSlotMixin",
     "CreeperAccessor",
@@ -16,8 +18,10 @@
     "FortuneMixin",
     "GhastMixin",
     "LivinEntityMixin",
+    "LootingMixin",
     "NetherPortalBlockMixin",
-    "SmallFireballMixin"
+    "SmallFireballMixin",
+    "UnbreakingMixin"
   ],
   "injectors": {
     "defaultRequire": 1

@@ -62,5 +62,82 @@
   {
     "item": "hellmod:magma_cube_core",
     "stage": 2
+  },
+  {
+    "item": "hellmod:ghast_appendix",
+    "stage": 2
+  },
+  {
+    "item": "hellmod:magma_cube_core",
+    "stage": 2
+  },
+  {
+    "item": "hellmod:nether_infused_ingot",
+    "stage": 2
+  },
+  {
+    "item": "hellmod:nether_infused_helmet",
+    "stage": 2
+  },
+  {
+    "item": "hellmod:nether_infused_chestplate",
+    "stage": 2
+  },
+  {
+    "item": "hellmod:nether_infused_leggings",
+    "stage": 2
+  },
+  {
+    "item": "hellmod:nether_infused_boots",
+    "stage": 2
+  },
+  {
+    "item": "hellmod:nether_infused_sword",
+    "stage": 2
+  },
+  {
+    "item": "hellmod:nether_infused_pickaxe",
+    "stage": 2
+  },
+  {
+    "item": "hellmod:nether_infused_axe",
+    "stage": 2
+  },
+  {
+    "item": "hellmod:nether_infused_shovel",
+    "stage": 2
+  },
+  {
+    "item": "hellmod:nether_infused_hoe",
+    "stage": 2
+  },
+  {
+    "item": "hellmod:nether_infused_template",
+    "stage": 2
+  },
+  {
+    "item": "hellmod:golden_apple_rune",
+    "stage": 2
+  },
+  {
+    "item": "hellmod:uncommon_hardcore_heart",
+    "stage": 2
+  },
+  {
+    "item": "hellmod:barrier_totem_of_undying",
+    "stage": 2
+  },
+  {
+  "item": "hellmod:nether_essence",
+  "stage": 2
+  },
+  {
+    "item": "hellmod:empowered_coal",
+    "stage": 2
+  },
+  {
+    "item": "hellmod:empowered_coal_block",
+    "stage": 2
   }
+
 ]

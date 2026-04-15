@@ -16,8 +16,21 @@ public class StageModifierApplier {
 
                 ((VariantHolder) creeper).hellmod$setExplosionPower(power);
 
-                System.out.println("SET POWER: " + power);
             }
+        }
+
+        if (entityData.has("follow_range")) {
+
+            double range = entityData.get("follow_range").getAsDouble();
+
+            var attr = entity.getAttributeInstance(
+                    net.minecraft.entity.attribute.EntityAttributes.GENERIC_FOLLOW_RANGE
+            );
+
+            if (attr != null) {
+                attr.setBaseValue(range);
+            }
+
         }
 
         for (var entry : entityData.entrySet()) {

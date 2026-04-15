@@ -132,6 +132,10 @@ public class StageBlockEntity extends BlockEntity implements NamedScreenHandlerF
                 items.set(3, new ItemStack(ModItems.SPEED_TOTEM_OF_UNDYING));
                 markDirty();
             }
+            if (newStage == 2) {
+                items.set(3, new ItemStack(ModItems.BARRIER_TOTEM_OF_UNDYING));
+                markDirty();
+            }
 
             world.playSound(
                     null,

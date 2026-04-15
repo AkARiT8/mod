@@ -43,16 +43,19 @@ public class TotemManager {
     public static void useTotem(PlayerEntity player, ItemStack stack) {
 
         Identifier id = Registries.ITEM.getId(stack.getItem());
-        TotemEffect effect = TOTEMS.get(id);
 
-        if (effect == null) return;
+        if (!isTotem(stack)) return;
 
         stack.decrement(1);
 
         player.setHealth(1.0F);
         player.clearStatusEffects();
 
-        effect.apply(player);
+        if (player instanceof ServerPlayerEntity serverPlayer) {
+            serverPlayer.server.execute(() -> {
+                applyEffect(player, id);
+            });
+        }
 
         player.getWorld().playSound(
                 null,
@@ -93,4 +96,22 @@ public class TotemManager {
     private interface TotemEffect {
         void apply(PlayerEntity player);
     }
+
+    private static void applyEffect(PlayerEntity player, Identifier id) {
+
+        player.addStatusEffect(new StatusEffectInstance(StatusEffects.REGENERATION, 900, 1));
+        player.addStatusEffect(new StatusEffectInstance(StatusEffects.ABSORPTION, 100, 1));
+        player.addStatusEffect(new StatusEffectInstance(StatusEffects.FIRE_RESISTANCE, 800, 0));
+
+        if (id.equals(new Identifier("hellmod:speed_totem_of_undying"))) {
+
+            player.addStatusEffect(new StatusEffectInstance(StatusEffects.SPEED, 1200, 2));
+
+        } else if (id.equals(new Identifier("hellmod:barrier_totem_of_undying"))) {
+
+            player.addStatusEffect(new StatusEffectInstance(StatusEffects.RESISTANCE, 200, 0));
+            player.addStatusEffect(new StatusEffectInstance(StatusEffects.ABSORPTION, 1200, 4));
+        }
+    }
+
 }
