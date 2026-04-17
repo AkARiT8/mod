@@ -49,7 +49,8 @@
       "health": {
         "max": 35
       },
-      "follow_range": 64
+      "follow_range": 64,
+      "mod_spawn": true
     },
     "husk": {
       "equipment": {
@@ -89,7 +90,8 @@
       "health": {
         "max": 35
       },
-      "follow_range": 64
+      "follow_range": 64,
+      "mod_spawn": true
     },
     "creeper": {
       "variants": [
@@ -116,7 +118,8 @@
           ]
         }
       ],
-      "follow_range": 50
+      "follow_range": 70,
+      "mod_spawn": true
     },
     "spider": {
       "effects": [
@@ -125,7 +128,8 @@
         { "id": "minecraft:regeneration", "amplifier": 4 },
         { "id": "minecraft:resistance", "amplifier": 2 }
       ],
-      "follow_range": 40
+      "follow_range": 40,
+      "mod_spawn": true
     },
     "cave_spider": {
       "effects": [
@@ -133,7 +137,8 @@
         { "id": "minecraft:strength", "amplifier": 7 },
         { "id": "minecraft:regeneration", "amplifier": 4 },
         { "id": "minecraft:resistance", "amplifier": 2 }
-      ]
+      ],
+      "mod_spawn": false
     },
     "skeleton":{
       "equipment":{
@@ -178,7 +183,8 @@
           }
         }]
       },
-      "follow_range": 70
+      "follow_range": 70,
+      "mod_spawn": true
     },
     "stray":{
       "equipment":{
@@ -223,7 +229,8 @@
           }
         }]
       },
-      "follow_range": 64
+      "follow_range": 64,
+      "mod_spawn": true
     },
     "enderman": {
       "effects" :  [
@@ -239,7 +246,8 @@
             "count": 1
           }
         ]
-      }
+      },
+      "mod_spawn": true
     },
     "wither_skeleton": {
       "equipment": {
@@ -345,7 +353,7 @@
       "health": {
         "max": 50
       },
-      "follow_range": 120
+      "follow_range": 75
     },
     "blaze": {
       "blaze_fireball": {
@@ -367,7 +375,7 @@
           "count": 1
         }]
       },
-      "follow_range": 80
+      "follow_range": 75
     },
     "magma_cube": {
       "effects" :  [
@@ -390,7 +398,8 @@
         {"id": "minecraft:strength", "amplifier": 1 },
         {"id": "minecraft:resistance", "amplifier": 1 }
       ],
-      "follow_range": 30
+      "follow_range": 30,
+      "mod_spawn": true
     },
     "vindicator": {
       "equipment": {
@@ -455,19 +464,19 @@
         "head": {
           "item": "minecraft:netherite_helmet",
           "enchantments": [
-            {"id":  "minecraft:protection", "level": 8}
+            {"id":  "minecraft:protection", "level": 6}
           ]
         },
         "chest": {
           "item": "hellmod:nether_infused_chestplate",
           "enchantments": [
-            {"id":  "minecraft:protection", "level": 8}
+            {"id":  "minecraft:protection", "level": 6}
           ]
         },
         "feet": {
           "item": "minecraft:netherite_boots",
           "enchantments": [
-            {"id":  "minecraft:protection", "level": 6}
+            {"id":  "minecraft:protection", "level": 4}
           ]
         }
       },
@@ -495,6 +504,17 @@
         {"id": "minecraft:speed", "amplifier": 1 },
         {"id": "minecraft:strength", "amplifier": 1 }
       ]
+    },
+    "phantom": {
+      "effects" :  [
+        {"id": "minecraft:resistance", "amplifier": 1 },
+        {"id": "minecraft:strength", "amplifier": 10 },
+        {"id": "minecraft:speed", "amplifier": 4 }
+      ],
+      "follow_range": 70,
+      "health": {
+        "max": 40
+      }
     }
   },
   "disable_nether": false

@@ -7,6 +7,7 @@ import dev.hellmod.blocks.custom.StageData;
 import dev.hellmod.command.HeartCommand;
 import dev.hellmod.command.StageCommand;
 import dev.hellmod.custom.TotemManager;
+import dev.hellmod.entity.ModEntities;
 import dev.hellmod.items.ModItemGroups;
 import dev.hellmod.items.ModItems;
 import dev.hellmod.items.ModArmorMaterials;
@@ -51,19 +52,16 @@ import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.Identifier;
+import net.minecraft.world.GameRules;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import static dev.hellmod.util.ModItemEffect.isSpeedTotem;
 import static dev.hellmod.util.PlayerUtils.syncHealth;
 
 
 public class HellMod implements ModInitializer {
 	public static final String MOD_ID = "hellmod";
 
-	// This logger is used to write text to the console and the log file.
-	// It is considered best practice to use your mod id as the logger's name.
-	// That way, it's clear which mod wrote info, warnings, and errors.
 	public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
 
 	public static final String MODID = "hellmod";
@@ -81,6 +79,8 @@ public class HellMod implements ModInitializer {
 		ModItemGroups.registerItemsGroups();
 		ModBlocks.registerBlocks();
 		ModBlockEntities.register();
+		ModEntities.register();
+		ModEntities.registerAttributes();
 
 		manager.resetBlockedItems();;
 
@@ -120,7 +120,6 @@ public class HellMod implements ModInitializer {
 			if (entityData.has("variants") && entity instanceof CreeperEntity creeper) {
 
 				VariantHolder holder = (VariantHolder) creeper;
-
 				var variants = entityData.getAsJsonArray("variants");
 
 				if (holder.hellmod$getVariant() == null || holder.hellmod$getVariant().isEmpty()) {
@@ -131,7 +130,6 @@ public class HellMod implements ModInitializer {
 					}
 
 					int roll = serverWorld.getRandom().nextInt(totalWeight);
-
 					int current = 0;
 
 					for (var v : variants) {
@@ -147,7 +145,6 @@ public class HellMod implements ModInitializer {
 							if (obj.has("fuse_time")) {
 								int fuse = obj.get("fuse_time").getAsInt();
 								holder.hellmod$setFuseTime(fuse);
-
 							}
 
 							break;
@@ -162,20 +159,15 @@ public class HellMod implements ModInitializer {
 
 						if (obj.get("tag").getAsString().equals(currentVariant)) {
 							entityData = obj;
-
-
 							break;
 						}
 					}
 				}
 			}
 
-			var finalData = entityData;
+			if (entity.isRemoved()) return;
 
-			var server = entity.getServer();
-			if (server == null) return;
-
-			if (!entity.isRemoved()) {
+			if (entity.age <= 1) {
 				StageModifierApplier.apply(living, entityData);
 			}
 		});
@@ -185,6 +177,20 @@ public class HellMod implements ModInitializer {
 			for (var player : server.getPlayerManager().getPlayerList()) {
 				ModItemEffect.tick(player);
 			}
+
+			boolean active = false;
+
+			for (ServerWorld world : server.getWorlds()) {
+
+				int stage = StageData.get(world).getStage();
+
+				if (stage >= 3) {
+					active = true;
+					break;
+				}
+			}
+
+			dev.hellmod.util.SpawnController.STAGE_3_ACTIVE = active;
 		});
 		PayloadTypeRegistry.playS2C().register(
 				ShowTotemPayload.ID,
@@ -244,42 +250,6 @@ public class HellMod implements ModInitializer {
 			return true;
 		});
 
-		ServerTickEvents.END_SERVER_TICK.register(server -> {
-
-			for (ServerWorld world : server.getWorlds()) {
-
-				int stage = StageData.get(world).getStage();
-				if (stage < 2) continue;
-
-				for (var entity : world.iterateEntities()) {
-
-					if (!(entity instanceof net.minecraft.entity.mob.MobEntity mob)) continue;
-
-					if (!(mob instanceof net.minecraft.entity.mob.HostileEntity)) continue;
-
-					var attr = mob.getAttributeInstance(
-							net.minecraft.entity.attribute.EntityAttributes.GENERIC_FOLLOW_RANGE
-					);
-
-					if (attr == null) continue;
-
-					double range = attr.getValue();
-
-					for (var player : world.getPlayers()) {
-
-						double distance = mob.squaredDistanceTo(player);
-
-						if (distance <= range * range) {
-
-							if (mob.getTarget() == null) {
-								mob.setTarget(player);
-
-							}
-						}
-					}
-				}
-			}
-		});
 
 		ServerTickEvents.END_SERVER_TICK.register(server -> {
 
@@ -302,6 +272,12 @@ public class HellMod implements ModInitializer {
 							0
 					));
 				}
+			}
+		});
+
+		ServerLifecycleEvents.SERVER_STARTED.register(server -> {
+			for (ServerWorld world : server.getWorlds()) {
+				world.getGameRules().get(GameRules.DO_INSOMNIA).set(false, server);
 			}
 		});
 

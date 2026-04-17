@@ -93,5 +93,6 @@
   "tooltip.hellmod.stage_block.line1": "Stage 0",
   "tooltip.hellmod.uncommon_hardcore_heart.line1": "Stage 2",
   "tooltip.hellmod.uncommon_hardcore_heart.line3": "Rare",
-  "tooltip.hellmod.uncommon_hardcore_heart.line7": "Up to 16 Max HP"
+  "tooltip.hellmod.uncommon_hardcore_heart.line7": "Up to 16 Max HP",
+  "entity.hellmod.boss_zombie": "§4☠ BERSERK ZOMBIE ☠"
 }

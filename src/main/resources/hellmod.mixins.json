@@ -21,6 +21,7 @@
     "LootingMixin",
     "NetherPortalBlockMixin",
     "SmallFireballMixin",
+    "SpawnGroupMixin",
     "UnbreakingMixin"
   ],
   "injectors": {

@@ -84,7 +84,7 @@ public class ModItems {
             new ArmorItem(
                     ModArmorMaterials.NETHER_INFUSED_ARMOR_MATERIAL,
                     ArmorItem.Type.HELMET,
-                    new Item.Settings().maxCount(1).fireproof().maxDamage(1264)
+                    new Item.Settings().maxCount(1).fireproof().maxDamage(2635)
             )
     );
     public static final Item NETHER_INFUSED_CHESTPLATE = registerItem(
@@ -92,7 +92,7 @@ public class ModItems {
             new ArmorItem(
                     ModArmorMaterials.NETHER_INFUSED_ARMOR_MATERIAL,
                     ArmorItem.Type.CHESTPLATE,
-                    new Item.Settings().maxCount(1).fireproof().maxDamage(1264)
+                    new Item.Settings().maxCount(1).fireproof().maxDamage(2635)
             )
     );
 
@@ -101,7 +101,7 @@ public class ModItems {
             new ArmorItem(
                     ModArmorMaterials.NETHER_INFUSED_ARMOR_MATERIAL,
                     ArmorItem.Type.LEGGINGS,
-                    new Item.Settings().maxCount(1).fireproof().maxDamage(1264)
+                    new Item.Settings().maxCount(1).fireproof().maxDamage(2635)
             )
     );
     public static final Item NETHER_INFUSED_BOOTS = registerItem(
@@ -109,7 +109,7 @@ public class ModItems {
             new ArmorItem(
                     ModArmorMaterials.NETHER_INFUSED_ARMOR_MATERIAL,
                     ArmorItem.Type.BOOTS,
-                    new Item.Settings().maxCount(1).fireproof().maxDamage(1264)
+                    new Item.Settings().maxCount(1).fireproof().maxDamage(2635)
 
 
             )
