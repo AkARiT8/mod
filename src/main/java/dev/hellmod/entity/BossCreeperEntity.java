@@ -19,6 +19,8 @@ import net.minecraft.world.LocalDifficulty;
 import net.minecraft.world.ServerWorldAccess;
 import net.minecraft.world.World;
 
+import java.util.Objects;
+
 public class BossCreeperEntity extends CreeperEntity {
 
     private final ServerBossBar bossBar;
@@ -75,8 +77,13 @@ public class BossCreeperEntity extends CreeperEntity {
         int secondsLeft = (maxTime - lifeTicks) / 20;
 
         bossBar.setName(
-                net.minecraft.text.Text.literal("☢ Boss Creeper - " + secondsLeft + "s")
+                Objects.requireNonNull(this.getDisplayName()).copy()
+                        .append(
+                                net.minecraft.text.Text.literal(" - " + secondsLeft + "s")
+                                        .formatted(net.minecraft.util.Formatting.GRAY)
+                        )
         );
+
 
         if (lifeTicks % 600 == 200) {
 

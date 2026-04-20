@@ -8,7 +8,7 @@ import net.minecraft.entity.mob.CreeperEntity;
 
 public class BossCreeperRenderer extends CreeperEntityRenderer {
 
-    private static final float SCALE = 2.5f;
+    private static final float SCALE = 5f;
 
     public BossCreeperRenderer(EntityRendererFactory.Context context) {
         super(context);

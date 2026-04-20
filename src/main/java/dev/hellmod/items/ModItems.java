@@ -149,6 +149,103 @@ public class ModItems {
     public static final Item NETHER_ESSENCE = registerItem("nether_essence", new CustoModItem(new Item.Settings()));
     public static final Item EMPOWERED_COAL = registerItem("empowered_coal", new CustoModItem(new Item.Settings()));
 
+    //STAGE 3
+    public static final Item TRUE_AMETHYST_INGOT = registerItem("true_amethyst_ingot", new CustoModItem(new Item.Settings()));
+
+
+    public static final Item TRUE_AMETHYST_HELMET = registerItem(
+            "true_amethyst_helmet",
+            new ArmorItem(
+                    ModArmorMaterials.TRUE_AMETHYST_ARMOR_MATERIAL,
+                    ArmorItem.Type.HELMET,
+                    new Item.Settings().maxCount(1).fireproof().maxDamage(5492)
+            )
+    );
+
+    public static final Item TRUE_AMETHYST_CHESTPLATE = registerItem(
+            "true_amethyst_chestplate",
+            new ArmorItem(
+                    ModArmorMaterials.TRUE_AMETHYST_ARMOR_MATERIAL,
+                    ArmorItem.Type.CHESTPLATE,
+                    new Item.Settings().maxCount(1).fireproof().maxDamage(5492)
+            )
+    );
+
+    public static final Item TRUE_AMETHYST_LEGGINGS = registerItem(
+            "true_amethyst_leggings",
+            new ArmorItem(
+                    ModArmorMaterials.TRUE_AMETHYST_ARMOR_MATERIAL,
+                    ArmorItem.Type.LEGGINGS,
+                    new Item.Settings().maxCount(1).fireproof().maxDamage(5492)
+            )
+    );
+
+    public static final Item TRUE_AMETHYST_BOOTS = registerItem(
+            "true_amethyst_boots",
+            new ArmorItem(
+                    ModArmorMaterials.TRUE_AMETHYST_ARMOR_MATERIAL,
+                    ArmorItem.Type.BOOTS,
+                    new Item.Settings().maxCount(1).fireproof().maxDamage(5492)
+            )
+    );
+
+    public static final Item TRUE_AMETHYST_SWORD = registerItem(
+            "true_amethyst_sword",
+            new SwordItem(
+                    TrueAmathystModMaterial.INSTANCE,
+                    new Item.Settings()
+                            .maxCount(1)
+                            .fireproof()
+                            .component(
+                                    DataComponentTypes.ATTRIBUTE_MODIFIERS,
+                                    SwordItem.createAttributeModifiers(
+                                            TrueAmathystModMaterial.INSTANCE,
+                                            4,
+                                            -2.4F
+                                    )
+                            )
+            )
+    );
+
+    public static final Item TRUE_AMETHYST_PICKAXE = registerItem("true_amethyst_pickaxe", new CustomPickaxeItem(TrueAmathystModMaterial.INSTANCE,2,-2.8F, new Item.Settings().maxCount(1).fireproof()));
+
+
+    public static final Item TRUE_AMETHYST_AXE = registerItem("true_amethyst_axe",new CustomAxeItem(
+            TrueAmathystModMaterial.INSTANCE,
+            7.0F,
+            -3.0F,
+            new Item.Settings().maxCount(1).fireproof()
+    ));
+    public static final Item TRUE_AMETHYST_SHOVEL = registerItem("true_amethyst_shovel", new CustomShovelItem(TrueAmathystModMaterial.INSTANCE,2.5F,-3F, new Item.Settings().maxCount(1).fireproof()));
+    public static final Item TRUE_AMETHYST_HOE = registerItem("true_amethyst_hoe", new CustomHoeItem(TrueAmathystModMaterial.INSTANCE,1,-2.5F, new Item.Settings().maxCount(1).fireproof()));
+
+    public static final Item CREEPER_ESSENCE = registerItem("creeper_essence", new CustoModItem(new Item.Settings()));
+    public static final Item ZOMBIE_ESSENCE = registerItem("zombie_essence", new CustoModItem(new Item.Settings()));
+    public static final Item PHANTOM_ESSENCE = registerItem("phantom_essence", new CustoModItem(new Item.Settings()));
+
+    public static final Item TRUE_AMETHYST_SHARD = registerItem("true_amethyst_shard", new CustoModItem(new Item.Settings()));
+    public static final Item TRUE_AMETHYST_TEMPLATE = registerItem("true_amethyst_template", new CustoModItem(new Item.Settings()));
+
+    public static final Item TRUE_AMETHYST_SHIELD = Registry.register(
+            Registries.ITEM,
+            new Identifier("hellmod", "true_amethyst_shield"),
+            new TrueAmethystShieldItem(new Item.Settings().maxDamage(1493))
+    );
+
+    public static final Item TRUE_AMETHYST_BOW = Registry.register(
+            Registries.ITEM,
+            new Identifier("hellmod", "true_amethyst_bow"),
+            new TrueAmethystBowItem(new Item.Settings().maxDamage(384))
+    );
+
+    public static final Item INVENCIBILITY_RUNE = registerItem(
+            "invencibility_rune",
+            new InvencibilityRune(new Item.Settings().maxCount(1))
+    );
+
+
+
+
     private static Item registerItem(String itemid, Item item) {
         return Registry.register(Registries.ITEM, new Identifier(HellMod.MODID, itemid), item);
     }

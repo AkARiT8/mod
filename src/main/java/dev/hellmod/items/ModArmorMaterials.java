@@ -44,11 +44,39 @@ public class ModArmorMaterials {
                     )
             );
 
+    public static final RegistryEntry<ArmorMaterial> TRUE_AMETHYST_ARMOR_MATERIAL =
+            Registry.registerReference(
+                    Registries.ARMOR_MATERIAL,
+                    new Identifier(HellMod.MODID, "true_amethyst_ingot"),
+                    new ArmorMaterial(
+                            Map.of(
+                                    ArmorItem.Type.HELMET, 5,
+                                    ArmorItem.Type.CHESTPLATE, 12,
+                                    ArmorItem.Type.LEGGINGS, 9,
+                                    ArmorItem.Type.BOOTS, 5
+                            ),
+                            40,
+                            SoundEvents.ITEM_ARMOR_EQUIP_NETHERITE,
+                            () -> Ingredient.ofItems(ModItems.TRUE_AMETHYST_INGOT),
+
+                            List.of(
+                                    new ArmorMaterial.Layer(
+                                            new Identifier(HellMod.MODID, "true_amethyst"),
+                                            "",
+                                            false
+                                    )
+                            ),
+
+                            5f,
+                            0.3f
+                    )
+            );
+
     private static RegistryEntry<ArmorMaterial> registerArmorMaterial(String id, ArmorMaterial armorMaterial){
         return Registry.registerReference(Registries.ARMOR_MATERIAL, new Identifier(HellMod.MODID, id), armorMaterial);
     }
 
     public static void registerArmorMaterials(){
-        HellMod.LOGGER.info("registrando armor material");
+
     }
 }

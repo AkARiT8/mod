@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "hellmod:nether_infused_hoe"
+    "hellmod:nether_infused_hoe",
+    "hellmod:true_amethyst_hoe"
   ]
 }

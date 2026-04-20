@@ -1,0 +1,6 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "hellmod:item/true_amethyst_bow_pulling_2"
+  }
+}

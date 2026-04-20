@@ -3,6 +3,7 @@
   "package": "dev.hellmod.client.mixin",
   "compatibilityLevel": "JAVA_21",
   "client": [
+    "ShieldTextureMixin"
   ],
   "injectors": {
     "defaultRequire": 1

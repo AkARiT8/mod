@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "hellmod:nether_infused_template"
+    "hellmod:nether_infused_template",
+    "hellmod:true_amethyst_template"
   ]
 }

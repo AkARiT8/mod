@@ -135,7 +135,7 @@ public class BossZombieEntity extends ZombieEntity {
 
     public static DefaultAttributeContainer.Builder createBossAttributes() {
         return ZombieEntity.createZombieAttributes()
-                .add(EntityAttributes.GENERIC_MAX_HEALTH, 300.0)
+                .add(EntityAttributes.GENERIC_MAX_HEALTH, 150.0)
                 .add(EntityAttributes.GENERIC_ATTACK_DAMAGE, 15.0)
                 .add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.35)
                 .add(EntityAttributes.GENERIC_ARMOR, 10.0)

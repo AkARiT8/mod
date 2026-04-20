@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "hellmod:nether_infused_axe"
+    "hellmod:nether_infused_axe",
+    "hellmod:true_amethyst_axe"
   ]
 }

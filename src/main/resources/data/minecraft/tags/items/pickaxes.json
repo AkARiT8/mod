@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "hellmod:nether_infused_pickaxe"
+    "hellmod:nether_infused_pickaxe",
+    "hellmod:true_amethyst_pickaxe"
   ]
 }

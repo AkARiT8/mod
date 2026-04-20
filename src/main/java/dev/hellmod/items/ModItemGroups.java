@@ -2,9 +2,13 @@ package dev.hellmod.items;
 
 import dev.hellmod.HellMod;
 import dev.hellmod.blocks.ModBlocks;
+import dev.hellmod.items.custom.ModPotions;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
+import net.minecraft.component.DataComponentTypes;
+import net.minecraft.component.type.PotionContentsComponent;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.text.Text;
@@ -52,6 +56,34 @@ public class ModItemGroups {
                         entries.add(ModItems.GHAST_APPENDIX);
                         entries.add(ModItems.EMPOWERED_COAL);
                         entries.add(ModBlocks.EMPOWERED_COAL_BLOCK.getLeft());
+                        entries.add(ModItems.TRUE_AMETHYST_HELMET);
+                        entries.add(ModItems.TRUE_AMETHYST_CHESTPLATE);
+                        entries.add(ModItems.TRUE_AMETHYST_LEGGINGS);
+                        entries.add(ModItems.TRUE_AMETHYST_BOOTS);
+                        entries.add(ModItems.TRUE_AMETHYST_AXE);
+                        entries.add(ModItems.TRUE_AMETHYST_PICKAXE);
+                        entries.add(ModItems.TRUE_AMETHYST_SHOVEL);
+                        entries.add(ModItems.TRUE_AMETHYST_SWORD);
+                        entries.add(ModItems.TRUE_AMETHYST_HOE);
+                        entries.add(ModItems.CREEPER_ESSENCE);
+                        entries.add(ModItems.ZOMBIE_ESSENCE);
+                        entries.add(ModItems.PHANTOM_ESSENCE);
+                        entries.add(ModItems.TRUE_AMETHYST_SHARD);
+                        entries.add(ModItems.TRUE_AMETHYST_INGOT);
+                        entries.add(ModItems.TRUE_AMETHYST_TEMPLATE);
+                        entries.add(ModItems.TRUE_AMETHYST_SHIELD);
+                        entries.add(ModItems.TRUE_AMETHYST_BOW);
+                        entries.add(ModItems.INVENCIBILITY_RUNE);
+                        ItemStack stack = new ItemStack(Items.POTION);
+
+                        stack.set(
+                                DataComponentTypes.POTION_CONTENTS,
+                                new PotionContentsComponent(
+                                        Registries.POTION.getEntry(ModPotions.PANIC_POTION)
+                                )
+                        );
+
+                        entries.add(stack);
 
                     })
                     .build()

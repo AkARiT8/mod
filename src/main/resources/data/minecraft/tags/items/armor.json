@@ -4,6 +4,10 @@
     "hellmod:nether_infused_helmet",
     "hellmod:nether_infused_chestplate",
     "hellmod:nether_infused_leggings",
-    "hellmod:nether_infused_boots"
+    "hellmod:nether_infused_boots",
+    "hellmod:true_amethyst_helmet",
+    "hellmod:true_amethyst_chestplate",
+    "hellmod:true_amethyst_leggings",
+    "hellmod:true_amethyst_boots"
   ]
 }

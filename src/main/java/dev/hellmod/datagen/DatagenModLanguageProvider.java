@@ -106,6 +106,76 @@ public class DatagenModLanguageProvider extends FabricLanguageProvider {
         builder.add("tooltip.hellmod.uncommon_hardcore_heart.line3", "Rare");
         builder.add("tooltip.hellmod.uncommon_hardcore_heart.line7", "Up to 16 Max HP");
 
+
+        //STAGE 3
+
+        builder.add(ModItems.TRUE_AMETHYST_HELMET, "True Amethyst Helmet");
+        builder.add("tooltip.hellmod.true_amethyst_helmet.line1", "Stage 3");
+        builder.add("tooltip.hellmod.true_amethyst_helmet.line5", "epic");
+        builder.add(ModItems.TRUE_AMETHYST_CHESTPLATE, "True Amethyst Chestplate");
+        builder.add("tooltip.hellmod.true_amethyst_chestplate.line10", "Stage 3");
+        builder.add("tooltip.hellmod.true_amethyst_chestplate.line5", "epic");
+        builder.add(ModItems.TRUE_AMETHYST_LEGGINGS, "True Amethyst Leggings");
+        builder.add("tooltip.hellmod.true_amethyst_leggings.line1", "Stage 3");
+        builder.add("tooltip.hellmod.true_amethyst_leggings.line5", "epic");
+        builder.add(ModItems.TRUE_AMETHYST_BOOTS, "True Amethyst Boots");
+        builder.add("tooltip.hellmod.true_amethyst_boots.line1", "Stage 3");
+        builder.add("tooltip.hellmod.true_amethyst_boots.line5", "epic");
+
+        builder.add(ModItems.TRUE_AMETHYST_SWORD, "True Amethyst Sword");
+        builder.add("tooltip.hellmod.true_amethyst_sword.line1", "Stage 3");
+        builder.add("tooltip.hellmod.true_amethyst_sword.line5", "epic");
+        builder.add(ModItems.TRUE_AMETHYST_SHOVEL, "True Amethyst Shovel");
+        builder.add("tooltip.hellmod.true_amethyst_shovel.line1", "Stage 3");
+        builder.add("tooltip.hellmod.true_amethyst_shovel.line5", "epic");
+        builder.add(ModItems.TRUE_AMETHYST_AXE, "True Amethyst Axe");
+        builder.add("tooltip.hellmod.true_amethyst_axe.line1", "Stage 3");
+        builder.add("tooltip.hellmod.true_amethyst_axe.line5", "epic");
+        builder.add(ModItems.TRUE_AMETHYST_PICKAXE, "True Amethyst Pickaxe");
+        builder.add("tooltip.hellmod.true_amethyst_pickaxe.line1", "Stage 3");
+        builder.add("tooltip.hellmod.true_amethyst_pickaxe.line5", "epic");
+        builder.add(ModItems.TRUE_AMETHYST_HOE, "True Amethyst Hoe");
+        builder.add("tooltip.hellmod.true_amethyst_hoe.line1", "Stage 3");
+        builder.add("tooltip.hellmod.true_amethyst_hoe.line5", "epic");
+
+
+        builder.add(ModItems.CREEPER_ESSENCE, "Creeper Essence");
+        builder.add("tooltip.hellmod.creeper_essence.line1", "Stage 3");
+        builder.add("tooltip.hellmod.creeper_essence.line3", "Epic");
+        builder.add(ModItems.ZOMBIE_ESSENCE, "Zombie Essence");
+        builder.add("tooltip.hellmod.zombie_essence.line1", "Stage 3");
+        builder.add("tooltip.hellmod.zombie_essence.line3", "Epic");
+        builder.add(ModItems.PHANTOM_ESSENCE, "Phantom Essence");
+        builder.add("tooltip.hellmod.phantom_essence.line1", "Stage 3");
+        builder.add("tooltip.hellmod.phantom_essence.line3", "Epic");
+
+        builder.add(ModItems.TRUE_AMETHYST_SHARD, "True Amethyst Shard");
+        builder.add("tooltip.hellmod.true_amethyst_shard.line1", "Stage 3");
+        builder.add("tooltip.hellmod.true_amethyst_shard.line3", "Epic");
+        builder.add(ModItems.TRUE_AMETHYST_INGOT, "True Amethyst Ingot");
+        builder.add("tooltip.hellmod.true_amethyst_ingot.line1", "Stage 3");
+        builder.add("tooltip.hellmod.true_amethyst_ingot.line3", "Epic");
+        builder.add(ModItems.TRUE_AMETHYST_TEMPLATE, "True Amethyst Template");
+        builder.add("tooltip.hellmod.true_amethyst_template.line1", "Stage 3");
+        builder.add("tooltip.hellmod.true_amethyst_template.line3", "Epic");
+
+        builder.add(ModItems.TRUE_AMETHYST_SHIELD, "True Amethyst Shield");
+        builder.add("tooltip.hellmod.true_amethyst_shield.line1", "Stage 3");
+        builder.add("tooltip.hellmod.true_amethyst_shield.line5", "Epic");
+
+        builder.add(ModItems.TRUE_AMETHYST_BOW, "True Amethyst Bow");
+        builder.add("tooltip.hellmod.true_amethyst_bow.line1", "Stage 3");
+        builder.add("tooltip.hellmod.true_amethyst_bow.line5", "Epic");
+
+        builder.add(ModItems.INVENCIBILITY_RUNE, "Invencibility Rune");
+        builder.add("tooltip.hellmod.invencibility_rune.line1", "Stage 3");
+        builder.add("tooltip.hellmod.invencibility_rune.line3", "Epic");
+
+        builder.add("item.minecraft.potion.effect.panic_potion", "Panic Potion");
+
+
+
+
         //Blocks
         builder.add(ModBlocks.PURE_IRON_BLOCK.getLeft(), "Block of Pure Iron");
         builder.add("tooltip.hellmod.pure_iron_block.line1", "Stage 1");
@@ -126,5 +196,10 @@ public class DatagenModLanguageProvider extends FabricLanguageProvider {
 
         //gm1Tab
         builder.add("itemGroup.hellmod.hell_group", "Hell items");
+
+        //bossName
+        builder.add("entity.hellmod.boss_zombie", "§4☠ BERSERK ZOMBIE ☠");
+        builder.add("entity.hellmod.boss_creeper", "§2☠ CREEPER BOMB ☠");
+        builder.add("entity.hellmod.boss_phantom", "§5☠ GIGA PHANTOM ☠");
     }
 }

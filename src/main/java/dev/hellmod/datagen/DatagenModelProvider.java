@@ -1,5 +1,7 @@
 package dev.hellmod.datagen;
 
+import com.google.gson.JsonArray;
+import com.google.gson.JsonObject;
 import dev.hellmod.HellMod;
 import dev.hellmod.blocks.ModBlocks;
 import dev.hellmod.items.ModItems;
@@ -9,7 +11,6 @@ import net.minecraft.data.client.*;
 import net.minecraft.item.ArmorItem;
 import net.minecraft.util.Identifier;
 
-import java.util.Optional;
 
 public class DatagenModelProvider extends FabricModelProvider {
 
@@ -72,11 +73,22 @@ public class DatagenModelProvider extends FabricModelProvider {
         itemModelGenerator.registerArmor((ArmorItem) ModItems.NETHER_INFUSED_LEGGINGS);
         itemModelGenerator.registerArmor((ArmorItem) ModItems.NETHER_INFUSED_BOOTS);
 
+        itemModelGenerator.registerArmor((ArmorItem) ModItems.TRUE_AMETHYST_HELMET);
+        itemModelGenerator.registerArmor((ArmorItem) ModItems.TRUE_AMETHYST_CHESTPLATE);
+        itemModelGenerator.registerArmor((ArmorItem) ModItems.TRUE_AMETHYST_LEGGINGS);
+        itemModelGenerator.registerArmor((ArmorItem) ModItems.TRUE_AMETHYST_BOOTS);
+
         itemModelGenerator.register(ModItems.NETHER_INFUSED_SWORD, Models.HANDHELD);
         itemModelGenerator.register(ModItems.NETHER_INFUSED_PICKAXE, Models.HANDHELD);
         itemModelGenerator.register(ModItems.NETHER_INFUSED_AXE, Models.HANDHELD);
         itemModelGenerator.register(ModItems.NETHER_INFUSED_SHOVEL, Models.HANDHELD);
         itemModelGenerator.register(ModItems.NETHER_INFUSED_HOE, Models.HANDHELD);
+
+        itemModelGenerator.register(ModItems.TRUE_AMETHYST_SWORD, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.TRUE_AMETHYST_AXE, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.TRUE_AMETHYST_PICKAXE, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.TRUE_AMETHYST_SHOVEL, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.TRUE_AMETHYST_HOE, Models.HANDHELD);
 
         itemModelGenerator.register(ModItems.GOLDEN_APPLE_RUNE,Models.GENERATED);
         itemModelGenerator.register(ModItems.BARRIER_TOTEM_OF_UNDYING,Models.GENERATED);
@@ -85,6 +97,54 @@ public class DatagenModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.NETHER_ESSENCE,Models.GENERATED);
         itemModelGenerator.register(ModItems.EMPOWERED_COAL,Models.GENERATED);
 
+        itemModelGenerator.register(ModItems.CREEPER_ESSENCE,Models.GENERATED);
+        itemModelGenerator.register(ModItems.ZOMBIE_ESSENCE,Models.GENERATED);
+        itemModelGenerator.register(ModItems.PHANTOM_ESSENCE,Models.GENERATED);
+
+        itemModelGenerator.register(ModItems.TRUE_AMETHYST_SHARD,Models.GENERATED);
+        itemModelGenerator.register(ModItems.TRUE_AMETHYST_INGOT,Models.GENERATED);
+        itemModelGenerator.register(ModItems.TRUE_AMETHYST_TEMPLATE,Models.GENERATED);
+
+        itemModelGenerator.register(ModItems.INVENCIBILITY_RUNE,Models.GENERATED);
+
+
+
+        Identifier id = new Identifier(HellMod.MODID, "item/true_amethyst_shield");
+
+        JsonObject json = new JsonObject();
+        json.addProperty("parent", "item/shield");
+
+        JsonObject textures = new JsonObject();
+        textures.addProperty("layer0", "hellmod:item/true_amethyst_shield");
+        json.add("textures", textures);
+
+        JsonArray overrides = new JsonArray();
+
+        JsonObject override = new JsonObject();
+
+        JsonObject predicate = new JsonObject();
+        predicate.addProperty("blocking", 1.0f);
+        override.add("predicate", predicate);
+
+        override.addProperty("model", "hellmod:item/true_amethyst_shield_blocking");
+
+        overrides.add(override);
+        json.add("overrides", overrides);
+
+        itemModelGenerator.writer.accept(id, () -> json);
+
+
+        Identifier blockingId = new Identifier(HellMod.MODID, "item/true_amethyst_shield_blocking");
+
+        JsonObject blockingJson = new JsonObject();
+        blockingJson.addProperty("parent", "item/shield_blocking");
+
+        JsonObject textures2 = new JsonObject();
+        textures2.addProperty("particle", "hellmod:item/true_amethyst_shield");
+
+        blockingJson.add("textures", textures2);
+
+        itemModelGenerator.writer.accept(blockingId, () -> blockingJson);
 
     }
 }

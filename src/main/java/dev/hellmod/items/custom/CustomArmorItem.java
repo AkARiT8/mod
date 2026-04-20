@@ -15,9 +15,6 @@ public class CustomArmorItem extends ArmorItem {
     public boolean isEnchantable(ItemStack stack) {
         return true;
     }
-
-
-
     @Override
     public int getEnchantability() {
         return 15;

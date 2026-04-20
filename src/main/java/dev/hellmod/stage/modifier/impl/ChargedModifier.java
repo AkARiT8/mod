@@ -1,7 +1,7 @@
 package dev.hellmod.stage.modifier.impl;
 
 import com.google.gson.JsonObject;
-import dev.hellmod.mixin.CreeperAccessor;
+import dev.hellmod.mixin.Accessor.CreeperAccessor;
 import dev.hellmod.stage.modifier.EntityModifier;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.mob.CreeperEntity;

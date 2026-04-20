@@ -28,7 +28,18 @@ public class ModEntities {
                     Registries.ENTITY_TYPE,
                     new Identifier("hellmod", "boss_creeper"),
                     FabricEntityTypeBuilder.create(SpawnGroup.MONSTER, BossCreeperEntity::new)
-                            .dimensions(EntityDimensions.fixed(1.2f, 3.5f))
+                            .dimensions(EntityDimensions.fixed(2.4f, 7f))
+                            .trackRangeBlocks(128)
+                            .trackedUpdateRate(1)
+                            .build()
+            );
+
+    public static final EntityType<BossPhantomEntity> BOSS_PHANTOM =
+            Registry.register(
+                    Registries.ENTITY_TYPE,
+                    new Identifier("hellmod", "boss_phantom"),
+                    FabricEntityTypeBuilder.create(SpawnGroup.MONSTER, BossPhantomEntity::new)
+                            .dimensions(EntityDimensions.fixed(2.4f, 7f))
                             .trackRangeBlocks(128)
                             .trackedUpdateRate(1)
                             .build()
@@ -45,6 +56,11 @@ public class ModEntities {
         FabricDefaultAttributeRegistry.register(
                 BOSS_CREEPER,
                 BossCreeperEntity.createAttributes()
+        );
+
+        FabricDefaultAttributeRegistry.register(
+                BOSS_PHANTOM,
+                BossPhantomEntity.createAttributes()
         );
     }
 }

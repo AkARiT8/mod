@@ -339,8 +339,8 @@
       },
       "loot":{
         "extra_drops": [{
-          "item": "hellmod:pure_gold_ingot",
-          "chance": 0.4,
+          "item": "minecraft:gold_block",
+          "chance": 0.29,
           "count": 1
         },
           {
@@ -353,7 +353,7 @@
       "health": {
         "max": 50
       },
-      "follow_range": 75
+      "follow_range": 200
     },
     "blaze": {
       "blaze_fireball": {

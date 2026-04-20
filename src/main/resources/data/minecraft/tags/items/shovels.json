@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "hellmod:nether_infused_shovel"
+    "hellmod:nether_infused_shovel",
+    "hellmod:true_amethyst_shovel"
   ]
 }

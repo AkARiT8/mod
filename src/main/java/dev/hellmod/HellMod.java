@@ -11,10 +11,10 @@ import dev.hellmod.entity.ModEntities;
 import dev.hellmod.items.ModItemGroups;
 import dev.hellmod.items.ModItems;
 import dev.hellmod.items.ModArmorMaterials;
+import dev.hellmod.items.custom.ModPotions;
 import dev.hellmod.network.ShowTotemPayload;
 import dev.hellmod.registry.ModBlockEntities;
 import dev.hellmod.registry.ModScreenHandlers;
-import dev.hellmod.stage.StageEffects;
 import dev.hellmod.stage.modifier.EntityModifierRegistry;
 import dev.hellmod.stage.modifier.LootDropHandler;
 import dev.hellmod.stage.modifier.StageModifierApplier;
@@ -24,7 +24,6 @@ import dev.hellmod.stage.recipe.StageRecipeReloadListener;
 import dev.hellmod.util.ModItemEffect;
 import dev.hellmod.util.VariantHolder;
 import net.fabricmc.api.ModInitializer;
-
 import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
 import net.fabricmc.fabric.api.entity.event.v1.ServerLivingEntityEvents;
 import net.fabricmc.fabric.api.entity.event.v1.ServerPlayerEvents;
@@ -33,24 +32,21 @@ import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
 import net.fabricmc.fabric.api.networking.v1.PayloadTypeRegistry;
 import net.fabricmc.fabric.api.networking.v1.ServerPlayConnectionEvents;
-import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
 import net.fabricmc.fabric.api.resource.ResourceManagerHelper;
 import net.fabricmc.fabric.api.resource.SimpleSynchronousResourceReloadListener;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.mob.CreeperEntity;
+import net.minecraft.entity.mob.GhastEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
-import net.minecraft.particle.ParticleTypes;
 import net.minecraft.registry.Registries;
 import net.minecraft.resource.ResourceManager;
 import net.minecraft.resource.ResourceType;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
-import net.minecraft.sound.SoundCategory;
-import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.Identifier;
 import net.minecraft.world.GameRules;
 import org.slf4j.Logger;
@@ -81,6 +77,7 @@ public class HellMod implements ModInitializer {
 		ModBlockEntities.register();
 		ModEntities.register();
 		ModEntities.registerAttributes();
+		ModPotions.registerPotions();
 
 		manager.resetBlockedItems();;
 
@@ -88,9 +85,9 @@ public class HellMod implements ModInitializer {
 
 		BlockedItemsLoader.load(manager);
 
-		EntityModifierRegistry.register("equipment", new EquipmentModifier());
+		EntityModifierRegistry.register("equipment", new EquipmentModifier() );
 		EntityModifierRegistry.register("effects", new EffectModifier());
-		EntityModifierRegistry.register("charged", new ChargedModifier());
+		EntityModifierRegistry.register("charged", new ChargedModifier() );
 		EntityModifierRegistry.register("fireball", new GhastModifier());
 		EntityModifierRegistry.register("blaze_fireball", new BlazeModifier());
 		EntityModifierRegistry.register("loot", new LootModifier());
@@ -174,6 +171,7 @@ public class HellMod implements ModInitializer {
 
 
 		ServerTickEvents.END_SERVER_TICK.register(server -> {
+
 			for (var player : server.getPlayerManager().getPlayerList()) {
 				ModItemEffect.tick(player);
 			}
@@ -186,7 +184,20 @@ public class HellMod implements ModInitializer {
 
 				if (stage >= 3) {
 					active = true;
-					break;
+				}
+
+				for (PlayerEntity player : world.getPlayers()) {
+
+					for (GhastEntity ghast : world.getEntitiesByClass(
+							GhastEntity.class,
+							player.getBoundingBox().expand(200),
+							e -> true
+					)) {
+
+						if (ghast.getTarget() == null) {
+							ghast.setTarget(player);
+						}
+					}
 				}
 			}
 
