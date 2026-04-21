@@ -10,15 +10,17 @@
       "item": "hellmod:nether_essence"
     }
   ],
-
-  "mobcap_multiplier": 1.5,
+  "mobcap_multiplier": 2,
+  "disable_passive_spawns": true,
+  "disable_nether": false,
+  "disable_end": true,
   "difmod": {
     "zombie": {
       "equipment": {
         "mainhand":{
-          "item": "hellmod:nether_infused_axe",
+          "item": "hellmod:true_amethyst_axe",
           "enchantments": [
-            {"id": "minecraft:sharpness", "level": 8}
+            {"id": "minecraft:sharpness", "level": 10}
           ]
         },
         "head": {
@@ -32,11 +34,17 @@
           "enchantments": [
             {"id": "minecraft:protection", "level": 2}
           ]
+        },
+        "feat": {
+          "item": "minecraft:iron_boots",
+          "enchantments": [
+            {"id": "minecraft:protection", "level": 5}
+          ]
         }
       },
       "effects" :  [
         {"id": "minecraft:strength", "amplifier": 2 },
-        {"id": "minecraft:speed", "amplifier": 2 }
+        {"id": "minecraft:speed", "amplifier": 3 }
       ],
       "loot": {
         "extra_drops": [{
@@ -57,9 +65,9 @@
     "husk": {
       "equipment": {
         "mainhand":{
-          "item": "hellmod:nether_infused_axe",
+          "item": "hellmod:true_amethyst_axe",
           "enchantments": [
-            {"id": "minecraft:sharpness", "level": 8}
+            {"id": "minecraft:sharpness", "level": 10}
           ]
         },
         "head": {
@@ -73,11 +81,17 @@
           "enchantments": [
             {"id": "minecraft:protection", "level": 2}
           ]
+        },
+        "feat": {
+          "item": "minecraft:iron_boots",
+          "enchantments": [
+            {"id": "minecraft:protection", "level": 5}
+          ]
         }
       },
       "effects" :  [
-        {"id": "minecraft:strength", "amplifier": 1 },
-        {"id": "minecraft:speed", "amplifier": 1 }
+        {"id": "minecraft:strength", "amplifier": 2 },
+        {"id": "minecraft:speed", "amplifier": 3 }
       ],
       "loot": {
         "extra_drops": [{
@@ -98,11 +112,11 @@
     "creeper": {
       "variants": [
         {
-          "weight": 70,
+          "weight": 80,
           "tag": "normal",
           "charged": true,
-          "fuse_time": 30,
-          "explosion_power": 8,
+          "fuse_time": 25,
+          "explosion_power": 10,
           "effects": [
             { "id": "minecraft:speed", "amplifier": 2 },
             { "id": "minecraft:fire_resistance", "amplifier": 0 },
@@ -110,13 +124,13 @@
           ]
         },
         {
-          "weight": 30,
+          "weight": 20,
           "tag": "debuff",
           "charged": false,
-          "fuse_time": 5,
-          "explosion_power": 3,
+          "fuse_time": 3,
+          "explosion_power": 4,
           "effects": [
-            { "id": "minecraft:speed", "amplifier": 10 }
+            { "id": "minecraft:speed", "amplifier": 15 }
           ]
         }
       ],
@@ -126,7 +140,7 @@
     "spider": {
       "effects": [
         { "id": "minecraft:speed", "amplifier": 3 },
-        { "id": "minecraft:strength", "amplifier": 7 },
+        { "id": "minecraft:strength", "amplifier": 10 },
         { "id": "minecraft:regeneration", "amplifier": 4 },
         { "id": "minecraft:resistance", "amplifier": 2 }
       ],
@@ -136,7 +150,7 @@
     "cave_spider": {
       "effects": [
         { "id": "minecraft:speed", "amplifier": 3 },
-        { "id": "minecraft:strength", "amplifier": 7 },
+        { "id": "minecraft:strength", "amplifier": 10 },
         { "id": "minecraft:regeneration", "amplifier": 4 },
         { "id": "minecraft:resistance", "amplifier": 2 }
       ],
@@ -147,31 +161,31 @@
         "mainhand":{
           "item": "minecraft:bow",
           "enchantments": [
-            {"id": "minecraft:power", "level": 28 }
+            {"id": "minecraft:power", "level": 35 }
           ]
         },
         "head": {
           "item": "minecraft:chainmail_helmet",
           "enchantments": [
-            {"id":  "minecraft:protection", "level": 4}
+            {"id":  "minecraft:protection", "level": 6}
           ]
         },
         "chest": {
           "item": "minecraft:chainmail_chestplate",
           "enchantments": [
-            {"id":  "minecraft:protection", "level": 4}
+            {"id":  "minecraft:protection", "level": 6}
           ]
         },
         "legs": {
           "item": "minecraft:chainmail_leggings",
           "enchantments": [
-            {"id":  "minecraft:protection", "level": 4}
+            {"id":  "minecraft:protection", "level": 6}
           ]
         },
         "feet": {
           "item": "minecraft:chainmail_boots",
           "enchantments": [
-            {"id":  "minecraft:protection", "level": 4}
+            {"id":  "minecraft:protection", "level": 6}
           ]
         }
       },
@@ -193,31 +207,31 @@
         "mainhand":{
           "item": "minecraft:bow",
           "enchantments": [
-            {"id": "minecraft:power", "level": 28 }
+            {"id": "minecraft:power", "level": 35 }
           ]
         },
         "head": {
           "item": "minecraft:chainmail_helmet",
           "enchantments": [
-            {"id":  "minecraft:protection", "level": 4}
+            {"id":  "minecraft:protection", "level": 6}
           ]
         },
         "chest": {
           "item": "minecraft:chainmail_chestplate",
           "enchantments": [
-            {"id":  "minecraft:protection", "level": 4}
+            {"id":  "minecraft:protection", "level": 6}
           ]
         },
         "legs": {
           "item": "minecraft:chainmail_leggings",
           "enchantments": [
-            {"id":  "minecraft:protection", "level": 4}
+            {"id":  "minecraft:protection", "level": 6}
           ]
         },
         "feet": {
           "item": "minecraft:chainmail_boots",
           "enchantments": [
-            {"id":  "minecraft:protection", "level": 4}
+            {"id":  "minecraft:protection", "level": 6}
           ]
         }
       },
@@ -231,20 +245,20 @@
           }
         }]
       },
-      "follow_range": 64,
+      "follow_range": 70,
       "mod_spawn": true
     },
     "enderman": {
       "effects" :  [
-        {"id": "minecraft:strength", "amplifier": 2 },
-        {"id": "minecraft:speed", "amplifier": 1 },
-        {"id": "minecraft:resistance", "amplifier": 1 }
+        {"id": "minecraft:strength", "amplifier": 4 },
+        {"id": "minecraft:speed", "amplifier": 2 },
+        {"id": "minecraft:resistance", "amplifier": 2 }
       ],
       "loot": {
         "extra_drops": [
           {
             "item": "minecraft:diamond",
-            "chance": 0.5,
+            "chance": 0.8,
             "count": 1
           }
         ]
@@ -256,11 +270,11 @@
         "mainhand": {
           "item": "minecraft:netherite_sword",
           "enchantments": [
-            {"id":  "minecraft:sharpness", "level": 20}
+            {"id":  "minecraft:sharpness", "level": 25}
           ]
         },
         "head": {
-          "item": "minecraft:netherite_helmet",
+          "item": "hellmod:true_amethyst_helmet",
           "enchantments": [
             {"id":  "minecraft:protection", "level": 10}
           ]
@@ -270,10 +284,16 @@
           "enchantments": [
             {"id":  "minecraft:protection", "level": 15}
           ]
+        },
+        "feet": {
+          "item": "hellmod:nether_infused_boots",
+          "enchantments": [
+            {"id":  "minecraft:protection", "level": 5}
+          ]
         }
       },
       "effects" :  [
-        {"id": "minecraft:strength", "amplifier": 0 },
+        {"id": "minecraft:strength", "amplifier": 2 },
         {"id": "minecraft:speed", "amplifier": 2 }
       ],
       "loot": {
@@ -290,9 +310,9 @@
     },
     "hoglin":{
       "effects" :  [
-        {"id": "minecraft:resistance", "amplifier": 2 },
-        {"id": "minecraft:speed", "amplifier": 4 },
-        {"id": "minecraft:strength", "amplifier": 6 }
+        {"id": "minecraft:resistance", "amplifier": 3 },
+        {"id": "minecraft:speed", "amplifier": 5 },
+        {"id": "minecraft:strength", "amplifier": 10 }
       ],
       "follow_range": 40
     },
@@ -301,25 +321,25 @@
         "head": {
           "item": "minecraft:golden_helmet",
           "enchantments": [
-            {"id":  "minecraft:protection", "level": 6}
+            {"id":  "minecraft:protection", "level": 10}
           ]
         },
         "chest": {
           "item": "minecraft:golden_chestplate",
           "enchantments": [
-            {"id":  "minecraft:protection", "level": 6}
+            {"id":  "minecraft:protection", "level": 10}
           ]
         },
         "legs": {
           "item": "minecraft:golden_leggings",
           "enchantments": [
-            {"id":  "minecraft:protection", "level": 6}
+            {"id":  "minecraft:protection", "level": 10}
           ]
         },
         "feet": {
           "item": "minecraft:golden_boots",
           "enchantments": [
-            {"id":  "minecraft:protection", "level": 6}
+            {"id":  "minecraft:protection", "level": 10}
           ]
         }
       },
@@ -337,12 +357,12 @@
     },
     "ghast": {
       "fireball": {
-        "fireball_power": 7
+        "fireball_power": 10
       },
       "loot":{
         "extra_drops": [{
           "item": "minecraft:gold_block",
-          "chance": 0.29,
+          "chance": 0.3,
           "count": 1
         },
           {
@@ -353,7 +373,7 @@
         ]
       },
       "health": {
-        "max": 50
+        "max": 60
       },
       "follow_range": 200
     },
@@ -365,15 +385,15 @@
       "effects": [
         {"id": "minecraft:resistance", "amplifier": 1 },
         {"id": "minecraft:regeneration", "amplifier": 2 },
-        {"id": "minecraft:strength", "amplifier": 7 }
+        {"id": "minecraft:strength", "amplifier": 10 }
       ],
       "health": {
-        "max": 55
+        "max": 70
       },
       "loot": {
         "extra_drops": [{
           "item": "hellmod:blaze_main_rod",
-          "chance": 0.15,
+          "chance": 0.2,
           "count": 1
         }]
       },
@@ -381,14 +401,14 @@
     },
     "magma_cube": {
       "effects" :  [
-        {"id": "minecraft:jump_boost", "amplifier": 10 },
-        {"id": "minecraft:strength", "amplifier": 3 },
-        {"id": "minecraft:resistance", "amplifier": 1 }
+        {"id": "minecraft:jump_boost", "amplifier": 15 },
+        {"id": "minecraft:strength", "amplifier": 6 },
+        {"id": "minecraft:resistance", "amplifier": 2 }
       ],
       "loot": {
         "extra_drops": [{
           "item": "hellmod:magma_cube_core",
-          "chance": 0.05,
+          "chance": 0.1,
           "count": 1
         }]
       },
@@ -396,9 +416,9 @@
     },
     "slime": {
       "effects" :  [
-        {"id": "minecraft:jump_boost", "amplifier": 10 },
-        {"id": "minecraft:strength", "amplifier": 1 },
-        {"id": "minecraft:resistance", "amplifier": 1 }
+        {"id": "minecraft:jump_boost", "amplifier": 15 },
+        {"id": "minecraft:strength", "amplifier": 6 },
+        {"id": "minecraft:resistance", "amplifier": 2 }
       ],
       "follow_range": 30,
       "mod_spawn": true
@@ -408,13 +428,13 @@
         "mainhand":{
           "item": "hellmod:nether_infused_axe",
           "enchantments": [
-            {"id": "minecraft:sharpness", "level": 15}
+            {"id": "minecraft:sharpness", "level": 20}
           ]
         }
       },
       "effects" :  [
         {"id": "minecraft:strength", "amplifier": 2 },
-        {"id": "minecraft:speed", "amplifier": 2 }
+        {"id": "minecraft:speed", "amplifier": 3 }
       ],
       "follow_range": 50
     },
@@ -431,25 +451,25 @@
         "head": {
           "item": "minecraft:chainmail_helmet",
           "enchantments": [
-            {"id":  "minecraft:protection", "level": 6}
+            {"id":  "minecraft:protection", "level": 8}
           ]
         },
         "chest": {
           "item": "minecraft:chainmail_chestplate",
           "enchantments": [
-            {"id":  "minecraft:protection", "level": 6}
+            {"id":  "minecraft:protection", "level": 8}
           ]
         },
         "legs": {
           "item": "minecraft:chainmail_leggings",
           "enchantments": [
-            {"id":  "minecraft:protection", "level": 6}
+            {"id":  "minecraft:protection", "level": 8}
           ]
         },
         "feet": {
           "item": "minecraft:chainmail_boots",
           "enchantments": [
-            {"id":  "minecraft:protection", "level": 6}
+            {"id":  "minecraft:protection", "level": 8}
           ]
         }
       },
@@ -458,7 +478,7 @@
     "piglin_brute": {
       "equipment": {
         "mainhand":{
-          "item": "hellmod:nether_infused_axe",
+          "item": "hellmod:true_amethyst_axe",
           "enchantments": [
             {"id": "minecraft:sharpness", "level": 20}
           ]
@@ -466,19 +486,19 @@
         "head": {
           "item": "minecraft:netherite_helmet",
           "enchantments": [
-            {"id":  "minecraft:protection", "level": 6}
+            {"id":  "minecraft:protection", "level": 7}
           ]
         },
         "chest": {
           "item": "hellmod:nether_infused_chestplate",
           "enchantments": [
-            {"id":  "minecraft:protection", "level": 6}
+            {"id":  "minecraft:protection", "level": 7}
           ]
         },
         "feet": {
-          "item": "minecraft:netherite_boots",
+          "item": "minecraft:nether_infused_boots",
           "enchantments": [
-            {"id":  "minecraft:protection", "level": 4}
+            {"id":  "minecraft:protection", "level": 5}
           ]
         }
       },
@@ -499,26 +519,28 @@
     "zombified_piglin": {
       "equipment": {
         "mainhand":{
-          "item": "minecraft:netherite_sword"
+          "item": "minecraft:true_amethyst_sword"
         }
       },
       "effects" :  [
-        {"id": "minecraft:speed", "amplifier": 1 },
-        {"id": "minecraft:strength", "amplifier": 1 }
-      ]
+        {"id": "minecraft:speed", "amplifier": 2 },
+        {"id": "minecraft:strength", "amplifier": 2 }
+      ],
+      "health": {
+        "max": 35
+      }
     },
     "phantom": {
       "effects" :  [
         {"id": "minecraft:resistance", "amplifier": 1 },
-        {"id": "minecraft:strength", "amplifier": 10 },
-        {"id": "minecraft:speed", "amplifier": 4 }
+        {"id": "minecraft:strength", "amplifier": 12 },
+        {"id": "minecraft:speed", "amplifier": 6 }
       ],
       "follow_range": 70,
       "health": {
-        "max": 40
+        "max": 45
       }
     }
-  },
-  "disable_nether": false
+  }
 }
 

@@ -171,6 +171,31 @@ public class DatagenModLanguageProvider extends FabricLanguageProvider {
         builder.add("tooltip.hellmod.invencibility_rune.line1", "Stage 3");
         builder.add("tooltip.hellmod.invencibility_rune.line3", "Epic");
 
+        builder.add(ModItems.PANIC_BALL, "Panic Ball");
+        builder.add("tooltip.hellmod.panic_ball.line1", "Stage 3");
+        builder.add("tooltip.hellmod.panic_ball.line3", "Epic");
+
+        builder.add(ModItems.PANIC_TOTEM_OF_UNDYING, "Panic Totem of Undying");
+        builder.add("tooltip.hellmod.panic_totem_of_undying.line1", "Stage 3");
+        builder.add("tooltip.hellmod.panic_totem_of_undying.line3", "Epic");
+
+        builder.add(ModItems.CREEPER_BOMB_HORN, "Creeper Bomb Horn");
+        builder.add("tooltip.hellmod.creeper_bomb_horn.line1", "Stage 3");
+        builder.add("tooltip.hellmod.creeper_bomb_horn.line3", "Epic");
+
+        builder.add(ModItems.ZOMBIE_BERSERK_HORN, "Berserk Zombie Horn");
+        builder.add("tooltip.hellmod.berserk_zombie_horn.line1", "Stage 3");
+        builder.add("tooltip.hellmod.berserk_zombie_horn.line3", "Epic");
+
+        builder.add(ModItems.GIGAPHANTOM_HORN, "Gigaphantom Horn");
+        builder.add("tooltip.hellmod.gigaphantom_horn.line1", "Stage 3");
+        builder.add("tooltip.hellmod.gigaphantom_horn.line3", "Epic");
+
+        builder.add(ModItems.RARE_HARDCORE_HEART, "Rare Hardcore Heart");
+        builder.add("tooltip.hellmod.rare_hardcore_heart.line1", "Stage 1");
+        builder.add("tooltip.hellmod.rare_hardcore_heart.line7", "Up to 18 Max HP");
+
+
         builder.add("item.minecraft.potion.effect.panic_potion", "Panic Potion");
 
 

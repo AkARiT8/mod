@@ -74,6 +74,14 @@ public class ModItemGroups {
                         entries.add(ModItems.TRUE_AMETHYST_SHIELD);
                         entries.add(ModItems.TRUE_AMETHYST_BOW);
                         entries.add(ModItems.INVENCIBILITY_RUNE);
+                        entries.add(ModItems.PANIC_BALL);
+                        entries.add(ModItems.PANIC_TOTEM_OF_UNDYING);
+                        entries.add(ModItems.CREEPER_BOMB_HORN);
+                        entries.add(ModItems.ZOMBIE_BERSERK_HORN);
+                        entries.add(ModItems.GIGAPHANTOM_HORN);
+                        entries.add(ModItems.RARE_HARDCORE_HEART);
+
+
                         ItemStack stack = new ItemStack(Items.POTION);
 
                         stack.set(

@@ -22,7 +22,6 @@ public class ModEntities {
                             .build()
             );
 
-    // 💀 NUEVO: BOSS CREEPER
     public static final EntityType<BossCreeperEntity> BOSS_CREEPER =
             Registry.register(
                     Registries.ENTITY_TYPE,

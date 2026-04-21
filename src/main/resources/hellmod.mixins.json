@@ -15,6 +15,7 @@
     "NetherPortalBlockMixin",
     "SmallFireballMixin",
     "SpawnGroupMixin",
+    "SpawnHelperMixin",
     "UnbreakingMixin",
     "Accessor.AnvilScreenHandlerAccessor",
     "Accessor.CreeperAccessor",

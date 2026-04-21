@@ -32,8 +32,8 @@ public class TotemManager {
         register("hellmod:speed_totem_of_undying", (player) -> {
             player.addStatusEffect(new StatusEffectInstance(StatusEffects.SPEED, 200, 1));
         });
-        register("hellmod:barrier_totem_of_undying", (player) -> {
-        });
+        register("hellmod:barrier_totem_of_undying", (player) -> {});
+        register("hellmod:panic_totem_of_undying", (player) -> {});
     }
 
     public static boolean isTotem(ItemStack stack) {
@@ -111,6 +111,11 @@ public class TotemManager {
 
             player.addStatusEffect(new StatusEffectInstance(StatusEffects.RESISTANCE, 200, 0));
             player.addStatusEffect(new StatusEffectInstance(StatusEffects.ABSORPTION, 1200, 4));
+        } else if (id.equals(new Identifier("hellmod:panic_totem_of_undying"))) {
+
+            player.addStatusEffect(new StatusEffectInstance(StatusEffects.LEVITATION ,40,  49));
+            player.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOW_FALLING, 1200, 0));
+            player.addStatusEffect(new StatusEffectInstance(StatusEffects.REGENERATION, 400, 0));
         }
     }
 

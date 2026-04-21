@@ -22,6 +22,7 @@ import dev.hellmod.stage.modifier.StageModifierManager;
 import dev.hellmod.stage.modifier.impl.*;
 import dev.hellmod.stage.recipe.StageRecipeReloadListener;
 import dev.hellmod.util.ModItemEffect;
+import dev.hellmod.util.SpawnController;
 import dev.hellmod.util.VariantHolder;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
@@ -176,21 +177,24 @@ public class HellMod implements ModInitializer {
 				ModItemEffect.tick(player);
 			}
 
-			boolean active = false;
+			int highestStage = 0;
 
 			for (ServerWorld world : server.getWorlds()) {
 
 				int stage = StageData.get(world).getStage();
 
-				if (stage >= 3) {
-					active = true;
+
+				if (stage > highestStage) {
+					highestStage = stage;
 				}
 
 				for (PlayerEntity player : world.getPlayers()) {
 
+					int range = 150;
+
 					for (GhastEntity ghast : world.getEntitiesByClass(
 							GhastEntity.class,
-							player.getBoundingBox().expand(200),
+							player.getBoundingBox().expand(range),
 							e -> true
 					)) {
 
@@ -201,7 +205,7 @@ public class HellMod implements ModInitializer {
 				}
 			}
 
-			dev.hellmod.util.SpawnController.STAGE_3_ACTIVE = active;
+			SpawnController.CURRENT_STAGE = Math.min(highestStage, 5);
 		});
 		PayloadTypeRegistry.playS2C().register(
 				ShowTotemPayload.ID,

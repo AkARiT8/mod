@@ -55,6 +55,8 @@
     },
     "creeper": {
       "charged": true,
+      "fuse_time": 30,
+      "explosion_power": 6,
       "effects": [
         { "id": "minecraft:speed", "amplifier": 2 },
         { "id": "minecraft:invisibility", "amplifier": 0 },

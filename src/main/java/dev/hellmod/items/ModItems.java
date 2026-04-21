@@ -243,7 +243,37 @@ public class ModItems {
             new InvencibilityRune(new Item.Settings().maxCount(1))
     );
 
+    public static final Item PANIC_BALL = registerItem("panic_ball", new CustoModItem(new Item.Settings()));
 
+    public static final Item PANIC_TOTEM_OF_UNDYING = registerItem("panic_totem_of_undying", new CustoModItem(new Item.Settings().maxCount(1)));
+
+    public static final Item CREEPER_BOMB_HORN = Registry.register(
+            Registries.ITEM,
+            new Identifier("hellmod", "creeper_bomb_horn"),
+            new CustomCreeperHornItem(new Item.Settings().maxCount(1))
+    );
+
+    public static final Item ZOMBIE_BERSERK_HORN = Registry.register(
+            Registries.ITEM,
+            new Identifier("hellmod", "berserk_zombie_horn"),
+            new CustomZombieHornItem(new Item.Settings().maxCount(1))
+    );
+
+    public static final Item GIGAPHANTOM_HORN = Registry.register(
+            Registries.ITEM,
+            new Identifier("hellmod", "gigaphantom_horn"),
+            new CustomPhantomHornItem(new Item.Settings().maxCount(1))
+    );
+
+    public static final Item RARE_HARDCORE_HEART = registerItem(
+            "rare_hardcore_heart",
+            new CustomRareHeart(new Item.Settings().food(
+                    new FoodComponent.Builder()
+                            .saturationModifier(0.0f)
+                            .alwaysEdible()
+                            .build()
+            ))
+    );
 
 
     private static Item registerItem(String itemid, Item item) {

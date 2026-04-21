@@ -14,13 +14,14 @@ public class SpawnGroupMixin {
 
         SpawnGroup self = (SpawnGroup)(Object)this;
 
-        if (self == SpawnGroup.MONSTER && dev.hellmod.util.SpawnController.STAGE_3_ACTIVE) {
+        if (self != SpawnGroup.MONSTER) return;
 
-            int original = cir.getReturnValue();
+        float multiplier = dev.hellmod.stage.modifier.impl.MobcapModifier.getMobcapModifier();
 
-            int newCap = original * 2;
+        if (multiplier <= 1.0f) return;
 
-            cir.setReturnValue(newCap);
-        }
+        int original = cir.getReturnValue();
+
+        cir.setReturnValue(Math.round(original * multiplier));
     }
 }

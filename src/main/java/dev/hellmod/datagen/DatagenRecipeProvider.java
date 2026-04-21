@@ -320,5 +320,198 @@ public class DatagenRecipeProvider extends FabricRecipeProvider {
                 .input('L', ModItems.EMPOWERED_COAL)
                 .criterion(hasItem(ModItems.NETHER_INFUSED_INGOT),conditionsFromItem(ModItems.NETHER_INFUSED_INGOT))
                 .offerTo(recipeExporter, new Identifier(HellMod.MODID, "nether_infused_template"));
+
+        //STAGE 3
+
+        SmithingTransformRecipeJsonBuilder.create(
+                Ingredient.ofItems(ModItems.TRUE_AMETHYST_TEMPLATE),
+                Ingredient.ofItems(ModItems.NETHER_INFUSED_AXE),
+                Ingredient.ofItems(ModItems.TRUE_AMETHYST_INGOT),
+                RecipeCategory.COMBAT,
+                ModItems.TRUE_AMETHYST_AXE
+        ).criterion(
+                "has_true_amethyst_ingot",
+                conditionsFromItem(ModItems.TRUE_AMETHYST_INGOT)
+        ).offerTo(recipeExporter, "true_amethyst_axe");
+
+        SmithingTransformRecipeJsonBuilder.create(
+                Ingredient.ofItems(ModItems.TRUE_AMETHYST_TEMPLATE),
+                Ingredient.ofItems(ModItems.NETHER_INFUSED_SWORD),
+                Ingredient.ofItems(ModItems.TRUE_AMETHYST_INGOT),
+                RecipeCategory.COMBAT,
+                ModItems.TRUE_AMETHYST_SWORD
+        ).criterion(
+                "has_true_amethyst_ingot",
+                conditionsFromItem(ModItems.TRUE_AMETHYST_INGOT)
+        ).offerTo(recipeExporter, "true_amethyst_sword");
+
+        SmithingTransformRecipeJsonBuilder.create(
+                Ingredient.ofItems(ModItems.TRUE_AMETHYST_TEMPLATE),
+                Ingredient.ofItems(ModItems.NETHER_INFUSED_HOE),
+                Ingredient.ofItems(ModItems.TRUE_AMETHYST_INGOT),
+                RecipeCategory.COMBAT,
+                ModItems.TRUE_AMETHYST_HOE
+        ).criterion(
+                "has_true_amethyst_ingot",
+                conditionsFromItem(ModItems.TRUE_AMETHYST_INGOT)
+        ).offerTo(recipeExporter, "true_amethyst_hoe");
+
+        SmithingTransformRecipeJsonBuilder.create(
+                Ingredient.ofItems(ModItems.TRUE_AMETHYST_TEMPLATE),
+                Ingredient.ofItems(ModItems.NETHER_INFUSED_PICKAXE),
+                Ingredient.ofItems(ModItems.TRUE_AMETHYST_INGOT),
+                RecipeCategory.COMBAT,
+                ModItems.TRUE_AMETHYST_PICKAXE
+        ).criterion(
+                "has_true_amethyst_ingot",
+                conditionsFromItem(ModItems.TRUE_AMETHYST_INGOT)
+        ).offerTo(recipeExporter, "true_amethyst_pickaxe");
+
+        SmithingTransformRecipeJsonBuilder.create(
+                Ingredient.ofItems(ModItems.TRUE_AMETHYST_TEMPLATE),
+                Ingredient.ofItems(ModItems.NETHER_INFUSED_SHOVEL),
+                Ingredient.ofItems(ModItems.TRUE_AMETHYST_INGOT),
+                RecipeCategory.COMBAT,
+                ModItems.TRUE_AMETHYST_SHOVEL
+        ).criterion(
+                "has_true_amethyst_ingot",
+                conditionsFromItem(ModItems.TRUE_AMETHYST_INGOT)
+        ).offerTo(recipeExporter, "true_amethyst_shovel");
+
+        SmithingTransformRecipeJsonBuilder.create(
+                Ingredient.ofItems(ModItems.TRUE_AMETHYST_TEMPLATE),
+                Ingredient.ofItems(ModItems.NETHER_INFUSED_HELMET),
+                Ingredient.ofItems(ModItems.TRUE_AMETHYST_INGOT),
+                RecipeCategory.COMBAT,
+                ModItems.TRUE_AMETHYST_HELMET
+        ).criterion(
+                "has_true_amethyst_ingot",
+                conditionsFromItem(ModItems.TRUE_AMETHYST_INGOT)
+        ).offerTo(recipeExporter, "true_amethyst_helmet");
+
+        SmithingTransformRecipeJsonBuilder.create(
+                Ingredient.ofItems(ModItems.TRUE_AMETHYST_TEMPLATE),
+                Ingredient.ofItems(ModItems.NETHER_INFUSED_CHESTPLATE),
+                Ingredient.ofItems(ModItems.TRUE_AMETHYST_INGOT),
+                RecipeCategory.COMBAT,
+                ModItems.TRUE_AMETHYST_CHESTPLATE
+        ).criterion(
+                "has_true_amethyst_ingot",
+                conditionsFromItem(ModItems.TRUE_AMETHYST_INGOT)
+        ).offerTo(recipeExporter, "true_amethyst_chestplate");
+
+        SmithingTransformRecipeJsonBuilder.create(
+                Ingredient.ofItems(ModItems.TRUE_AMETHYST_TEMPLATE),
+                Ingredient.ofItems(ModItems.NETHER_INFUSED_LEGGINGS),
+                Ingredient.ofItems(ModItems.TRUE_AMETHYST_INGOT),
+                RecipeCategory.COMBAT,
+                ModItems.TRUE_AMETHYST_LEGGINGS
+        ).criterion(
+                "has_true_amethyst_ingot",
+                conditionsFromItem(ModItems.TRUE_AMETHYST_INGOT)
+        ).offerTo(recipeExporter, "true_amethyst_leggings");
+
+        SmithingTransformRecipeJsonBuilder.create(
+                Ingredient.ofItems(ModItems.TRUE_AMETHYST_TEMPLATE),
+                Ingredient.ofItems(ModItems.NETHER_INFUSED_BOOTS),
+                Ingredient.ofItems(ModItems.TRUE_AMETHYST_INGOT),
+                RecipeCategory.COMBAT,
+                ModItems.TRUE_AMETHYST_BOOTS
+        ).criterion(
+                "has_true_amethyst_ingot",
+                conditionsFromItem(ModItems.TRUE_AMETHYST_INGOT)
+        ).offerTo(recipeExporter, "true_amethyst_boots");
+
+        SmithingTransformRecipeJsonBuilder.create(
+                Ingredient.ofItems(ModItems.TRUE_AMETHYST_TEMPLATE),
+                Ingredient.ofItems(Items.BOW),
+                Ingredient.ofItems(ModItems.TRUE_AMETHYST_INGOT),
+                RecipeCategory.COMBAT,
+                ModItems.TRUE_AMETHYST_BOW
+        ).criterion(
+                "has_true_amethyst_ingot",
+                conditionsFromItem(ModItems.TRUE_AMETHYST_INGOT)
+        ).offerTo(recipeExporter, "true_amethyst_bow");
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.TRUE_AMETHYST_SHIELD)
+                .pattern("PIP")
+                .pattern("POP")
+                .pattern("PIP")
+                .input('I', ModItems.TRUE_AMETHYST_INGOT)
+                .input('O', Items.SHIELD)
+                .input('P', Items.AMETHYST_SHARD)
+                .criterion(hasItem(ModItems.TRUE_AMETHYST_INGOT),conditionsFromItem(ModItems.TRUE_AMETHYST_INGOT))
+                .offerTo(recipeExporter, new Identifier(HellMod.MODID, "true_amethyst_shield"));
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.PANIC_BALL)
+                .pattern("PIP")
+                .pattern("LOL")
+                .pattern("PKP")
+                .input('I', ModItems.TRUE_AMETHYST_INGOT)
+                .input('O', Items.SLIME_BALL)
+                .input('P', Items.PHANTOM_MEMBRANE)
+                .input('L', ModItems.GHAST_APPENDIX)
+                .input('K', ModItems.PURE_EMERALD)
+                .criterion(hasItem(ModItems.TRUE_AMETHYST_INGOT),conditionsFromItem(ModItems.TRUE_AMETHYST_INGOT))
+                .offerTo(recipeExporter, new Identifier(HellMod.MODID, "panic_ball"));
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.INVENCIBILITY_RUNE)
+                .pattern("PIP")
+                .pattern("LOL")
+                .pattern("PKP")
+                .input('P', ModItems.PURE_IRON_INGOT)
+                .input('O', Items.NETHERITE_INGOT)
+                .input('I', Items.IRON_CHESTPLATE)
+                .input('L', ModBlocks.PURE_IRON_BLOCK.getRight())
+                .input('K', ModItems.TRUE_AMETHYST_INGOT)
+                .criterion(hasItem(ModItems.TRUE_AMETHYST_INGOT),conditionsFromItem(ModItems.TRUE_AMETHYST_INGOT))
+                .offerTo(recipeExporter, new Identifier(HellMod.MODID, "invencibility_rune"));
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.PANIC_TOTEM_OF_UNDYING)
+                .pattern("PIP")
+                .pattern("LOL")
+                .pattern("PKP")
+                .input('I', ModItems.TRUE_AMETHYST_SHARD)
+                .input('P', Items.AMETHYST_SHARD)
+                .input('O', Items.TOTEM_OF_UNDYING)
+                .input('K', ModItems.PANIC_BALL)
+                .input('L', ModItems.PURE_EMERALD)
+                .criterion(hasItem(ModItems.TRUE_AMETHYST_SHARD),conditionsFromItem(ModItems.TRUE_AMETHYST_SHARD))
+                .offerTo(recipeExporter, new Identifier(HellMod.MODID, "panic_totem_of_undying"));
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.TRUE_AMETHYST_SHARD)
+                .pattern("PIP")
+                .pattern("ILI")
+                .pattern("PIP")
+                .input('I', Items.AMETHYST_SHARD)
+                .input('P', ModItems.EMPOWERED_COAL)
+                .input('L', ModItems.PURE_DIAMOND)
+                .criterion(hasItem(ModItems.EMPOWERED_COAL),conditionsFromItem(ModItems.EMPOWERED_COAL))
+                .offerTo(recipeExporter, new Identifier(HellMod.MODID, "true_amethyst_shard"));
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.TRUE_AMETHYST_TEMPLATE)
+                .pattern("IPI")
+                .pattern("ILI")
+                .pattern("IPI")
+                .input('I', Items.AMETHYST_SHARD)
+                .input('P', ModItems.TRUE_AMETHYST_INGOT)
+                .input('L', Items.NETHERITE_UPGRADE_SMITHING_TEMPLATE)
+                .criterion(hasItem(ModItems.TRUE_AMETHYST_INGOT),conditionsFromItem(ModItems.TRUE_AMETHYST_INGOT))
+                .offerTo(recipeExporter, new Identifier(HellMod.MODID, "true_amethyst_template"));
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.TRUE_AMETHYST_INGOT)
+                .pattern("OKP")
+                .pattern("ILI")
+                .pattern("PKO")
+                .input('O', ModItems.CREEPER_ESSENCE)
+                .input('K', ModItems.ZOMBIE_ESSENCE)
+                .input('I', ModItems.PHANTOM_ESSENCE)
+                .input('P', ModItems.TRUE_AMETHYST_SHARD)
+                .input('L', Items.NETHERITE_INGOT)
+                .criterion(hasItem(ModItems.TRUE_AMETHYST_SHARD),conditionsFromItem(ModItems.TRUE_AMETHYST_SHARD))
+                .offerTo(recipeExporter, new Identifier(HellMod.MODID, "true_amethyst_ingot"));
+
+
+
     }
 }
