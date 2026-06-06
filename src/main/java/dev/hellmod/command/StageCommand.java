@@ -3,10 +3,12 @@ package dev.hellmod.command;
 import com.mojang.brigadier.CommandDispatcher;
 import com.mojang.brigadier.arguments.IntegerArgumentType;
 
-import dev.hellmod.blocks.custom.StageData;
+import dev.hellmod.network.ModServerEvents;
+import dev.hellmod.stage.manager.StageData;
 
 import net.minecraft.server.command.CommandManager;
 import net.minecraft.server.command.ServerCommandSource;
+import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.text.Text;
 
@@ -27,6 +29,11 @@ public class StageCommand {
 
                                             for (ServerWorld world : server.getWorlds()) {
                                                 StageData data = StageData.get(world);
+
+                                                for (ServerPlayerEntity player : world.getServer().getPlayerManager().getPlayerList()) {
+                                                    ModServerEvents.sendStage(player);
+                                                }
+
                                                 data.setStage(value);
                                                 data.setStageStepTo0();
                                             }

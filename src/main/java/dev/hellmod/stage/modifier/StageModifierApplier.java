@@ -2,8 +2,10 @@ package dev.hellmod.stage.modifier;
 
 import com.google.gson.JsonObject;
 import dev.hellmod.util.VariantHolder;
+import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.mob.CreeperEntity;
+import net.minecraft.entity.mob.ZombifiedPiglinEntity;
 import net.minecraft.server.world.ServerWorld;
 
 public class StageModifierApplier {
@@ -39,6 +41,31 @@ public class StageModifierApplier {
             if (entity.getWorld().getRandom().nextFloat() < 0.03f) {
 
                 if (!(entity.getWorld() instanceof ServerWorld world)) return;
+
+                if (entity instanceof ZombifiedPiglinEntity) {
+
+                    if (world.getRandom().nextFloat() < 0.2f) {
+
+                        System.out.println("pis");
+
+                        var brute = EntityType.PIGLIN_BRUTE.create(world);
+
+                        if (brute != null) {
+                            brute.refreshPositionAndAngles(
+                                    entity.getX(),
+                                    entity.getY(),
+                                    entity.getZ(),
+                                    entity.getYaw(),
+                                    entity.getPitch()
+                            );
+
+                            world.spawnEntity(brute);
+                            entity.discard();
+
+                            return;
+                        }
+                    }
+                }
 
                 if (!world.getRegistryKey().equals(ServerWorld.OVERWORLD)) return;
 

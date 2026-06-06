@@ -1,0 +1,13 @@
+{
+  "vertex": "grayscale",
+  "fragment": "grayscale",
+  "samplers": [
+    {
+      "name": "DiffuseSampler"
+    }
+  ],
+  "attributes": [
+    "Position"
+  ],
+  "uniforms": []
+}

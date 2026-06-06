@@ -3,12 +3,17 @@
   "package": "dev.hellmod.client.mixin",
   "compatibilityLevel": "JAVA_21",
   "client": [
-    "ShieldTextureMixin"
+    "FogMixin",
+    "GameRendererMixin",
+    "ShieldTextureMixin",
+    "SkyColorMixin"
   ],
   "injectors": {
     "defaultRequire": 1
   },
   "overwrites": {
     "requireAnnotations": true
-	}
+  },
+  "mixins": [
+  ]
 }

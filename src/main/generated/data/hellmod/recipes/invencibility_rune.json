@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "I": {
+      "item": "minecraft:iron_chestplate"
+    },
+    "K": {
+      "item": "hellmod:true_amethyst_ingot"
+    },
+    "L": {
+      "item": "hellmod:pure_iron_block"
+    },
+    "O": {
+      "item": "minecraft:netherite_ingot"
+    },
+    "P": {
+      "item": "hellmod:pure_iron_ingot"
+    }
+  },
+  "pattern": [
+    "PIP",
+    "LOL",
+    "PKP"
+  ],
+  "result": {
+    "count": 1,
+    "id": "hellmod:invencibility_rune"
+  }
+}

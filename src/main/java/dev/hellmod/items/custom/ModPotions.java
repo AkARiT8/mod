@@ -14,7 +14,7 @@ public class ModPotions {
             new Identifier("hellmod", "panic_potion"),
             new Potion(
                     new StatusEffectInstance(StatusEffects.LEVITATION, 40, 50),
-                     new StatusEffectInstance(StatusEffects.SLOW_FALLING, 1200, 0),
+                     new StatusEffectInstance(StatusEffects.SLOW_FALLING, 400, 0),
                     new StatusEffectInstance(StatusEffects.REGENERATION, 400, 0)
             )
     );

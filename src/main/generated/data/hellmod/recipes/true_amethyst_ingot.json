@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "I": {
+      "item": "hellmod:phantom_essence"
+    },
+    "K": {
+      "item": "hellmod:zombie_essence"
+    },
+    "L": {
+      "item": "minecraft:netherite_ingot"
+    },
+    "O": {
+      "item": "hellmod:creeper_essence"
+    },
+    "P": {
+      "item": "hellmod:true_amethyst_shard"
+    }
+  },
+  "pattern": [
+    "OKP",
+    "ILI",
+    "PKO"
+  ],
+  "result": {
+    "count": 1,
+    "id": "hellmod:true_amethyst_ingot"
+  }
+}

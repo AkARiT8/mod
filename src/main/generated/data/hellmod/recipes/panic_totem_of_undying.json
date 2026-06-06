@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "I": {
+      "item": "hellmod:true_amethyst_shard"
+    },
+    "K": {
+      "item": "hellmod:panic_ball"
+    },
+    "L": {
+      "item": "hellmod:pure_emerald"
+    },
+    "O": {
+      "item": "minecraft:totem_of_undying"
+    },
+    "P": {
+      "item": "minecraft:amethyst_shard"
+    }
+  },
+  "pattern": [
+    "PIP",
+    "LOL",
+    "PKP"
+  ],
+  "result": {
+    "count": 1,
+    "id": "hellmod:panic_totem_of_undying"
+  }
+}

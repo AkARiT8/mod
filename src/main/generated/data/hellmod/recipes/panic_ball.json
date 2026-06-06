@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "I": {
+      "item": "hellmod:true_amethyst_ingot"
+    },
+    "K": {
+      "item": "hellmod:pure_emerald"
+    },
+    "L": {
+      "item": "hellmod:ghast_appendix"
+    },
+    "O": {
+      "item": "minecraft:slime_ball"
+    },
+    "P": {
+      "item": "minecraft:phantom_membrane"
+    }
+  },
+  "pattern": [
+    "PIP",
+    "LOL",
+    "PKP"
+  ],
+  "result": {
+    "count": 1,
+    "id": "hellmod:panic_ball"
+  }
+}

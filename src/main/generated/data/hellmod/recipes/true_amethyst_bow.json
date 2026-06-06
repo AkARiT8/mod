@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "hellmod:true_amethyst_ingot"
+  },
+  "base": {
+    "item": "minecraft:bow"
+  },
+  "result": {
+    "count": 1,
+    "id": "hellmod:true_amethyst_bow"
+  },
+  "template": {
+    "item": "hellmod:true_amethyst_template"
+  }
+}

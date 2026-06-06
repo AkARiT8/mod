@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "L": {
+      "item": "hellmod:true_amethyst_shard"
+    },
+    "P": {
+      "item": "minecraft:rotten_flesh"
+    }
+  },
+  "pattern": [
+    "PPP",
+    "PLP",
+    "PPP"
+  ],
+  "result": {
+    "count": 1,
+    "id": "hellmod:berserk_zombie_horn"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "I": {
+      "item": "hellmod:true_amethyst_ingot"
+    },
+    "O": {
+      "item": "minecraft:shield"
+    },
+    "P": {
+      "item": "minecraft:amethyst_shard"
+    }
+  },
+  "pattern": [
+    "PIP",
+    "POP",
+    "PIP"
+  ],
+  "result": {
+    "count": 1,
+    "id": "hellmod:true_amethyst_shield"
+  }
+}

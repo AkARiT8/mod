@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "I": {
+      "item": "hellmod:empowered_coal_block"
+    },
+    "K": {
+      "item": "hellmod:true_amethyst_shard"
+    },
+    "L": {
+      "item": "hellmod:uncommon_hardcore_heart"
+    },
+    "O": {
+      "item": "hellmod:pure_gold_block"
+    },
+    "P": {
+      "item": "minecraft:amethyst_shard"
+    }
+  },
+  "pattern": [
+    "IKI",
+    "PLP",
+    "POP"
+  ],
+  "result": {
+    "count": 1,
+    "id": "hellmod:rare_hardcore_heart"
+  }
+}

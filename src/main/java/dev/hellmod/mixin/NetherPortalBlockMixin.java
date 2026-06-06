@@ -1,7 +1,6 @@
 package dev.hellmod.mixin;
 
-import dev.hellmod.blocks.custom.StageData;
-import dev.hellmod.stage.modifier.StageModifierManager;
+import dev.hellmod.stage.manager.StageData;
 import dev.hellmod.stage.modifier.impl.NetherModifier;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.NetherPortalBlock;

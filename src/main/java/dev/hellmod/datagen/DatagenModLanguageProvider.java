@@ -1,6 +1,7 @@
 package dev.hellmod.datagen;
 
 import dev.hellmod.blocks.ModBlocks;
+import dev.hellmod.enchantment.ModEnchantments;
 import dev.hellmod.items.ModItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider;
@@ -195,11 +196,10 @@ public class DatagenModLanguageProvider extends FabricLanguageProvider {
         builder.add("tooltip.hellmod.rare_hardcore_heart.line1", "Stage 1");
         builder.add("tooltip.hellmod.rare_hardcore_heart.line7", "Up to 18 Max HP");
 
-
         builder.add("item.minecraft.potion.effect.panic_potion", "Panic Potion");
 
-
-
+        builder.add(ModEnchantments.ENLIGHTENMENT, "Enlightenment");
+        builder.add(ModEnchantments.KNOWLEDGE, "knowledge");
 
         //Blocks
         builder.add(ModBlocks.PURE_IRON_BLOCK.getLeft(), "Block of Pure Iron");

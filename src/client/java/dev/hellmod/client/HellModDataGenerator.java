@@ -16,6 +16,7 @@ public class HellModDataGenerator implements DataGeneratorEntrypoint {
 		pack.addProvider(DatagenAdvancementProvider::new);
 		pack.addProvider(DatagenModBlockTagProvider::new);
 		pack.addProvider(DatagenModLanguageProvider::new);
+		pack.addProvider(DatagenEntityLootTableProvider::new);
 
 	}
 }

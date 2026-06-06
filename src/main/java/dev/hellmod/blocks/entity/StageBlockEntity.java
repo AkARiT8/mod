@@ -1,26 +1,22 @@
 package dev.hellmod.blocks.entity;
 
-import dev.hellmod.blocks.custom.StageData;
+import dev.hellmod.network.ModServerEvents;
+import dev.hellmod.stage.manager.StageData;
 import dev.hellmod.items.ModItems;
 import dev.hellmod.registry.ModBlockEntities;
 import dev.hellmod.screen.StageScreenHandler;
-import dev.hellmod.stage.modifier.StageModifierApplier;
-import dev.hellmod.stage.modifier.StageModifierManager;
 import dev.hellmod.stage.recipe.StageRecipeManager;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.BlockEntity;
-import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.Inventory;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
-import net.minecraft.registry.Registries;
 import net.minecraft.screen.ArrayPropertyDelegate;
 import net.minecraft.screen.NamedScreenHandlerFactory;
 import net.minecraft.screen.PropertyDelegate;
 import net.minecraft.screen.ScreenHandler;
-import net.minecraft.server.MinecraftServer;
+import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.text.Text;
@@ -125,6 +121,10 @@ public class StageBlockEntity extends BlockEntity implements NamedScreenHandlerF
 
             StageData data = StageData.get(serverWorld);
             int newStage = data.getStage() + 1;
+
+            for (ServerPlayerEntity player : world.getServer().getPlayerManager().getPlayerList()) {
+                ModServerEvents.sendStage(player);
+            }
 
             StageSync.syncStageToAllDimensions(serverWorld, newStage);
 

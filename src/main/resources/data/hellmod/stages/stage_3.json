@@ -1,13 +1,13 @@
 {
   "inputs": [
     {
-      "item": "hellmod:nether_infused_ingot"
+      "item": "hellmod:empowered_coal_block"
     },
     {
-      "item": "hellmod:ghast_appendix"
+      "item": "minecraft:enchanted_golden_apple"
     },
     {
-      "item": "hellmod:nether_essence"
+      "item": "hellmod:tre_amethyst_shard"
     }
   ],
   "mobcap_multiplier": 2,
@@ -528,13 +528,23 @@
       ],
       "health": {
         "max": 35
-      }
+      },
+      "mod_spawn": true
     },
     "phantom": {
-      "effects" :  [
-        {"id": "minecraft:resistance", "amplifier": 1 },
-        {"id": "minecraft:strength", "amplifier": 12 },
-        {"id": "minecraft:speed", "amplifier": 6 }
+      "effects": [
+        {
+          "id": "minecraft:resistance",
+          "amplifier": 1
+        },
+        {
+          "id": "minecraft:strength",
+          "amplifier": 12
+        },
+        {
+          "id": "minecraft:speed",
+          "amplifier": 6
+        }
       ],
       "follow_range": 70,
       "health": {

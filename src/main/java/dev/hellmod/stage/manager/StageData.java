@@ -1,4 +1,4 @@
-package dev.hellmod.blocks.custom;
+package dev.hellmod.stage.manager;
 
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.registry.RegistryWrapper;

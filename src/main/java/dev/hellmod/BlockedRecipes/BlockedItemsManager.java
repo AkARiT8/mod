@@ -1,13 +1,10 @@
 package dev.hellmod.BlockedRecipes;
 
-import dev.hellmod.blocks.custom.StageData;
-import net.minecraft.advancement.AdvancementEntry;
+import dev.hellmod.stage.manager.StageData;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
-import net.minecraft.util.Identifier;
 
 import java.util.HashMap;
 import java.util.Map;

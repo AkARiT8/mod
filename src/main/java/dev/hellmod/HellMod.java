@@ -3,10 +3,19 @@ package dev.hellmod;
 import dev.hellmod.BlockedRecipes.BlockedItemsLoader;
 import dev.hellmod.BlockedRecipes.BlockedItemsManager;
 import dev.hellmod.blocks.ModBlocks;
-import dev.hellmod.blocks.custom.StageData;
+import dev.hellmod.command.BunkerCommand;
+import dev.hellmod.command.EventCommand;
+import dev.hellmod.entity.AirshipEntity;
+import dev.hellmod.events.LightningStormEvent;
+import dev.hellmod.events.WorldEventManager;
+import dev.hellmod.network.AirshipAscendPayload;
+import dev.hellmod.network.ModNetworking;
+import dev.hellmod.network.ModServerEvents;
+import dev.hellmod.stage.manager.StageData;
 import dev.hellmod.command.HeartCommand;
 import dev.hellmod.command.StageCommand;
 import dev.hellmod.custom.TotemManager;
+import dev.hellmod.enchantment.ModEnchantments;
 import dev.hellmod.entity.ModEntities;
 import dev.hellmod.items.ModItemGroups;
 import dev.hellmod.items.ModItems;
@@ -21,6 +30,10 @@ import dev.hellmod.stage.modifier.StageModifierApplier;
 import dev.hellmod.stage.modifier.StageModifierManager;
 import dev.hellmod.stage.modifier.impl.*;
 import dev.hellmod.stage.recipe.StageRecipeReloadListener;
+import dev.hellmod.structures.BunkerDoor;
+import dev.hellmod.structures.InteriorDebug;
+import dev.hellmod.structures.StructureProtection;
+import dev.hellmod.structures.WorldStructureGenerator;
 import dev.hellmod.util.ModItemEffect;
 import dev.hellmod.util.SpawnController;
 import dev.hellmod.util.VariantHolder;
@@ -31,10 +44,16 @@ import net.fabricmc.fabric.api.entity.event.v1.ServerPlayerEvents;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerEntityEvents;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
+import net.fabricmc.fabric.api.event.player.PlayerBlockBreakEvents;
 import net.fabricmc.fabric.api.networking.v1.PayloadTypeRegistry;
 import net.fabricmc.fabric.api.networking.v1.ServerPlayConnectionEvents;
+import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
+import net.fabricmc.fabric.api.registry.FabricBrewingRecipeRegistryBuilder;
 import net.fabricmc.fabric.api.resource.ResourceManagerHelper;
 import net.fabricmc.fabric.api.resource.SimpleSynchronousResourceReloadListener;
+import net.minecraft.block.Blocks;
+import net.minecraft.enchantment.EnchantmentHelper;
+import net.minecraft.entity.ExperienceOrbEntity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
@@ -42,7 +61,9 @@ import net.minecraft.entity.mob.CreeperEntity;
 import net.minecraft.entity.mob.GhastEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.potion.Potions;
 import net.minecraft.registry.Registries;
+import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.resource.ResourceManager;
 import net.minecraft.resource.ResourceType;
 import net.minecraft.server.MinecraftServer;
@@ -79,6 +100,21 @@ public class HellMod implements ModInitializer {
 		ModEntities.register();
 		ModEntities.registerAttributes();
 		ModPotions.registerPotions();
+		ModEnchantments.register();
+		ModNetworking.register();
+		ModServerEvents.register();
+
+		WorldStructureGenerator.init();
+		StructureProtection.init();
+		InteriorDebug.init();
+		BunkerDoor.init();
+
+
+		WorldEventManager.init();
+
+		WorldEventManager.registerEvent(
+				LightningStormEvent.class
+		);
 
 		manager.resetBlockedItems();;
 
@@ -212,6 +248,11 @@ public class HellMod implements ModInitializer {
 				ShowTotemPayload.CODEC
 		);
 
+		PayloadTypeRegistry.playC2S().register(
+				AirshipAscendPayload.ID,
+				AirshipAscendPayload.CODEC
+		);
+
 		ResourceManagerHelper.get(ResourceType.SERVER_DATA).registerReloadListener(
 				new StageRecipeReloadListener()
 		);
@@ -236,6 +277,13 @@ public class HellMod implements ModInitializer {
 		CommandRegistrationCallback.EVENT.register((dispatcher, registryAccess, environment) -> {
 			HeartCommand.register(dispatcher);
 		});
+		CommandRegistrationCallback.EVENT.register((dispatcher, registryAccess, environment) -> {
+			BunkerCommand.register(dispatcher);
+		});
+		CommandRegistrationCallback.EVENT.register((dispatcher, registryAccess, environment) -> {
+			EventCommand.register(dispatcher);
+		});
+
 
 		ServerPlayConnectionEvents.JOIN.register((handler, sender, server) -> {
 			ServerPlayerEntity player = handler.player;
@@ -244,6 +292,82 @@ public class HellMod implements ModInitializer {
 
 		ServerPlayerEvents.AFTER_RESPAWN.register((oldPlayer, newPlayer, alive) -> {
 			syncHealth(newPlayer);
+		});
+
+		ServerPlayNetworking.registerGlobalReceiver(
+				AirshipAscendPayload.ID,
+				(payload, context) -> {
+
+					if (context.player().getVehicle()
+							instanceof AirshipEntity airship) {
+
+						airship.setAscending(
+								payload.ascending()
+						);
+
+						airship.setBraking(
+								payload.braking()
+						);
+					}
+				}
+		);
+
+		FabricBrewingRecipeRegistryBuilder.BUILD.register(builder -> {
+
+			builder.registerPotionRecipe(
+					Potions.AWKWARD,
+					ModItems.PANIC_BALL,
+					Registries.POTION.getEntry(ModPotions.PANIC_POTION)
+			);
+
+		});
+
+
+		PlayerBlockBreakEvents.AFTER.register((world, player, pos, state, blockEntity) -> {
+
+			if (world.isClient()) return;
+
+			int level = EnchantmentHelper.getLevel(
+					ModEnchantments.KNOWLEDGE,
+					player.getMainHandStack()
+			);
+
+			if (level <= 0) return;
+
+			boolean isOre =
+					state.isIn(BlockTags.COAL_ORES) ||
+							state.isIn(BlockTags.DIAMOND_ORES) ||
+							state.isIn(BlockTags.EMERALD_ORES) ||
+							state.isIn(BlockTags.REDSTONE_ORES) ||
+							state.isIn(BlockTags.LAPIS_ORES) ||
+							state.isIn(BlockTags.COPPER_ORES) ||
+							state.isIn(BlockTags.GOLD_ORES) ||
+							state.isIn(BlockTags.IRON_ORES) ||
+							state.isOf(Blocks.NETHER_QUARTZ_ORE) ||
+							state.isOf(Blocks.NETHER_GOLD_ORE);
+
+			if (!isOre) return;
+
+			ServerWorld serverWorld = (ServerWorld) world;
+
+
+			int extraXP = level * 4;
+
+			ExperienceOrbEntity.spawn(serverWorld, pos.toCenterPos(), extraXP);
+		});
+
+		ServerLivingEntityEvents.AFTER_DEATH.register((entity, damageSource) -> {
+
+			if (!(damageSource.getAttacker() instanceof ServerPlayerEntity player)) return;
+
+			int level = EnchantmentHelper.getLevel(ModEnchantments.ENLIGHTENMENT, player.getMainHandStack());
+
+			if (level > 0 && entity.getWorld() instanceof ServerWorld world) {
+
+				int extraXP = level * 6;
+
+				ExperienceOrbEntity.spawn(world, entity.getPos(), extraXP);
+			}
 		});
 
 		ServerLivingEntityEvents.ALLOW_DEATH.register((entity, damageSource, damageAmount) -> {

@@ -511,6 +511,45 @@ public class DatagenRecipeProvider extends FabricRecipeProvider {
                 .criterion(hasItem(ModItems.TRUE_AMETHYST_SHARD),conditionsFromItem(ModItems.TRUE_AMETHYST_SHARD))
                 .offerTo(recipeExporter, new Identifier(HellMod.MODID, "true_amethyst_ingot"));
 
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.GIGAPHANTOM_HORN)
+                .pattern("PPP")
+                .pattern("PLP")
+                .pattern("PPP")
+                .input('P',Items.PHANTOM_MEMBRANE)
+                .input('L', ModItems.TRUE_AMETHYST_SHARD)
+                .criterion(hasItem(ModItems.TRUE_AMETHYST_SHARD),conditionsFromItem(ModItems.TRUE_AMETHYST_SHARD))
+                .offerTo(recipeExporter, new Identifier(HellMod.MODID, "gigaphantom_horn"));
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.ZOMBIE_BERSERK_HORN)
+                .pattern("PPP")
+                .pattern("PLP")
+                .pattern("PPP")
+                .input('P',Items.ROTTEN_FLESH)
+                .input('L', ModItems.TRUE_AMETHYST_SHARD)
+                .criterion(hasItem(ModItems.TRUE_AMETHYST_SHARD),conditionsFromItem(ModItems.TRUE_AMETHYST_SHARD))
+                .offerTo(recipeExporter, new Identifier(HellMod.MODID, "berserk_zombie_horn"));
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.CREEPER_BOMB_HORN)
+                .pattern("PPP")
+                .pattern("PLP")
+                .pattern("PPP")
+                .input('P',Items.GUNPOWDER)
+                .input('L', ModItems.TRUE_AMETHYST_SHARD)
+                .criterion(hasItem(ModItems.TRUE_AMETHYST_SHARD),conditionsFromItem(ModItems.TRUE_AMETHYST_SHARD))
+                .offerTo(recipeExporter, new Identifier(HellMod.MODID, "creeper_bomb_horn"));
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.RARE_HARDCORE_HEART)
+                .pattern("IKI")
+                .pattern("PLP")
+                .pattern("POP")
+                .input('P',Items.AMETHYST_SHARD)
+                .input('L', ModItems.UNCOMMON_HARDCORE_HEART)
+                .input('I', ModBlocks.EMPOWERED_COAL_BLOCK.getRight())
+                .input('O', ModBlocks.PURE_GOLD_BLOCK.getRight())
+                .input('K', ModItems.TRUE_AMETHYST_SHARD)
+                .criterion(hasItem(ModItems.UNCOMMON_HARDCORE_HEART),conditionsFromItem(ModItems.UNCOMMON_HARDCORE_HEART))
+                .offerTo(recipeExporter, new Identifier(HellMod.MODID, "rare_hardcore_heart"));
+
 
 
     }

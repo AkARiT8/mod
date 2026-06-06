@@ -44,6 +44,18 @@ public class ModEntities {
                             .build()
             );
 
+    public static final EntityType<AirshipEntity> AIRSHIP =
+            Registry.register(
+                    Registries.ENTITY_TYPE,
+                    Identifier.of("hellmod", "airship"),
+                    FabricEntityTypeBuilder
+                            .create(SpawnGroup.MISC, AirshipEntity::new)
+                            .dimensions(EntityDimensions.fixed(3f, 2f))
+                            .trackRangeBlocks(128)
+                            .trackedUpdateRate(40)
+                            .build()
+            );
+
     public static void register() {}
 
     public static void registerAttributes() {

@@ -1,0 +1,4 @@
+// 1.20.6	2026-05-09T14:49:19.8223635	HellMod/minecraft:entity Loot Table
+e1c5d03d1f02c1245c81550f74725d8a6e0a8ce7 data\hellmod\loot_tables\entities\boss_zombie.json
+ebe9c2d3a22e8ff87c1e9a36c74ecbfd6dabfc7d data\hellmod\loot_tables\entities\boss_phantom.json
+196809784f45a39fdc885a0cbe433648abd3b382 data\hellmod\loot_tables\entities\boss_creeper.json

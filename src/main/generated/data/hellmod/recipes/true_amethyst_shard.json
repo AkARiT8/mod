@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "I": {
+      "item": "minecraft:amethyst_shard"
+    },
+    "L": {
+      "item": "hellmod:pure_diamond"
+    },
+    "P": {
+      "item": "hellmod:empowered_coal"
+    }
+  },
+  "pattern": [
+    "PIP",
+    "ILI",
+    "PIP"
+  ],
+  "result": {
+    "count": 1,
+    "id": "hellmod:true_amethyst_shard"
+  }
+}

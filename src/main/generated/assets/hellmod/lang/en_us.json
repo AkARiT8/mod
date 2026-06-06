@@ -6,6 +6,8 @@
   "block.hellmod.pure_iron_block": "Block of Pure Iron",
   "block.hellmod.pure_netherite_block": "Block of Pure Netherite",
   "block.hellmod.stage_block": "Stage Block",
+  "enchantment.hellmod.enlightenment": "Enlightenment",
+  "enchantment.hellmod.knowledge": "knowledge",
   "entity.hellmod.boss_creeper": "§2☠ CREEPER BOMB ☠",
   "entity.hellmod.boss_phantom": "§5☠ GIGA PHANTOM ☠",
   "entity.hellmod.boss_zombie": "§4☠ BERSERK ZOMBIE ☠",

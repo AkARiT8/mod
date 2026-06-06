@@ -3,9 +3,9 @@
   "textures": {
     "down": "hellmod:block/stageblock/stage_block_side",
     "east": "hellmod:block/stageblock/stage_block_side",
-    "north": "hellmod:block/stageblock/stage_block_front",
+    "north": "hellmod:block/stageblock/stage_block_side",
     "particle": "hellmod:block/stageblock/stage_block_top",
-    "south": "hellmod:block/stageblock/stage_block_side",
+    "south": "hellmod:block/stageblock/stage_block_front",
     "up": "hellmod:block/stageblock/stage_block_top",
     "west": "hellmod:block/stageblock/stage_block_side"
   }

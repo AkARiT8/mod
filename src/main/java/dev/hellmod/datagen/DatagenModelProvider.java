@@ -32,8 +32,8 @@ public class DatagenModelProvider extends FabricModelProvider {
         TextureMap textureMap = new TextureMap()
                 .put(TextureKey.UP, new Identifier(HellMod.MODID, "block/stageblock/stage_block_top"))
                 .put(TextureKey.DOWN, new Identifier(HellMod.MODID, "block/stageblock/stage_block_side"))
-                .put(TextureKey.NORTH, new Identifier(HellMod.MODID, "block/stageblock/stage_block_front"))
-                .put(TextureKey.SOUTH, new Identifier(HellMod.MODID, "block/stageblock/stage_block_side"))
+                .put(TextureKey.NORTH, new Identifier(HellMod.MODID, "block/stageblock/stage_block_side"))
+                .put(TextureKey.SOUTH, new Identifier(HellMod.MODID, "block/stageblock/stage_block_front"))
                 .put(TextureKey.EAST, new Identifier(HellMod.MODID, "block/stageblock/stage_block_side"))
                 .put(TextureKey.WEST, new Identifier(HellMod.MODID, "block/stageblock/stage_block_side"))
                 .put(TextureKey.PARTICLE, new Identifier(HellMod.MODID, "block/stageblock/stage_block_top"));
