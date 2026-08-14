@@ -19,18 +19,18 @@ import java.util.UUID;
 
 public class ModItems {
 
-    public static final Item PURE_IRON_INGOT = registerItem("pure_iron_ingot", new CustoModItem(new Item.Settings()));
-    public static final Item PURE_GOLD_INGOT = registerItem("pure_gold_ingot", new CustoModItem(new Item.Settings()));
-    public static final Item PURE_NETHERITE_INGOT = registerItem("pure_netherite_ingot", new CustoModItem(new Item.Settings()));
-    public static final Item PURE_EMERALD = registerItem("pure_emerald", new CustoModItem(new Item.Settings()));
-    public static final Item PURE_DIAMOND = registerItem("pure_diamond", new CustoModItem(new Item.Settings()));
+    public static final Item PURE_IRON_INGOT = registerItem("pure_iron_ingot", new Item(new Item.Settings()));
+    public static final Item PURE_GOLD_INGOT = registerItem("pure_gold_ingot", new Item(new Item.Settings()));
+    public static final Item PURE_NETHERITE_INGOT = registerItem("pure_netherite_ingot", new Item(new Item.Settings()));
+    public static final Item PURE_EMERALD = registerItem("pure_emerald", new Item(new Item.Settings()));
+    public static final Item PURE_DIAMOND = registerItem("pure_diamond", new Item(new Item.Settings()));
 
     public static final Item ENCHANTED_GOLDEN_CARROT = registerItem("enchanted_golden_carrot",
             new CustomCarrot(new Item.Settings().food(
                     new FoodComponent(4, 0.3f, false, 1.6f, List.of())
             )));
 
-    public static final Item SPEED_TOTEM_OF_UNDYING = registerItem("speed_totem_of_undying", new CustoModItem(new Item.Settings().maxCount(1)));
+    public static final Item SPEED_TOTEM_OF_UNDYING = registerItem("speed_totem_of_undying", new Item(new Item.Settings().maxCount(1)));
 
     public static final Item BASIC_HARDCORE_HEART = registerItem(
             "basic_hardcore_heart",
@@ -42,12 +42,12 @@ public class ModItems {
             ))
     );
 
-    public static final Item OVERWORLD_ESSENCE = registerItem("overworld_essence", new CustoModItem(new Item.Settings()));
-    public static final Item BLAZE_MAIN_ROD = registerItem("blaze_main_rod", new CustoModItem(new Item.Settings()));
-    public static final Item MAGMA_CUBE_CORE = registerItem("magma_cube_core", new CustoModItem(new Item.Settings()));
+    public static final Item OVERWORLD_ESSENCE = registerItem("overworld_essence", new Item(new Item.Settings()));
+    public static final Item BLAZE_MAIN_ROD = registerItem("blaze_main_rod", new Item(new Item.Settings()));
+    public static final Item MAGMA_CUBE_CORE = registerItem("magma_cube_core", new Item(new Item.Settings()));
 
 
-    public static final Item NETHER_INFUSED_INGOT = registerItem("nether_infused_ingot", new CustoModItem(new Item.Settings()));
+    public static final Item NETHER_INFUSED_INGOT = registerItem("nether_infused_ingot", new Item(new Item.Settings()));
 
     public static final Item NETHER_INFUSED_SWORD = registerItem(
             "nether_infused_sword",
@@ -143,14 +143,14 @@ public class ModItems {
             ))
     );
 
-    public static final Item BARRIER_TOTEM_OF_UNDYING = registerItem("barrier_totem_of_undying", new CustoModItem(new Item.Settings().maxCount(1)));
+    public static final Item BARRIER_TOTEM_OF_UNDYING = registerItem("barrier_totem_of_undying", new Item(new Item.Settings().maxCount(1)));
 
-    public static final Item GHAST_APPENDIX = registerItem("ghast_appendix", new CustoModItem(new Item.Settings()));
-    public static final Item NETHER_ESSENCE = registerItem("nether_essence", new CustoModItem(new Item.Settings()));
-    public static final Item EMPOWERED_COAL = registerItem("empowered_coal", new CustoModItem(new Item.Settings()));
+    public static final Item GHAST_APPENDIX = registerItem("ghast_appendix", new Item(new Item.Settings()));
+    public static final Item NETHER_ESSENCE = registerItem("nether_essence", new Item(new Item.Settings()));
+    public static final Item EMPOWERED_COAL = registerItem("empowered_coal", new Item(new Item.Settings()));
 
     //STAGE 3
-    public static final Item TRUE_AMETHYST_INGOT = registerItem("true_amethyst_ingot", new CustoModItem(new Item.Settings()));
+    public static final Item TRUE_AMETHYST_INGOT = registerItem("true_amethyst_ingot", new Item(new Item.Settings()));
 
 
     public static final Item TRUE_AMETHYST_HELMET = registerItem(
@@ -219,12 +219,12 @@ public class ModItems {
     public static final Item TRUE_AMETHYST_SHOVEL = registerItem("true_amethyst_shovel", new CustomShovelItem(TrueAmathystModMaterial.INSTANCE,2.5F,-3F, new Item.Settings().maxCount(1).fireproof()));
     public static final Item TRUE_AMETHYST_HOE = registerItem("true_amethyst_hoe", new CustomHoeItem(TrueAmathystModMaterial.INSTANCE,1,-2.5F, new Item.Settings().maxCount(1).fireproof()));
 
-    public static final Item CREEPER_ESSENCE = registerItem("creeper_essence", new CustoModItem(new Item.Settings()));
-    public static final Item ZOMBIE_ESSENCE = registerItem("zombie_essence", new CustoModItem(new Item.Settings()));
-    public static final Item PHANTOM_ESSENCE = registerItem("phantom_essence", new CustoModItem(new Item.Settings()));
+    public static final Item CREEPER_ESSENCE = registerItem("creeper_essence", new Item(new Item.Settings()));
+    public static final Item ZOMBIE_ESSENCE = registerItem("zombie_essence", new Item(new Item.Settings()));
+    public static final Item PHANTOM_ESSENCE = registerItem("phantom_essence", new Item(new Item.Settings()));
 
-    public static final Item TRUE_AMETHYST_SHARD = registerItem("true_amethyst_shard", new CustoModItem(new Item.Settings()));
-    public static final Item TRUE_AMETHYST_TEMPLATE = registerItem("true_amethyst_template", new CustoModItem(new Item.Settings()));
+    public static final Item TRUE_AMETHYST_SHARD = registerItem("true_amethyst_shard", new Item(new Item.Settings()));
+    public static final Item TRUE_AMETHYST_TEMPLATE = registerItem("true_amethyst_template", new Item(new Item.Settings()));
 
     public static final Item TRUE_AMETHYST_SHIELD = Registry.register(
             Registries.ITEM,
@@ -243,27 +243,9 @@ public class ModItems {
             new InvencibilityRune(new Item.Settings().maxCount(1))
     );
 
-    public static final Item PANIC_BALL = registerItem("panic_ball", new CustoModItem(new Item.Settings()));
+    public static final Item PANIC_BALL = registerItem("panic_ball", new Item(new Item.Settings()));
 
-    public static final Item PANIC_TOTEM_OF_UNDYING = registerItem("panic_totem_of_undying", new CustoModItem(new Item.Settings().maxCount(1)));
-
-    public static final Item CREEPER_BOMB_HORN = Registry.register(
-            Registries.ITEM,
-            new Identifier("hellmod", "creeper_bomb_horn"),
-            new CustomCreeperHornItem(new Item.Settings().maxCount(1))
-    );
-
-    public static final Item ZOMBIE_BERSERK_HORN = Registry.register(
-            Registries.ITEM,
-            new Identifier("hellmod", "berserk_zombie_horn"),
-            new CustomZombieHornItem(new Item.Settings().maxCount(1))
-    );
-
-    public static final Item GIGAPHANTOM_HORN = Registry.register(
-            Registries.ITEM,
-            new Identifier("hellmod", "gigaphantom_horn"),
-            new CustomPhantomHornItem(new Item.Settings().maxCount(1))
-    );
+    public static final Item PANIC_TOTEM_OF_UNDYING = registerItem("panic_totem_of_undying", new Item(new Item.Settings().maxCount(1)));
 
     public static final Item RARE_HARDCORE_HEART = registerItem(
             "rare_hardcore_heart",
@@ -275,6 +257,30 @@ public class ModItems {
             ))
     );
 
+    public static final Item LOOT_CUBE_T1 = registerItem(
+            "loot_cube_t1",
+            new CustomLootCubeT1(new Item.Settings())
+    );
+
+    public static final Item LOOT_CUBE_T2 = registerItem(
+            "loot_cube_t2",
+            new CustomLootCubeT2(new Item.Settings())
+    );
+
+    public static final Item LOOT_CUBE_T3 = registerItem(
+            "loot_cube_t3",
+            new CustomLootCubeT3(new Item.Settings())
+    );
+
+    public static final Item LOOT_CUBE_T4 = registerItem(
+            "loot_cube_t4",
+            new CustomLootCubeT4(new Item.Settings())
+    );
+
+    public static final Item LOOT_CUBE_T5 = registerItem(
+            "loot_cube_t5",
+            new CustomLootCubeT5(new Item.Settings())
+    );
 
     private static Item registerItem(String itemid, Item item) {
         return Registry.register(Registries.ITEM, new Identifier(HellMod.MODID, itemid), item);

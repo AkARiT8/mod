@@ -7,7 +7,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 
-public class CustomCarrot extends CustoModItem {
+public class CustomCarrot extends Item {
     public CustomCarrot(Settings settings) {
         super(settings);
     }

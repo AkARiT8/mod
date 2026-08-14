@@ -1,11 +1,11 @@
 package dev.hellmod.blocks;
 
-import dev.hellmod.blocks.custom.CustomBlockItem;
 import dev.hellmod.blocks.custom.StageBlock;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import dev.hellmod.HellMod;
 import net.minecraft.block.Blocks;
+import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
@@ -28,7 +28,7 @@ public class ModBlocks {
                 (Item) Registry.register(
                         Registries.ITEM,
                         new Identifier(HellMod.MODID, name),
-                        new CustomBlockItem(block, new Item.Settings())
+                        new BlockItem(block, new Item.Settings())
                 )
         );
     }

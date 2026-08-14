@@ -23,31 +23,31 @@ public class FogMixin {
             CallbackInfo ci
     ) {
 
-        if (StageManager.getCurrentStage() == 2) {
-
-            RenderSystem.setShaderFogStart(0.0F);
-            RenderSystem.setShaderFogEnd(12.0F);
-
-            RenderSystem.setShaderFogColor(
-
-                    0.15F,
-                    0.15F,
-                    0.15F
-            );
-        }
-
-        if (  ClientEventState.currentEvent
-                .equals("lightning_storm")) {
-
-            RenderSystem.setShaderFogStart(5.0F);
-            RenderSystem.setShaderFogEnd(180.0F);
-
-            RenderSystem.setShaderFogColor(
-
-                    0.0F,
-                    0.28F,
-                    0.67F
-            );
-        }
+//        if (StageManager.getCurrentStage() == 2) {
+//
+//            RenderSystem.setShaderFogStart(0.0F);
+//            RenderSystem.setShaderFogEnd(12.0F);
+//
+//            RenderSystem.setShaderFogColor(
+//
+//                    0.15F,
+//                    0.15F,
+//                    0.15F
+//            );
+//        }
+//
+//        if (  ClientEventState.currentEvent
+//                .equals("lightning_storm")) {
+//
+//            RenderSystem.setShaderFogStart(5.0F);
+//            RenderSystem.setShaderFogEnd(180.0F);
+//
+//            RenderSystem.setShaderFogColor(
+//
+//                    0.0F,
+//                    0.28F,
+//                    0.67F
+//            );
+//        }
     }
 }

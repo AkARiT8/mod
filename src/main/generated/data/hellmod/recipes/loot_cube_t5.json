@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "O": {
+      "item": "hellmod:loot_cube_t4"
+    },
+    "P": {
+      "item": "hellmod:true_amethyst_ingot"
+    }
+  },
+  "pattern": [
+    "OOO",
+    "OPO",
+    "OOO"
+  ],
+  "result": {
+    "count": 1,
+    "id": "hellmod:loot_cube_t5"
+  }
+}

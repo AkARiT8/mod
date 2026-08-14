@@ -10,6 +10,311 @@
       "item": "minecraft:iron_block"
     }
   ],
-  "difmod": {},
+  "difmod": {
+    "zombie":{
+      "loot": {
+        "extra_drops": [
+          {
+            "item": "hellmod:loot_cube_t1",
+            "chance": 0.015,
+            "count": 1
+          },
+          {
+            "item": "hellmod:loot_cube_t2",
+            "chance": 0.002,
+            "count": 1
+          }
+        ]
+      }
+    },
+    "skeleton":{
+      "loot": {
+        "extra_drops": [
+          {
+            "item": "hellmod:loot_cube_t1",
+            "chance": 0.015,
+            "count": 1
+          },
+          {
+            "item": "hellmod:loot_cube_t2",
+            "chance": 0.002,
+            "count": 1
+          }
+        ]
+      }
+    }
+  },
+  "creeper": {
+    "loot": {
+      "extra_drops": [
+        {
+          "item": "hellmod:loot_cube_t1",
+          "chance": 0.015,
+          "count": 1
+        },
+        {
+          "item": "hellmod:loot_cube_t2",
+          "chance": 0.002,
+          "count": 1
+        }
+      ]
+    }
+  },
+  "spider": {
+    "loot": {
+      "extra_drops": [
+        {
+          "item": "hellmod:loot_cube_t1",
+          "chance": 0.015,
+          "count": 1
+        },
+        {
+          "item": "hellmod:loot_cube_t2",
+          "chance": 0.002,
+          "count": 1
+        }
+      ]
+    }
+  },
+  "cave_spider": {
+    "loot": {
+      "extra_drops": [
+        {
+          "item": "hellmod:loot_cube_t1",
+          "chance": 0.015,
+          "count": 1
+        },
+        {
+          "item": "hellmod:loot_cube_t2",
+          "chance": 0.002,
+          "count": 1
+        }
+      ]
+    }
+  },
+  "pillager": {
+    "loot": {
+      "extra_drops": [
+        {
+          "item": "hellmod:loot_cube_t1",
+          "chance": 0.015,
+          "count": 1
+        },
+        {
+          "item": "hellmod:loot_cube_t2",
+          "chance": 0.002,
+          "count": 1
+        }
+      ]
+    }
+  },
+  "vindicator": {
+    "loot": {
+      "extra_drops": [
+        {
+          "item": "hellmod:loot_cube_t1",
+          "chance": 0.015,
+          "count": 1
+        },
+        {
+          "item": "hellmod:loot_cube_t2",
+          "chance": 0.002,
+          "count": 1
+        }
+      ]
+    }
+  },
+  "enderman": {
+    "loot": {
+      "extra_drops": [
+        {
+          "item": "hellmod:loot_cube_t1",
+          "chance": 0.02,
+          "count": 1
+        },
+        {
+          "item": "hellmod:loot_cube_t2",
+          "chance": 0.003,
+          "count": 1
+        }
+      ]
+    }
+  },
+  "husk": {
+    "loot": {
+    "extra_drops": [
+      {
+        "item": "hellmod:loot_cube_t1",
+        "chance": 0.015,
+        "count": 1
+      },
+      {
+        "item": "hellmod:loot_cube_t2",
+        "chance": 0.002,
+        "count": 1
+      }
+    ]
+  }},
+  "stray": {
+    "loot": {
+      "extra_drops": [
+        {
+          "item": "hellmod:loot_cube_t1",
+          "chance": 0.015,
+          "count": 1
+        },
+        {
+          "item": "hellmod:loot_cube_t2",
+          "chance": 0.002,
+          "count": 1
+        }
+      ]
+    }
+  },
+  "witch": {
+    "loot": {
+      "extra_drops": [
+        {
+          "item": "hellmod:loot_cube_t1",
+          "chance": 0.02,
+          "count": 1
+        },
+        {
+          "item": "hellmod:loot_cube_t2",
+          "chance": 0.003,
+          "count": 1
+        }
+      ]
+    }
+  },
+  "slime": {
+    "loot": {
+      "extra_drops": [
+        {
+          "item": "hellmod:loot_cube_t1",
+          "chance": 0.005,
+          "count": 1
+        },
+        {
+          "item": "hellmod:loot_cube_t2",
+          "chance": 0.001,
+          "count": 1
+        }
+      ]
+    }
+  },
+  "phantom": {
+    "loot": {
+      "extra_drops": [
+        {
+          "item": "hellmod:loot_cube_t1",
+          "chance": 0.015,
+          "count": 1
+        },
+        {
+          "item": "hellmod:loot_cube_t2",
+          "chance": 0.002,
+          "count": 1
+        }
+      ]
+    }
+  },
+  "drowned": {
+    "loot": {
+      "extra_drops": [
+        {
+          "item": "hellmod:loot_cube_t1",
+          "chance": 0.015,
+          "count": 1
+        },
+        {
+          "item": "hellmod:loot_cube_t2",
+          "chance": 0.002,
+          "count": 1
+        }
+      ]
+    }
+  },
+  "evoker": {
+    "loot": {
+      "extra_drops": [
+        {
+          "item": "hellmod:loot_cube_t1",
+          "chance": 0.02,
+          "count": 1
+        },
+        {
+          "item": "hellmod:loot_cube_t2",
+          "chance": 0.003,
+          "count": 1
+        }
+      ]
+    }
+  },
+  "ravager": {
+    "loot": {
+      "extra_drops": [
+        {
+          "item": "hellmod:loot_cube_t1",
+          "chance": 0.03,
+          "count": 1
+        },
+        {
+          "item": "hellmod:loot_cube_t2",
+          "chance": 0.004,
+          "count": 1
+        }
+      ]
+    }
+  },
+  "guardian": {
+    "loot": {
+      "extra_drops": [
+        {
+          "item": "hellmod:loot_cube_t1",
+          "chance": 0.015,
+          "count": 1
+        },
+        {
+          "item": "hellmod:loot_cube_t2",
+          "chance": 0.002,
+          "count": 1
+        }
+      ]
+    }
+  },
+  "elder_guardian": {
+    "loot": {
+      "extra_drops": [
+        {
+          "item": "hellmod:loot_cube_t1",
+          "chance": 0.05,
+          "count": 1
+        },
+        {
+          "item": "hellmod:loot_cube_t2",
+          "chance": 0.005,
+          "count": 1
+        }
+      ]
+    }
+  },
+  "warden": {
+    "loot": {
+      "extra_drops": [
+        {
+          "item": "hellmod:loot_cube_t1",
+          "chance": 0.1,
+          "count": 1
+        },
+        {
+          "item": "hellmod:loot_cube_t2",
+          "chance": 0.01,
+          "count": 1
+        }
+      ]
+    }
+  },
+
   "disable_nether": true
 }

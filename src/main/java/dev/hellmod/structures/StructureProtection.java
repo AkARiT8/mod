@@ -26,11 +26,6 @@ public class StructureProtection {
                     WorldStructureGenerator
                             .isProtected(pos)
             ) {
-
-                System.out.println(
-                        "BREAK CANCELLED"
-                );
-
                 return false;
             }
 
@@ -102,10 +97,6 @@ public class StructureProtection {
 
                     return ActionResult.PASS;
                 }
-
-                System.out.println(
-                        "PLACE CANCELLED"
-                );
 
                 return ActionResult.FAIL;
             }

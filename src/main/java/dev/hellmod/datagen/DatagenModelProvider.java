@@ -108,9 +108,6 @@ public class DatagenModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.INVENCIBILITY_RUNE,Models.GENERATED);
         itemModelGenerator.register(ModItems.PANIC_BALL,Models.GENERATED);
         itemModelGenerator.register(ModItems.PANIC_TOTEM_OF_UNDYING,Models.GENERATED);
-        itemModelGenerator.register(ModItems.CREEPER_BOMB_HORN,Models.GENERATED);
-        itemModelGenerator.register(ModItems.GIGAPHANTOM_HORN,Models.GENERATED);
-        itemModelGenerator.register(ModItems.ZOMBIE_BERSERK_HORN,Models.GENERATED);
         itemModelGenerator.register(ModItems.RARE_HARDCORE_HEART,Models.GENERATED);
 
 

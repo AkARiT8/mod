@@ -5,8 +5,10 @@
   "client": [
     "FogMixin",
     "GameRendererMixin",
+    "PlayerRendererFeatureAccessor",
     "ShieldTextureMixin",
-    "SkyColorMixin"
+    "SkyColorMixin",
+    "StickyLayerMixin"
   ],
   "injectors": {
     "defaultRequire": 1

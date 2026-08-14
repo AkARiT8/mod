@@ -25,15 +25,14 @@ public abstract class PlayerEntityMixin {
 
         PlayerEntity player = (PlayerEntity)(Object)this;
 
-        if (player.getVehicle() instanceof AirshipEntity && player.getVehicle().fallDistance > 15) {
+        if (player.getVehicle() instanceof AirshipEntity
+                && player.getVehicle().fallDistance > 15) {
 
             player.damage(
                     player.getDamageSources().fall(),
                     4.0f
             );
 
-            cir.setReturnValue(true);
-        }else {
             cir.setReturnValue(true);
         }
     }

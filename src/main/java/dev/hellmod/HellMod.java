@@ -1,11 +1,14 @@
 package dev.hellmod;
 
 import dev.hellmod.BlockedRecipes.BlockedItemsLoader;
+
 import dev.hellmod.BlockedRecipes.BlockedItemsManager;
 import dev.hellmod.blocks.ModBlocks;
 import dev.hellmod.command.BunkerCommand;
 import dev.hellmod.command.EventCommand;
+import dev.hellmod.effects.ModEffects;
 import dev.hellmod.entity.AirshipEntity;
+import dev.hellmod.entity.ModEntitySpawns;
 import dev.hellmod.events.LightningStormEvent;
 import dev.hellmod.events.WorldEventManager;
 import dev.hellmod.network.AirshipAscendPayload;
@@ -30,10 +33,11 @@ import dev.hellmod.stage.modifier.StageModifierApplier;
 import dev.hellmod.stage.modifier.StageModifierManager;
 import dev.hellmod.stage.modifier.impl.*;
 import dev.hellmod.stage.recipe.StageRecipeReloadListener;
-import dev.hellmod.structures.BunkerDoor;
-import dev.hellmod.structures.InteriorDebug;
-import dev.hellmod.structures.StructureProtection;
-import dev.hellmod.structures.WorldStructureGenerator;
+import dev.hellmod.structures.*;
+import dev.hellmod.structures.InfernalManor.InfernalManorBlockPlacement;
+import dev.hellmod.structures.InfernalManor.InfernalManorBlockProtection;
+import dev.hellmod.structures.InfernalManor.InfernalManorChestHandler;
+import dev.hellmod.structures.InfernalManor.InfernalManorEffectHandler;
 import dev.hellmod.util.ModItemEffect;
 import dev.hellmod.util.SpawnController;
 import dev.hellmod.util.VariantHolder;
@@ -45,6 +49,7 @@ import net.fabricmc.fabric.api.event.lifecycle.v1.ServerEntityEvents;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
 import net.fabricmc.fabric.api.event.player.PlayerBlockBreakEvents;
+import net.fabricmc.fabric.api.event.player.UseBlockCallback;
 import net.fabricmc.fabric.api.networking.v1.PayloadTypeRegistry;
 import net.fabricmc.fabric.api.networking.v1.ServerPlayConnectionEvents;
 import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
@@ -103,11 +108,13 @@ public class HellMod implements ModInitializer {
 		ModEnchantments.register();
 		ModNetworking.register();
 		ModServerEvents.register();
+		ModEffects.registerEffects();
 
 		WorldStructureGenerator.init();
 		StructureProtection.init();
 		InteriorDebug.init();
 		BunkerDoor.init();
+		ModEntitySpawns.init();
 
 
 		WorldEventManager.init();
@@ -115,8 +122,6 @@ public class HellMod implements ModInitializer {
 		WorldEventManager.registerEvent(
 				LightningStormEvent.class
 		);
-
-		manager.resetBlockedItems();;
 
 		ModScreenHandlers.register();
 
@@ -131,6 +136,21 @@ public class HellMod implements ModInitializer {
 		EntityModifierRegistry.register("health", new HealthModifier());
 
 		LootDropHandler.register();
+
+		UseBlockCallback.EVENT.register(
+				InfernalManorChestHandler::onUseBlock
+		);
+
+		PlayerBlockBreakEvents.BEFORE.register(
+				InfernalManorBlockProtection::beforeBreak
+		);
+
+		UseBlockCallback.EVENT.register(
+				InfernalManorBlockPlacement::onUseBlock
+		);
+
+		InfernalManorEffectHandler.register();
+
 
 		ServerEntityEvents.ENTITY_LOAD.register((entity, world) -> {
 
@@ -285,11 +305,6 @@ public class HellMod implements ModInitializer {
 		});
 
 
-		ServerPlayConnectionEvents.JOIN.register((handler, sender, server) -> {
-			ServerPlayerEntity player = handler.player;
-			manager.resetBlockedItems();
-		});
-
 		ServerPlayerEvents.AFTER_RESPAWN.register((oldPlayer, newPlayer, alive) -> {
 			syncHealth(newPlayer);
 		});
@@ -311,6 +326,8 @@ public class HellMod implements ModInitializer {
 					}
 				}
 		);
+
+		BlockedItemsLoader.load(manager);
 
 		FabricBrewingRecipeRegistryBuilder.BUILD.register(builder -> {
 

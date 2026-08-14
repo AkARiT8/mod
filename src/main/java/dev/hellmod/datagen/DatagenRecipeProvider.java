@@ -321,6 +321,44 @@ public class DatagenRecipeProvider extends FabricRecipeProvider {
                 .criterion(hasItem(ModItems.NETHER_INFUSED_INGOT),conditionsFromItem(ModItems.NETHER_INFUSED_INGOT))
                 .offerTo(recipeExporter, new Identifier(HellMod.MODID, "nether_infused_template"));
 
+        //LOOT CUBE
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.LOOT_CUBE_T2)
+                .pattern("OOO")
+                .pattern("OPO")
+                .pattern("OOO")
+                .input('O', ModItems.LOOT_CUBE_T1)
+                .input('P', Items.DIAMOND)
+                .criterion(hasItem(ModItems.LOOT_CUBE_T1),conditionsFromItem(ModItems.LOOT_CUBE_T1))
+                .offerTo(recipeExporter, new Identifier(HellMod.MODID, "loot_cube_t2"));
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.LOOT_CUBE_T3)
+                .pattern("OOO")
+                .pattern("OPO")
+                .pattern("OOO")
+                .input('O', ModItems.LOOT_CUBE_T2)
+                .input('P', Items.NETHERITE_INGOT)
+                .criterion(hasItem(ModItems.LOOT_CUBE_T2),conditionsFromItem(ModItems.LOOT_CUBE_T2))
+                .offerTo(recipeExporter, new Identifier(HellMod.MODID, "loot_cube_t3"));
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.LOOT_CUBE_T4)
+                .pattern("OOO")
+                .pattern("OPO")
+                .pattern("OOO")
+                .input('O', ModItems.LOOT_CUBE_T3)
+                .input('P', ModItems.NETHER_INFUSED_INGOT)
+                .criterion(hasItem(ModItems.LOOT_CUBE_T3),conditionsFromItem(ModItems.LOOT_CUBE_T3))
+                .offerTo(recipeExporter, new Identifier(HellMod.MODID, "loot_cube_t4"));
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.LOOT_CUBE_T5)
+                .pattern("OOO")
+                .pattern("OPO")
+                .pattern("OOO")
+                .input('O', ModItems.LOOT_CUBE_T4)
+                .input('P', ModItems.TRUE_AMETHYST_INGOT)
+                .criterion(hasItem(ModItems.LOOT_CUBE_T4),conditionsFromItem(ModItems.LOOT_CUBE_T4))
+                .offerTo(recipeExporter, new Identifier(HellMod.MODID, "loot_cube_t5"));
+
         //STAGE 3
 
         SmithingTransformRecipeJsonBuilder.create(
@@ -510,33 +548,6 @@ public class DatagenRecipeProvider extends FabricRecipeProvider {
                 .input('L', Items.NETHERITE_INGOT)
                 .criterion(hasItem(ModItems.TRUE_AMETHYST_SHARD),conditionsFromItem(ModItems.TRUE_AMETHYST_SHARD))
                 .offerTo(recipeExporter, new Identifier(HellMod.MODID, "true_amethyst_ingot"));
-
-        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.GIGAPHANTOM_HORN)
-                .pattern("PPP")
-                .pattern("PLP")
-                .pattern("PPP")
-                .input('P',Items.PHANTOM_MEMBRANE)
-                .input('L', ModItems.TRUE_AMETHYST_SHARD)
-                .criterion(hasItem(ModItems.TRUE_AMETHYST_SHARD),conditionsFromItem(ModItems.TRUE_AMETHYST_SHARD))
-                .offerTo(recipeExporter, new Identifier(HellMod.MODID, "gigaphantom_horn"));
-
-        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.ZOMBIE_BERSERK_HORN)
-                .pattern("PPP")
-                .pattern("PLP")
-                .pattern("PPP")
-                .input('P',Items.ROTTEN_FLESH)
-                .input('L', ModItems.TRUE_AMETHYST_SHARD)
-                .criterion(hasItem(ModItems.TRUE_AMETHYST_SHARD),conditionsFromItem(ModItems.TRUE_AMETHYST_SHARD))
-                .offerTo(recipeExporter, new Identifier(HellMod.MODID, "berserk_zombie_horn"));
-
-        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.CREEPER_BOMB_HORN)
-                .pattern("PPP")
-                .pattern("PLP")
-                .pattern("PPP")
-                .input('P',Items.GUNPOWDER)
-                .input('L', ModItems.TRUE_AMETHYST_SHARD)
-                .criterion(hasItem(ModItems.TRUE_AMETHYST_SHARD),conditionsFromItem(ModItems.TRUE_AMETHYST_SHARD))
-                .offerTo(recipeExporter, new Identifier(HellMod.MODID, "creeper_bomb_horn"));
 
         ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.RARE_HARDCORE_HEART)
                 .pattern("IKI")

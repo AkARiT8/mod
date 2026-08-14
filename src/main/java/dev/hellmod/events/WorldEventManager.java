@@ -102,7 +102,7 @@ public class WorldEventManager {
 
             cooldown = 0;
 
-            startRandomEvent(world);
+            //startRandomEvent(world);
         });
     }
     public static void registerEvent(

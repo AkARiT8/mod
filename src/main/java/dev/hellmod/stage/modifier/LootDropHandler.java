@@ -47,7 +47,7 @@ public class LootDropHandler {
             if (chance >= 0.3f) {
                 extraCount = world.random.nextInt(lootingLevel + 1);
             } else {
-                float bonus = 0.1f * lootingLevel;
+                float bonus = chance * lootingLevel;
                 finalChance = Math.min(chance + bonus, 1.0f);
             }
 

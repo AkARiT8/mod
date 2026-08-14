@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "O": {
+      "item": "hellmod:loot_cube_t3"
+    },
+    "P": {
+      "item": "hellmod:nether_infused_ingot"
+    }
+  },
+  "pattern": [
+    "OOO",
+    "OPO",
+    "OOO"
+  ],
+  "result": {
+    "count": 1,
+    "id": "hellmod:loot_cube_t4"
+  }
+}

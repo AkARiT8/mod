@@ -1,0 +1,7 @@
+{
+  "parent": "hellmod:item/loot_cube",
+  "textures": {
+    "0": "hellmod:item/loot_cube_t5",
+    "particle": "hellmod:item/loot_cube_t5"
+  }
+}

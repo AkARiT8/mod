@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:jigsaw",
+  "start_pool": "hellmod:start",
+  "size": 20,
+  "max_distance_from_center": 64,
+  "biomes": "#hellmod:has_structure/infernal_manor",
+  "step": "surface_structures",
+  "terrain_adaptation": "beard_thin",
+  "start_height": {
+    "type": "minecraft:constant",
+    "value": {
+      "absolute": 64
+    }
+  },
+  "use_expansion_hack": false,
+  "spawn_overrides": {}
+}

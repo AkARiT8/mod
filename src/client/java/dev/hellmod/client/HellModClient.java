@@ -1,6 +1,10 @@
 package dev.hellmod.client;
 
+import dev.hellmod.client.Renderer.*;
 import dev.hellmod.client.model.AirshipModel;
+import dev.hellmod.client.model.SnotProjectileModel;
+import dev.hellmod.client.model.SnoterModel;
+import dev.hellmod.client.model.SnoterModelTier2;
 import dev.hellmod.entity.ModEntities;
 import dev.hellmod.items.ModItems;
 import dev.hellmod.network.AirshipAscendPayload;
@@ -91,37 +95,37 @@ public class HellModClient implements ClientModInitializer {
 			if (stage == 1){
 				CameraRoll.ROLL = 0f;
 			}
-			if (stage == 2) {
-
-				CameraRoll.ROLL = 20f;
-
-				shaderReloadTimer.getAndIncrement();
-
-
-				if (shaderReloadTimer.get() >= 0) {
-
-					shaderReloadTimer.set(0);
-
-					try {
-
-						client.gameRenderer
-								.disablePostProcessor();
-
-						client.gameRenderer
-								.loadPostProcessor(
-
-										new Identifier(
-												"hellmod",
-												"shaders/post/grayscale.json"
-										)
-								);
-
-					} catch (Exception e) {
-
-						e.printStackTrace();
-					}
-				}
-			}
+//			if (stage == 2) {
+//
+//				CameraRoll.ROLL = 20f;
+//
+//				shaderReloadTimer.getAndIncrement();
+//
+//
+//				if (shaderReloadTimer.get() >= 0) {
+//
+//					shaderReloadTimer.set(0);
+//
+//					try {
+//
+//						client.gameRenderer
+//								.disablePostProcessor();
+//
+//						client.gameRenderer
+//								.loadPostProcessor(
+//
+//										new Identifier(
+//												"hellmod",
+//												"shaders/post/grayscale.json"
+//										)
+//								);
+//
+//					} catch (Exception e) {
+//
+//						e.printStackTrace();
+//					}
+//				}
+//			}
 
 			else {
 
@@ -138,6 +142,8 @@ public class HellModClient implements ClientModInitializer {
 					return entity != null && entity.isUsingItem() && entity.getActiveItem() == stack ? 1.0F : 0.0F;
 				}
 		);
+
+		ModTooltipHandler.register();
 
 		ModelPredicateProviderRegistry.register(
 				ModItems.TRUE_AMETHYST_BOW,
@@ -164,25 +170,39 @@ public class HellModClient implements ClientModInitializer {
 				}
 		);
 
-
-		EntityRendererRegistry.register(
-				ModEntities.BOSS_ZOMBIE,
-				BossZombieRenderer::new
-		);
-
-		EntityRendererRegistry.register(
-				ModEntities.BOSS_CREEPER,
-				BossCreeperRenderer::new
-		);
-
-		EntityRendererRegistry.register(
-				ModEntities.BOSS_PHANTOM,
-				BossPhantomRenderer::new
-		);
-
 		EntityRendererRegistry.register(
 				ModEntities.AIRSHIP,
 				AirshipRenderer::new
+		);
+
+		EntityRendererRegistry.register(
+				ModEntities.SNOTER,
+				SnoterRenderer::new
+		);
+
+		EntityRendererRegistry.register(
+				ModEntities.SNOTER_TIER_2,
+				SnoterTier2Renderer::new
+		);
+
+		EntityRendererRegistry.register(
+				ModEntities.SNOT_PROJECTILE,
+				SnotProjectileRenderer::new
+		);
+
+		EntityRendererRegistry.register(
+				ModEntities.SNOT_PROJECTILE_TIER2,
+				SnotProjectileTier2Renderer::new
+		);
+
+		EntityRendererRegistry.register(
+				ModEntities.INFERNAL_KNIGHT,
+				InfernalKnightRenderer::new
+		);
+
+		EntityRendererRegistry.register(
+				ModEntities.INFERNAL_ARCHER,
+				InfernalArcherRenderer::new
 		);
 
 
@@ -194,6 +214,21 @@ public class HellModClient implements ClientModInitializer {
 		EntityModelLayerRegistry.registerModelLayer(
 				AirshipModel.LAYER_LOCATION,
 				AirshipModel::getTexturedModelData
+		);
+
+		EntityModelLayerRegistry.registerModelLayer(
+				SnoterModel.LAYER_LOCATION,
+				SnoterModel::getTexturedModelData
+		);
+
+		EntityModelLayerRegistry.registerModelLayer(
+				SnotProjectileModel.LAYER_LOCATION,
+				SnotProjectileModel::getTexturedModelData
+		);
+
+		EntityModelLayerRegistry.registerModelLayer(
+				SnoterModelTier2.LAYER_LOCATION,
+				SnoterModelTier2::getTexturedModelData
 		);
 
 		ClientPlayNetworking.registerGlobalReceiver(

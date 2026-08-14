@@ -17,7 +17,7 @@ import net.minecraft.world.World;
 
 import java.util.List;
 
-public class GoldenAppleRune extends CustoModItem {
+public class GoldenAppleRune extends Item {
 
     public GoldenAppleRune(Item.Settings settings) {
         super(settings);

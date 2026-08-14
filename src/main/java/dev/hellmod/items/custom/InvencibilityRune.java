@@ -17,7 +17,7 @@ import net.minecraft.world.World;
 
 import java.util.List;
 
-public class InvencibilityRune extends CustoModItem {
+public class InvencibilityRune extends Item {
 
     public InvencibilityRune(Settings settings) {
         super(settings);

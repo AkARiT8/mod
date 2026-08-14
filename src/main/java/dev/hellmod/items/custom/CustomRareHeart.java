@@ -6,10 +6,11 @@ import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 
-public class CustomRareHeart extends CustoModItem {
+public class CustomRareHeart extends Item {
 
     private static final int MAX_EXTRA_HEARTS = 8;
 

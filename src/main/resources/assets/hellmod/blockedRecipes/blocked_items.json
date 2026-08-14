@@ -32,14 +32,6 @@
   "stage": 1
   },
   {
-    "item": "hellmod:pure_netherite_ingot",
-    "stage": 1
-  },
-  {
-    "item": "hellmod:pure_netherite_block",
-    "stage": 1
-  },
-  {
     "item": "hellmod:enchanted_golden_carrot",
     "stage": 1
   },
@@ -54,6 +46,18 @@
   {
     "item": "hellmod:overworld_essence",
     "stage": 1
+  },
+  {
+    "item": "hellmod:loot_cube_t3",
+    "stage": 1
+  },
+  {
+  "item": "hellmod:pure_netherite_ingot",
+  "stage": 2
+  },
+  {
+    "item": "hellmod:pure_netherite_block",
+    "stage": 2
   },
   {
     "item": "hellmod:blaze_main_rod",
@@ -128,8 +132,8 @@
     "stage": 2
   },
   {
-  "item": "hellmod:nether_essence",
-  "stage": 2
+    "item": "hellmod:nether_essence",
+    "stage": 2
   },
   {
     "item": "hellmod:empowered_coal",
@@ -138,6 +142,97 @@
   {
     "item": "hellmod:empowered_coal_block",
     "stage": 2
+  },
+  {
+    "item": "hellmod:loot_cube_t4",
+    "stage": 2
+  },
+  {
+    "item": "hellmod:true_amethyst_helmet",
+    "stage": 3
+  },
+  {
+    "item": "hellmod:true_amethyst_chestplate",
+    "stage": 3
+  },
+  {
+    "item": "hellmod:true_amethyst_leggings",
+    "stage": 3
+  },
+  {
+    "item": "hellmod:true_amethyst_boots",
+    "stage": 3
+  },
+  {
+    "item": "hellmod:true_amethyst_axe",
+    "stage": 3
+  },
+  {
+    "item": "hellmod:true_amethyst_pickaxe",
+    "stage": 3
+  },
+  {
+    "item": "hellmod:true_amethyst_shovel",
+    "stage": 3
+  },
+  {
+    "item": "hellmod:true_amethyst_sword",
+    "stage": 3
+  },
+  {
+    "item": "hellmod:true_amethyst_hoe",
+    "stage": 3
+  },
+  {
+    "item": "hellmod:creeper_essence",
+    "stage": 3
+  },
+  {
+    "item": "hellmod:zombie_essence",
+    "stage": 3
+  },
+  {
+    "item": "hellmod:phantom_essence",
+    "stage": 3
+  },
+  {
+    "item": "hellmod:true_amethyst_shard",
+    "stage": 3
+  },
+  {
+    "item": "hellmod:true_amethyst_ingot",
+    "stage": 3
+  },
+  {
+    "item": "hellmod:true_amethyst_template",
+    "stage": 3
+  },
+  {
+    "item": "hellmod:true_amethyst_shield",
+    "stage": 3
+  },
+  {
+    "item": "hellmod:true_amethyst_bow",
+    "stage": 3
+  },
+  {
+    "item": "hellmod:invencibility_rune",
+    "stage": 3
+  },
+  {
+    "item": "hellmod:panic_ball",
+    "stage": 3
+  },
+  {
+    "item": "hellmod:panic_totem_of_undying",
+    "stage": 3
+  },
+  {
+    "item": "hellmod:rare_hardcore_heart",
+    "stage": 3
+  },
+  {
+    "item": "hellmod:loot_cube_t5",
+    "stage": 3
   }
-
 ]

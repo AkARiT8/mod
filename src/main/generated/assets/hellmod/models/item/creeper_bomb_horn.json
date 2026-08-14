@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "hellmod:item/creeper_bomb_horn"
-  }
-}

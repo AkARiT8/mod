@@ -76,10 +76,12 @@ public class ModItemGroups {
                         entries.add(ModItems.INVENCIBILITY_RUNE);
                         entries.add(ModItems.PANIC_BALL);
                         entries.add(ModItems.PANIC_TOTEM_OF_UNDYING);
-                        entries.add(ModItems.CREEPER_BOMB_HORN);
-                        entries.add(ModItems.ZOMBIE_BERSERK_HORN);
-                        entries.add(ModItems.GIGAPHANTOM_HORN);
                         entries.add(ModItems.RARE_HARDCORE_HEART);
+                        entries.add(ModItems.LOOT_CUBE_T1);
+                        entries.add(ModItems.LOOT_CUBE_T2);
+                        entries.add(ModItems.LOOT_CUBE_T3);
+                        entries.add(ModItems.LOOT_CUBE_T4);
+                        entries.add(ModItems.LOOT_CUBE_T5);
 
 
                         ItemStack stack = new ItemStack(Items.POTION);
