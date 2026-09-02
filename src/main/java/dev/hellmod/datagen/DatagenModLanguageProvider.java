@@ -185,15 +185,31 @@ public class DatagenModLanguageProvider extends FabricLanguageProvider {
         builder.add(ModBlocks.EMPOWERED_COAL_BLOCK.getLeft(), "Empowered Coal Block");
         builder.add("tooltip.hellmod.empowered_coal_block.line2", "Stage 2");
 
+        builder.add(ModBlocks.DARK_OBSIDIAN.getLeft(), "Dark Obsidian");
+        builder.add("tooltip.hellmod.dark_obsidian.line3", "Stage 3");
+        builder.add(ModBlocks.CRYING_DARK_OBSIDIAN.getLeft(), "Crying Dark Obsidian");
+        builder.add("tooltip.hellmod.crying_dark_obsidian.line3", "Stage 3");
+        builder.add(ModBlocks.CRACKED_DARK_OBSIDIAN.getLeft(), "Cracked Dark Obsidian");
+        builder.add("tooltip.hellmod.cracked_dark_obsidian.line3", "Stage 3");
+        builder.add(ModBlocks.DARK_OBSIDIAN_PILAR.getLeft(), "Dark Obsidian Pilar");
+        builder.add("tooltip.hellmod.dark_obsidian_pilar.line3", "Stage 3");
+        builder.add(ModBlocks.DARK_OBSIDIAN_NODE.getLeft(), "Dark Obsidian Node");
+        builder.add("tooltip.hellmod.dark_obsidian_node.line3", "Stage 3");
+
+        builder.add(ModBlocks.DARK_OBSIDIAN_SLAB.getLeft(), "Dark Obsidian Slab");
+        builder.add("tooltip.hellmod.dark_obsidian_slab.line3", "Stage 3");
+        builder.add(ModBlocks.DARK_OBSIDIAN_STAIRS.getLeft(), "Dark Obsidian Stairs");
+        builder.add("tooltip.hellmod.dark_obsidian_stairs.line3", "Stage 3");
+
+        builder.add(ModBlocks.CUSTOM_BUTTON.getLeft(), "Custom Button");
+        builder.add("tooltip.hellmod.custom_button.line3", "Stage 3");
+
         //gm1Tab
         builder.add("itemGroup.hellmod.hell_group", "Hell items");
 
-        //bossName
-        builder.add("entity.hellmod.boss_zombie", "§4☠ BERSERK ZOMBIE ☠");
-        builder.add("entity.hellmod.boss_creeper", "§2☠ CREEPER BOMB ☠");
-        builder.add("entity.hellmod.boss_phantom", "§5☠ GIGA PHANTOM ☠");
-
         //Effects
         builder.add(ModEffects.STICKY, "Sticky");
+        builder.add(ModEffects.CONTAMINATION, "Contamination");
+        builder.add(ModEffects.FRAGILITY, "Fragility");
     }
 }

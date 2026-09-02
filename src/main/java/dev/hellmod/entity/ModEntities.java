@@ -96,6 +96,42 @@ public class ModEntities {
                             .build()
             );
 
+    public static final EntityType<DoomSkeletonEntity> DOOM_SKELETON =
+            Registry.register(
+                    Registries.ENTITY_TYPE,
+                    Identifier.of(HellMod.MOD_ID, "doom_skeleton"),
+                    FabricEntityTypeBuilder.createMob()
+                            .entityFactory(DoomSkeletonEntity::new)
+                            .spawnGroup(SpawnGroup.MONSTER)
+                            .dimensions(EntityDimensions.fixed(0.6f, 1.99f))
+                            .build()
+            );
+
+    public static final EntityType<DoomCreeperEntity> DOOM_CREEPER =
+            Registry.register(
+                    Registries.ENTITY_TYPE,
+                    Identifier.of("hellmod", "doom_creeper"),
+                    FabricEntityTypeBuilder.create(
+                                    SpawnGroup.MONSTER,
+                                    DoomCreeperEntity::new
+                            )
+                            .dimensions(EntityDimensions.fixed(0.6F, 1.7F))
+                            .build()
+            );
+
+    public static final EntityType<DoomZombieEntity> DOOM_ZOMBIE =
+            Registry.register(
+                    Registries.ENTITY_TYPE,
+                    Identifier.of("hellmod", "doom_zombie"),
+                    FabricEntityTypeBuilder.create(
+                                    SpawnGroup.MONSTER,
+                                    DoomZombieEntity::new
+                            )
+                            .dimensions(EntityDimensions.fixed(0.6F, 1.95F))
+                            .build()
+            );
+
+
     public static void register() {}
 
     public static void registerAttributes() {
@@ -117,7 +153,22 @@ public class ModEntities {
 
         FabricDefaultAttributeRegistry.register(
                 ModEntities.INFERNAL_ARCHER,
-                InfernalKnightEntity.createAttributes()
+                InfernalArcherEntity.createAttributes()
+        );
+
+        FabricDefaultAttributeRegistry.register(
+                ModEntities.DOOM_SKELETON,
+                DoomSkeletonEntity.createAttributes()
+        );
+
+        FabricDefaultAttributeRegistry.register(
+                ModEntities.DOOM_CREEPER,
+                DoomCreeperEntity.createAttributes()
+        );
+
+        FabricDefaultAttributeRegistry.register(
+                ModEntities.DOOM_ZOMBIE,
+                DoomZombieEntity.createAttributes()
         );
     }
 }

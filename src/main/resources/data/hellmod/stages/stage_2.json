@@ -60,7 +60,7 @@
             "count": 1
           },
           {
-            "item": "hellmod:loot_cube_t3",
+            "item": "hellmod:loot_cube_t4",
             "chance": 0.001,
             "count": 1
           }
@@ -112,7 +112,7 @@
             "count": 1
           },
           {
-            "item": "hellmod:loot_cube_t3",
+            "item": "hellmod:loot_cube_t4",
             "chance": 0.001,
             "count": 1
           }
@@ -167,7 +167,7 @@
             "count": 1
           },
           {
-            "item": "hellmod:loot_cube_t3",
+            "item": "hellmod:loot_cube_t4",
             "chance": 0.001,
             "count": 1
           }
@@ -203,7 +203,7 @@
             "count": 1
           },
           {
-            "item": "hellmod:loot_cube_t3",
+            "item": "hellmod:loot_cube_t4",
             "chance": 0.001,
             "count": 1
           }
@@ -236,7 +236,7 @@
             "count": 1
           },
           {
-            "item": "hellmod:loot_cube_t3",
+            "item": "hellmod:loot_cube_t4",
             "chance": 0.001,
             "count": 1
           }
@@ -294,7 +294,7 @@
             "count": 1
           },
           {
-            "item": "hellmod:loot_cube_t3",
+            "item": "hellmod:loot_cube_t4",
             "chance": 0.001,
             "count": 1
           }
@@ -354,7 +354,7 @@
             "count": 1
           },
           {
-            "item": "hellmod:loot_cube_t3",
+            "item": "hellmod:loot_cube_t4",
             "chance": 0.001,
             "count": 1
           }
@@ -387,7 +387,7 @@
             "count": 1
           },
           {
-            "item": "hellmod:loot_cube_t3",
+            "item": "hellmod:loot_cube_t4",
             "chance": 0.0015,
             "count": 1
           }
@@ -438,7 +438,7 @@
             "count": 1
           },
           {
-            "item": "hellmod:loot_cube_t3",
+            "item": "hellmod:loot_cube_t4",
             "chance": 0.001,
             "count": 1
           }
@@ -471,7 +471,7 @@
             "count": 1
           },
           {
-            "item": "hellmod:loot_cube_t3",
+            "item": "hellmod:loot_cube_t4",
             "chance": 0.001,
             "count": 1
           }
@@ -523,7 +523,7 @@
             "count": 1
           },
           {
-            "item": "hellmod:loot_cube_t3",
+            "item": "hellmod:loot_cube_t4",
             "chance": 0.001,
             "count": 1
           }
@@ -650,7 +650,7 @@
             "count": 1
           },
           {
-            "item": "hellmod:loot_cube_t3",
+            "item": "hellmod:loot_cube_t4",
             "chance": 0.001,
             "count": 1
           }
@@ -711,7 +711,7 @@
             "count": 1
           },
           {
-            "item": "hellmod:loot_cube_t3",
+            "item": "hellmod:loot_cube_t4",
             "chance": 0.001,
             "count": 1
           }
@@ -768,7 +768,7 @@
             "count": 1
           },
           {
-            "item": "hellmod:loot_cube_t3",
+            "item": "hellmod:loot_cube_t4",
             "chance": 0.002,
             "count": 1
           }
@@ -804,7 +804,7 @@
             "count": 1
           },
           {
-            "item": "hellmod:loot_cube_t3",
+            "item": "hellmod:loot_cube_t4",
             "chance": 0.001,
             "count": 1
           }
@@ -839,7 +839,7 @@
             "count": 1
           },
           {
-            "item": "hellmod:loot_cube_t3",
+            "item": "hellmod:loot_cube_t4",
             "chance": 0.001,
             "count": 1
           }
@@ -865,7 +865,7 @@
             "count": 1
           },
           {
-            "item": "hellmod:loot_cube_t3",
+            "item": "hellmod:loot_cube_t4",
             "chance": 0.001,
             "count": 1
           }
@@ -891,38 +891,38 @@
             "count": 1
           },
           {
-            "item": "hellmod:loot_cube_t3",
+            "item": "hellmod:loot_cube_t4",
             "chance": 0.001,
             "count": 1
           }
         ]
       }
-    }
-  },
-  "evoker": {
-    "loot": {
-      "extra_drops": [
-        {
-          "item": "hellmod:loot_cube_t1",
-          "chance": 0.05,
-          "count": 1
-        },
-        {
-          "item": "hellmod:loot_cube_t2",
-          "chance": 0.03,
-          "count": 1
-        },
-        {
-          "item": "hellmod:loot_cube_t3",
-          "chance": 0.01,
-          "count": 1
-        },
-        {
-          "item": "hellmod:loot_cube_t3",
-          "chance": 0.001,
-          "count": 1
-        }
-      ]
+    },
+    "evoker": {
+      "loot": {
+        "extra_drops": [
+          {
+            "item": "hellmod:loot_cube_t1",
+            "chance": 0.05,
+            "count": 1
+          },
+          {
+            "item": "hellmod:loot_cube_t2",
+            "chance": 0.03,
+            "count": 1
+          },
+          {
+            "item": "hellmod:loot_cube_t3",
+            "chance": 0.01,
+            "count": 1
+          },
+          {
+            "item": "hellmod:loot_cube_t4",
+            "chance": 0.001,
+            "count": 1
+          }
+        ]
+      }
     },
     "guardian": {
       "loot": {
@@ -943,66 +943,67 @@
             "count": 1
           },
           {
-            "item": "hellmod:loot_cube_t3",
+            "item": "hellmod:loot_cube_t4",
             "chance": 0.001,
             "count": 1
           }
         ]
-      },
-      "elder_guardian": {
-        "loot": {
-          "extra_drops": [
-            {
-              "item": "hellmod:loot_cube_t1",
-              "chance": 0.01,
-              "count": 1
-            },
-            {
-              "item": "hellmod:loot_cube_t2",
-              "chance": 0.05,
-              "count": 1
-            },
-            {
-              "item": "hellmod:loot_cube_t3",
-              "chance": 0.02,
-              "count": 1
-            },
-            {
-              "item": "hellmod:loot_cube_t3",
-              "chance": 0.002,
-              "count": 1
-            }
-          ]
-        }
-      },
-      "warden": {
-        "loot": {
-          "extra_drops": [
-            {
-              "item": "hellmod:loot_cube_t1",
-              "chance": 0.01,
-              "count": 1
-            },
-            {
-              "item": "hellmod:loot_cube_t2",
-              "chance": 0.05,
-              "count": 1
-            },
-            {
-              "item": "hellmod:loot_cube_t3",
-              "chance": 0.02,
-              "count": 1
-            },
-            {
-              "item": "hellmod:loot_cube_t3",
-              "chance": 0.003,
-              "count": 1
-            }
-          ]
-        }
       }
   },
+    "elder_guardian": {
+      "loot": {
+        "extra_drops": [
+          {
+            "item": "hellmod:loot_cube_t1",
+            "chance": 0.01,
+            "count": 1
+          },
+          {
+            "item": "hellmod:loot_cube_t2",
+            "chance": 0.05,
+            "count": 1
+          },
+          {
+            "item": "hellmod:loot_cube_t3",
+            "chance": 0.02,
+            "count": 1
+          },
+          {
+            "item": "hellmod:loot_cube_t4",
+            "chance": 0.002,
+            "count": 1
+          }
+        ]
+      }
+    },
+    "warden": {
+      "loot": {
+        "extra_drops": [
+          {
+            "item": "hellmod:loot_cube_t1",
+            "chance": 0.02,
+            "count": 1
+          },
+          {
+            "item": "hellmod:loot_cube_t2",
+            "chance": 0.05,
+            "count": 1
+          },
+          {
+            "item": "hellmod:loot_cube_t3",
+            "chance": 0.02,
+            "count": 1
+          },
+          {
+            "item": "hellmod:loot_cube_t4",
+            "chance": 0.003,
+            "count": 1
+          }
+        ]
+      }
+    },
   "disable_nether": false
   }
 }
+
 

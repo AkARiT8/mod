@@ -27,6 +27,10 @@ public class CreeperExplodeMixin {
             float power = ((VariantHolder) creeper).hellmod$getExplosionPower();
             String variant = ((VariantHolder) creeper).hellmod$getVariant();
 
+            if (creeper instanceof dev.hellmod.entity.DoomCreeperEntity) {
+                power = 15.0F;
+            }
+
             world.createExplosion(
                     creeper,
                     creeper.getX(),
@@ -35,7 +39,7 @@ public class CreeperExplodeMixin {
                     power,
                     World.ExplosionSourceType.MOB
             );
-            System.out.println("VARIANT: " + variant);
+
             if ("debuff".equals(variant)) {
 
                 double radius = power * 2.0;
@@ -50,7 +54,8 @@ public class CreeperExplodeMixin {
 
                     double distance = creeper.distanceTo(target);
 
-                    float damage = power * (1.0f - (float)(distance / radius));
+                    float damage =
+                            power * (1.0f - (float)(distance / radius));
 
                     if (damage > 0.1f) {
 
@@ -73,9 +78,6 @@ public class CreeperExplodeMixin {
 
                         player.addStatusEffect(new StatusEffectInstance(
                                 StatusEffects.NAUSEA, 100, 5));
-
-
-
                     }
                 }
             }

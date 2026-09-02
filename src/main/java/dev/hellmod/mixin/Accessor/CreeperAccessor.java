@@ -22,5 +22,8 @@ public interface CreeperAccessor {
     @Accessor("currentFuseTime")
     int getCurrentFuseTime();
 
+    @Accessor("explosionRadius")
+    int getExplosionRadius();
+
 
 }

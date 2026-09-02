@@ -38,6 +38,7 @@ import dev.hellmod.structures.InfernalManor.InfernalManorBlockPlacement;
 import dev.hellmod.structures.InfernalManor.InfernalManorBlockProtection;
 import dev.hellmod.structures.InfernalManor.InfernalManorChestHandler;
 import dev.hellmod.structures.InfernalManor.InfernalManorEffectHandler;
+import dev.hellmod.structures.doomCylinder.DoomCylinderController;
 import dev.hellmod.util.ModItemEffect;
 import dev.hellmod.util.SpawnController;
 import dev.hellmod.util.VariantHolder;
@@ -328,6 +329,8 @@ public class HellMod implements ModInitializer {
 		);
 
 		BlockedItemsLoader.load(manager);
+
+		DoomCylinderController.registerTick();
 
 		FabricBrewingRecipeRegistryBuilder.BUILD.register(builder -> {
 

@@ -14,6 +14,17 @@ public class ModEffects {
             new StickyEffect()
     );
 
+    public static final StatusEffect CONTAMINATION = Registry.register(
+            Registries.STATUS_EFFECT,
+            Identifier.of(HellMod.MODID, "contamination"),
+            new ContaminationEffect()
+    );
+    public static final StatusEffect FRAGILITY = Registry.register(
+            Registries.STATUS_EFFECT,
+            Identifier.of(HellMod.MODID, "fragility"),
+            new FragilityEffect()
+    );
+
     public static void registerEffects() {
         HellMod.LOGGER.info("Registering Effects for " + HellMod.MOD_ID);
     }

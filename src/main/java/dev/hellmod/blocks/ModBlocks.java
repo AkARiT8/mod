@@ -1,10 +1,10 @@
 package dev.hellmod.blocks;
 
+import dev.hellmod.blocks.custom.CustomButton;
+import dev.hellmod.blocks.custom.DarkObsidianPilar;
 import dev.hellmod.blocks.custom.StageBlock;
-import net.minecraft.block.AbstractBlock;
-import net.minecraft.block.Block;
+import net.minecraft.block.*;
 import dev.hellmod.HellMod;
-import net.minecraft.block.Blocks;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.registry.Registries;
@@ -21,6 +21,46 @@ public class ModBlocks {
     public static final Pair<Block, Item> PURE_NETHERITE_BLOCK = registerBlock("pure_netherite_block", new Block(AbstractBlock.Settings.copy(Blocks.NETHERITE_BLOCK).requiresTool()));
     public static final Pair<Block, Item> STAGE_BLOCK = registerBlock("stage_block", new StageBlock(AbstractBlock.Settings.copy(Blocks.BEDROCK)));
     public static final Pair<Block, Item> EMPOWERED_COAL_BLOCK = registerBlock("empowered_coal_block", new Block(AbstractBlock.Settings.copy(Blocks.COAL_BLOCK).requiresTool()));
+    public static final Pair<Block, Item> DARK_OBSIDIAN = registerBlock("dark_obsidian", new Block(AbstractBlock.Settings.copy(Blocks.BEDROCK).requiresTool()));
+    public static final Pair<Block, Item> CRYING_DARK_OBSIDIAN = registerBlock("crying_dark_obsidian", new Block(AbstractBlock.Settings.copy(Blocks.BEDROCK).requiresTool()));
+    public static final Pair<Block, Item> CRACKED_DARK_OBSIDIAN = registerBlock("cracked_dark_obsidian", new Block(AbstractBlock.Settings.copy(Blocks.BEDROCK).requiresTool()));
+    public static final Pair<Block, Item> DARK_OBSIDIAN_NODE = registerBlock("dark_obsidian_node", new Block(AbstractBlock.Settings.copy(Blocks.BEDROCK).luminance(state -> 12).requiresTool()));
+
+    public static final Pair<Block, Item> DARK_OBSIDIAN_PILAR =
+            registerBlock(
+                    "dark_obsidian_pilar",
+                    new DarkObsidianPilar(
+                            AbstractBlock.Settings.copy(Blocks.BEDROCK)
+                    )
+            );
+
+    public static final Pair<Block, Item> DARK_OBSIDIAN_SLAB =
+            registerBlock(
+                    "dark_obsidian_slab",
+                    new SlabBlock(
+                            AbstractBlock.Settings.copy(ModBlocks.DARK_OBSIDIAN.getLeft())
+                    )
+            );
+
+    public static final Pair<Block, Item> DARK_OBSIDIAN_STAIRS =
+            registerBlock(
+                    "dark_obsidian_stairs",
+                    new StairsBlock(
+                            ModBlocks.DARK_OBSIDIAN.getLeft().getDefaultState(),
+                            AbstractBlock.Settings.copy(
+                                    ModBlocks.DARK_OBSIDIAN.getLeft()
+                            )
+                    )
+            );
+
+    public static final Pair<Block, Item> CUSTOM_BUTTON =
+            registerBlock(
+                    "custom_button",
+                    new CustomButton(
+                            AbstractBlock.Settings.copy(Blocks.STONE)
+                                    .nonOpaque()
+                    )
+            );
 
     private static Pair<Block, Item> registerBlock(String name, Block block){
         return new Pair<>(

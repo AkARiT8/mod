@@ -1,10 +1,8 @@
 package dev.hellmod.client;
 
+import dev.hellmod.blocks.entity.ModBlockEntities;
 import dev.hellmod.client.Renderer.*;
-import dev.hellmod.client.model.AirshipModel;
-import dev.hellmod.client.model.SnotProjectileModel;
-import dev.hellmod.client.model.SnoterModel;
-import dev.hellmod.client.model.SnoterModelTier2;
+import dev.hellmod.client.model.*;
 import dev.hellmod.entity.ModEntities;
 import dev.hellmod.items.ModItems;
 import dev.hellmod.network.AirshipAscendPayload;
@@ -22,10 +20,12 @@ import net.fabricmc.fabric.api.client.networking.v1.ClientPlayNetworking;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
 import net.fabricmc.fabric.api.networking.v1.PayloadTypeRegistry;
+import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.screen.ingame.HandledScreens;
 import net.minecraft.client.item.ModelPredicateProviderRegistry;
 import net.minecraft.client.option.KeyBinding;
+import net.minecraft.client.render.block.entity.BlockEntityRendererFactories;
 import net.minecraft.client.util.InputUtil;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -205,6 +205,40 @@ public class HellModClient implements ClientModInitializer {
 				InfernalArcherRenderer::new
 		);
 
+		EntityModelLayerRegistry.registerModelLayer(
+				DoomSkeletonModel.LAYER,
+				DoomSkeletonModel::getTexturedModelData
+		);
+
+		EntityRendererRegistry.register(
+				ModEntities.DOOM_SKELETON,
+				DoomSkeletonRenderer::new
+		);
+
+		EntityModelLayerRegistry.registerModelLayer(
+				DoomCreeperModel.LAYER_LOCATION ,
+				DoomCreeperModel::getTexturedModelData
+		);
+
+		EntityRendererRegistry.register(
+				ModEntities.DOOM_CREEPER,
+				DoomCreeperRenderer::new
+		);
+
+		EntityModelLayerRegistry.registerModelLayer(
+				DoomZombieModel.LAYER_LOCATION,
+				DoomZombieModel::getTexturedModelData
+		);
+
+		EntityRendererRegistry.register(
+				ModEntities.DOOM_ZOMBIE,
+				DoomZombieRenderer::new
+		);
+
+		BlockEntityRendererFactories.register(
+				ModBlockEntities.CUSTOM_BUTTON,
+				CustomButtonBlockEntityRenderer::new
+		);
 
 		HandledScreens.register(
 				ModScreenHandlers.STAGE_SCREEN_HANDLER,
@@ -230,6 +264,13 @@ public class HellModClient implements ClientModInitializer {
 				SnoterModelTier2.LAYER_LOCATION,
 				SnoterModelTier2::getTexturedModelData
 		);
+
+		EntityModelLayerRegistry.registerModelLayer(
+				CustomButtonModel.LAYER_LOCATION,
+				CustomButtonModel::getTexturedModelData
+		);
+
+
 
 		ClientPlayNetworking.registerGlobalReceiver(
 				ShowTotemPayload.ID,

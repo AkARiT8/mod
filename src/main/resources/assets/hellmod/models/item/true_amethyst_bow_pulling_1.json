@@ -1,5 +1,5 @@
 {
-  "parent": "item/handheld",
+  "parent": "item/bow",
   "textures": {
     "layer0": "hellmod:item/true_amethyst_bow_pulling_1"
   }

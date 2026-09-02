@@ -82,6 +82,14 @@ public class ModItemGroups {
                         entries.add(ModItems.LOOT_CUBE_T3);
                         entries.add(ModItems.LOOT_CUBE_T4);
                         entries.add(ModItems.LOOT_CUBE_T5);
+                        entries.add(ModBlocks.DARK_OBSIDIAN.getLeft());
+                        entries.add(ModBlocks.CRACKED_DARK_OBSIDIAN.getLeft());
+                        entries.add(ModBlocks.CRYING_DARK_OBSIDIAN.getLeft());
+                        entries.add(ModBlocks.DARK_OBSIDIAN_PILAR.getLeft());
+                        entries.add(ModBlocks.DARK_OBSIDIAN_NODE.getLeft());
+                        entries.add(ModBlocks.DARK_OBSIDIAN_SLAB.getLeft());
+                        entries.add(ModBlocks.DARK_OBSIDIAN_STAIRS.getLeft());
+                        entries.add(ModBlocks.CUSTOM_BUTTON.getLeft());
 
 
                         ItemStack stack = new ItemStack(Items.POTION);
